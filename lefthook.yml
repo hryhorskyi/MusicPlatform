@@ -1,0 +1,17 @@
+pre-push:
+  parallel: true
+  commands:
+    bundler-leak:
+      run: bundle exec bundler-leak
+    bundler-audit:
+      run: bundle exec bundler-audit check --update
+    traceroute:
+      run: FAIL_ON_ERROR=1 rake traceroute
+      
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      run: bundle exec rubocop
+    brakeman:
+      run: brakeman --no-pager 

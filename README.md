@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version 
+* Ruby version
 
 * System dependencies
 
@@ -30,8 +30,8 @@ Things you may want to cover:
   - breakman - is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
   - bundler-audit - checks gemfile.lock for vulnerable versions of gems and does not allow untrusted gems to be installed.
   - bunder-leak - tool to find leaky gems in your dependencies. Make sure memory leaks are not in your gem dependencies.
-  - lefthook - hook for git push and git commit. 
- 
+  - lefthook - hook for git push and git commit.
+
 * How setting leftook:
   1. Install lefthook:
     ```ruby
@@ -44,7 +44,7 @@ Things you may want to cover:
     $ lefthook run pre-push
     ```
   - Expected result after calling commands:
-    
+
     ```ruby
     $ lefthook run pre-commit
     ...
@@ -53,7 +53,7 @@ Things you may want to cover:
       ✔️  rubocop
 
     #or
-    
+
     $ lefthook run pre-push
     ...
     SUMMARY: (done in 1.76 seconds)
@@ -62,8 +62,29 @@ Things you may want to cover:
     ```
 * How it works:
     - We have two actions `pre-commit` and `pre-push`:
-    -   when you execute `git commit`, call rubocop and brakeman before doing so. 
+    -   when you execute `git commit`, call rubocop and brakeman before doing so.
     if rubocop and brakeman run with exceptions, your commit will not be executed.
 
-    - when you execute `git push`, call bundler-leak and bundler-audit before doing so. 
+    - when you execute `git push`, call bundler-leak and bundler-audit before doing so.
     if bundler-leak and bundler-audit run with exceptions, your push will not be executed.
+
+## Configure rails credentials
+
+### How to get keys from encrypted environments
+
+There are 4 environments with their own keys: development, test, staging and production.
+1. Open rails console for necessary environment(for instance, **rails c -e production**);
+2. **Rails.application.credentials.config** command - demonstation of all data from config/credentials/*.yml.enc file;
+3. **Rails.application.credentials.config[:secret_key_base]** command - demonstration of environment key;
+
+Database params from console:
+* Rails.application.credentials.config[:database_name]
+* Rails.application.credentials.config[:database_url]
+* Rails.application.credentials.config[:database_host]
+* Rails.application.credentials.config[:database_username]
+* Rails.application.credentials.config[:database_password]
+
+### How to add or update credentials
+
+You need a text editor(VIM) for next command:
+**EDITOR=vim rails credentials:edit --environment <name_of_environment>**

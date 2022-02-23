@@ -16,5 +16,6 @@
 !/tmp/storage/.keep
 
 /config/master.key
+/config/credentials/**.key
 
 .ruby-gemset

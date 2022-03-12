@@ -83,12 +83,22 @@ There are 4 environments with their own keys: development, test, staging and pro
 
 Database params from console:
 * Rails.application.credentials.config[:database_name]
-* Rails.application.credentials.config[:database_url]
 * Rails.application.credentials.config[:database_host]
 * Rails.application.credentials.config[:database_username]
 * Rails.application.credentials.config[:database_password]
 
 ### How to add or update credentials
 
-You need a text editor(VIM) for next command:
-**EDITOR=vim rails credentials:edit --environment <name_of_environment>**
+You can use a text editor(VIM/Nano/VS Code/etc.) for next command:
+
+`
+EDITOR="your text editor" rails credentials:edit --environment <name_of_environment>`
+
+## Deployment on Heroku
+### Staging
+https://epam-music-staging.herokuapp.com/
+### Production
+https://epam-music.herokuapp.com/
+### Postman Collect
+Added to the attachment in the link:
+https://beattrey.atlassian.net/jira/software/projects/EM/boards/1?selectedIssue=EM-8

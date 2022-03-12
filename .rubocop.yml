@@ -12,3 +12,10 @@ Style/Documentation:
 
 Layout/LineLength:
   Max: 120
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'path', 'xdescribe']
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - spec/requests/api/v1/*

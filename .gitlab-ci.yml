@@ -1,0 +1,79 @@
+stages:
+  - lintering
+  - test
+  - deploy
+
+image: "ruby:3.1.0"
+
+.base:
+  cache:
+    - key:
+        files:
+          - Gemfile.lock
+      paths:
+        - vendor/ruby
+  before_script:
+    - gem install bundler --no-document
+    - ruby -v
+    - bundle install -j $(nproc) --path vendor/ruby
+
+.base_db:
+  extends: .base
+  services:
+    - postgres:latest
+  variables:
+    POSTGRES_DB: $POSTGRES_DB
+    POSTGRES_USER: $POSTGRES_USER
+    POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+  before_script:
+    - RAILS_ENV=test bundle install --jobs $(nproc) --path vendor/ruby
+    - cp config/database.yml.gitlab config/database.yml
+    - RAILS_ENV=test bundle exec rake db:migrate
+
+.base_deploy:
+  before_script:
+    - gem install dpl
+    - gem install faraday -v 1.10.0
+    - apt-get update
+
+lintering:rubocop:
+  extends: .base
+  stage: lintering
+  script:
+    - bundle exec lefthook run pre-commit
+    - bundle exec lefthook run pre-push
+
+test:rspec:
+  extends: .base_db
+  stage: test
+  coverage: '/LOC\s\(\d+\.\d+%\)\scovered/'
+  variables:
+    COVERAGE: "true"
+  script:
+    - RAILS_ENV=test bundle exec rspec
+  artifacts:
+    paths:
+      - "coverage/"
+    name: "Pipeline $CI_PIPELINE_ID Coverage Report"
+
+deploy:staging_heroku: 
+  extends: .base_deploy
+  stage: deploy
+  script:
+    - dpl --provider=heroku --app=$HEROKU_STAGING_APP_NAME --api_key=$HEROKU_API_KEY
+  environment:
+    name: staging
+    url: https://gitlab-ci-staging-test.herokuapp.com/
+  only:
+    - dev
+
+deploy:production_heroku: 
+  extends: .base_deploy
+  stage: deploy
+  script:
+    - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP_NAME --api_key=$HEROKU_API_KEY
+  environment:
+    name: production
+    url: https://gitlab-ci-staging-test.herokuapp.com/
+  only:
+    - main

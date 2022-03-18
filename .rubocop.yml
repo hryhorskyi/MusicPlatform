@@ -19,3 +19,7 @@ Metrics/BlockLength:
 RSpec/EmptyExampleGroup:
   Exclude:
     - spec/requests/api/v1/*
+
+Lint/EmptyBlock:
+  Exclude:
+    - config/routes.rb

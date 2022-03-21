@@ -13,7 +13,7 @@ RSpec.configure do |config|
       },
       paths: {},
       servers: [
-        { url: 'http://{defaultHost}', variables: { defaultHost: { default: 'localhost:3000' } } }
+        { url: 'http://{host}', variables: { host: { default: Rails.application.credentials.dig(:rswag, :host) } } }
       ]
     },
     'v1/swagger_admin.yaml' => {

@@ -31,6 +31,9 @@ image: "ruby:3.1.0"
     - RAILS_ENV=test bundle exec rake db:migrate
 
 .base_deploy:
+  cache:
+    key: swagger_hash
+    untracked: true
   before_script:
     - gem install dpl
     - gem install faraday -v 1.10.0
@@ -51,6 +54,12 @@ test:rspec:
     COVERAGE: "true"
   script:
     - RAILS_ENV=test bundle exec rspec
+    - RAILS_ENV=test bundle exec rails rswag
+  cache:
+    key: swagger_hash
+    untracked: true
+    paths:
+      - swagger/*
   artifacts:
     paths:
       - "coverage/"
@@ -60,10 +69,10 @@ deploy:staging_heroku:
   extends: .base_deploy
   stage: deploy
   script:
-    - dpl --provider=heroku --app=$HEROKU_STAGING_APP_NAME --api_key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_STAGING_APP_NAME --api_key=$HEROKU_API_KEY --skip_cleanup
   environment:
     name: staging
-    url: https://gitlab-ci-staging-test.herokuapp.com/
+    url: https://epam-music-staging.herokuapp.com/
   only:
     - dev
 
@@ -71,9 +80,9 @@ deploy:production_heroku:
   extends: .base_deploy
   stage: deploy
   script:
-    - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP_NAME --api_key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP_NAME --api_key=$HEROKU_API_KEY --skip_cleanup
   environment:
     name: production
-    url: https://gitlab-ci-staging-test.herokuapp.com/
+    url: https://epam-music.herokuapp.com/
   only:
     - main

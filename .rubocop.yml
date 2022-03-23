@@ -23,3 +23,7 @@ RSpec/EmptyExampleGroup:
 Lint/EmptyBlock:
   Exclude:
     - config/routes.rb
+  
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+  

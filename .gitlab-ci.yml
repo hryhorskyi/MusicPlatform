@@ -54,7 +54,7 @@ test:rspec:
     COVERAGE: "true"
   script:
     - RAILS_ENV=test bundle exec rspec
-    - RAILS_ENV=test bundle exec rails rswag
+    - SIMPLECOV_DISABLE=true RAILS_ENV=test bundle exec rails rswag
   cache:
     key: swagger_hash
     untracked: true
@@ -65,7 +65,7 @@ test:rspec:
       - "coverage/"
     name: "Pipeline $CI_PIPELINE_ID Coverage Report"
 
-deploy:staging_heroku: 
+deploy:staging_heroku:
   extends: .base_deploy
   stage: deploy
   script:
@@ -76,7 +76,7 @@ deploy:staging_heroku:
   only:
     - dev
 
-deploy:production_heroku: 
+deploy:production_heroku:
   extends: .base_deploy
   stage: deploy
   script:

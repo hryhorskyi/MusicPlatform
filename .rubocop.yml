@@ -9,6 +9,7 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+  EnforcedShorthandSyntax: either
 
 Layout/LineLength:
   Max: 120

@@ -9,8 +9,10 @@ gem 'rails', '~> 7.0.1'
 
 gem 'bcrypt', '~> 3.1'
 gem 'bootsnap', require: false
+gem 'jwt_sessions', '2.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'redis', '~> 4.6'
 gem 'rswag-api', '~> 2.5'
 gem 'rswag-ui', '~> 2.5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

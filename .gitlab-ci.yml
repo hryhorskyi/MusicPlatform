@@ -20,6 +20,7 @@ image: "ruby:3.1.0"
 .base_db:
   extends: .base
   services:
+    - redis:latest
     - postgres:latest
   variables:
     POSTGRES_DB: $POSTGRES_DB

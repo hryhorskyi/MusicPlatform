@@ -1,0 +1,6 @@
+en:
+  swagger:
+    sessions:
+      name: Sessions
+      actions:
+        delete: delete session

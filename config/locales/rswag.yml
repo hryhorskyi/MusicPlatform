@@ -3,4 +3,5 @@ en:
     sessions:
       name: Sessions
       actions:
+        post: create session
         delete: delete session

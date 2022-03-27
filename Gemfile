@@ -9,6 +9,7 @@ gem 'rails', '~> 7.0.1'
 
 gem 'bcrypt', '~> 3.1'
 gem 'bootsnap', require: false
+gem 'jsonapi-serializer', '~> 2.2'
 gem 'jwt_sessions', '~> 2.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'

@@ -8,5 +8,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :nickname, presence: true, uniqueness: true, length: { minimum: NICKNAME_LENGTH.min,
                                                                    maximum: NICKNAME_LENGTH.max }
-  validates :password, presence: true, format: { with: PASSWORD_REGEXP }
+  validates :password, confirmation: true, format: { with: PASSWORD_REGEXP }
+  validates :password_confirmation, presence: true
 end

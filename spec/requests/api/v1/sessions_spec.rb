@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe I18n.t('swagger.sessions.name'), swagger_doc: 'v1/swagger.yaml', type: 'request' do
+RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
   path '/api/v1/session' do
-    post(I18n.t('swagger.sessions.actions.post')) do
-      tags I18n.t('swagger.sessions.name')
+    post(I18n.t('swagger.sessions.action.post')) do
+      tags I18n.t('swagger.sessions.tags')
       consumes 'application/json'
       parameter name: :session, in: :body, schema: {
         type: :object,
@@ -28,8 +28,8 @@ RSpec.describe I18n.t('swagger.sessions.name'), swagger_doc: 'v1/swagger.yaml', 
       end
     end
 
-    delete(I18n.t('swagger.sessions.actions.delete')) do
-      tags I18n.t('swagger.sessions.name')
+    delete(I18n.t('swagger.sessions.action.delete')) do
+      tags I18n.t('swagger.sessions.tags')
       response(204, 'no content') do
         run_test!
       end

@@ -1,7 +1,10 @@
 en:
   swagger:
     sessions:
-      name: Sessions
-      actions:
+      tags: Session
+      action:
         post: create session
         delete: delete session
+    users:
+      tags: User
+      action: create user

@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'json_matchers', '~> 0.11.1'
   gem 'rspec-rails', '~> 5.1'
   gem 'rswag-specs', '~> 2.5'
   gem 'shoulda-matchers', '~> 5.1'

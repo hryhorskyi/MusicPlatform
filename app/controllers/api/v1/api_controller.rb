@@ -3,6 +3,8 @@
 module Api
   module V1
     class ApiController < ActionController::API
+      include JWTSessions::RailsAuthorization
+
       private
 
       def render_errors(object:, status:)

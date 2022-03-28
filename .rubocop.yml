@@ -20,6 +20,10 @@ Metrics/BlockLength:
 RSpec/EmptyExampleGroup:
   Exclude:
     - spec/requests/api/v1/*
-  
+
 Style/HashSyntax:
   EnforcedShorthandSyntax: either
+
+RSpec/VariableName:
+  Exclude:
+    - spec/requests/api/v1/*

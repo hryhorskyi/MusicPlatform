@@ -11,28 +11,16 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
-    context 'when user valid' do
-      subject { build(:user) }
+    it { is_expected.to validate_presence_of(:nickname) }
 
-      %i[nickname email password].each do |field|
-        it { is_expected.to validate_presence_of(field) }
-      end
-
-      %i[nickname email].each do |field|
-        it { is_expected.to validate_uniqueness_of(field) }
-      end
-
-      it { is_expected.to validate_length_of(:nickname).is_at_least(User::NICKNAME_LENGTH.first) }
-      it { is_expected.to validate_length_of(:nickname).is_at_most(User::NICKNAME_LENGTH.last) }
+    %i[nickname email].each do |field|
+      it { expect(build(:user)).to validate_uniqueness_of(field) }
     end
 
-    context 'when user invalid' do
-      %w[P@ss0r p@ssw0rd P@123457 P@ssword Passw0rd].each do |invalid_password|
-        it "raise validation error with invalid password: #{invalid_password}" do
-          expect { create(:user, password: invalid_password) }.to raise_error(ActiveRecord::RecordInvalid,
-                                                                              'Validation failed: Password is invalid')
-        end
-      end
-    end
+    it { is_expected.to validate_length_of(:nickname).is_at_least(User::NICKNAME_LENGTH.first) }
+    it { is_expected.to validate_length_of(:nickname).is_at_most(User::NICKNAME_LENGTH.last) }
+
+    it_behaves_like 'email is valid'
+    it_behaves_like 'password is valid'
   end
 end

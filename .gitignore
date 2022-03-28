@@ -22,5 +22,6 @@ dump.rdb
 /coverage
 /log
 .ruby-gemset
+dump.rdb
 
 /swagger/*

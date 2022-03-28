@@ -23,6 +23,7 @@ module Api
       end
 
       def destroy
+        SessionDestroy.call(token_from_headers(:refresh))
         head :no_content
       end
     end

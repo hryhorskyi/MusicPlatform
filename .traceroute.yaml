@@ -1,0 +1,4 @@
+ignore_unreachable_actions:
+  - ^*request_method
+  - ^*request_cookies
+  - ^*request_headers

@@ -8,11 +8,8 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-<<<<<<< HEAD
 dump.rdb
-=======
 .rake_tasks
->>>>>>> dev
 /storage/*
 !/storage/.keep
 /tmp/storage/*

@@ -5,6 +5,7 @@ en:
       action:
         post: create session
         delete: delete session
+        update: update session
     users:
       tags: User
       action: create user

@@ -16,6 +16,12 @@ module Api
         end
       end
 
+      def update
+        render json: { csrf: SecureRandom.hex(88).to_s,
+                       access: SecureRandom.hex(165).to_s,
+                       access_expires_at: DateTime.now }, status: :ok
+      end
+
       def destroy
         head :no_content
       end

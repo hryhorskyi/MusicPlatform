@@ -27,6 +27,16 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
         run_test!
       end
     end
+    put(I18n.t('swagger.sessions.actions.update')) do
+      tags I18n.t('swagger.sessions.name')
+      response '200', 'ok' do
+        run_test! do |responce|
+          %w[csrf access access_expires_at].each do |field|
+            expect(JSON.parse(responce.body).keys).to include(field)
+          end
+        end
+      end
+    end
 
     delete(I18n.t('swagger.sessions.action.delete')) do
       tags I18n.t('swagger.sessions.tags')

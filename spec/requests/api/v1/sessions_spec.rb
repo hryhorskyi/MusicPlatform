@@ -19,7 +19,9 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
           user = create(:user)
           { email: user.email, password: user.password }
         end
-        run_test!
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/session')
+        end
       end
 
       response '400', 'bad request' do

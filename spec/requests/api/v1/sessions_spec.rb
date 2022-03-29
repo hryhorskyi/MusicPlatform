@@ -11,6 +11,7 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
           email: { type: :string },
           password: { type: :string }
         },
+        example: { email: 'test1@gmail.com', password: 'P@ssw0rd' },
         required: %w[email password]
       }
 

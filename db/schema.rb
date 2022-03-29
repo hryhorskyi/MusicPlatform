@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_24_125901) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_26_134423) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "friends", force: :cascade do |t|
+    t.bigint "initiator_id"
+    t.bigint "acceptor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["acceptor_id"], name: "index_friends_on_acceptor_id"
+    t.index ["initiator_id", "acceptor_id"], name: "index_friends_on_initiator_id_and_acceptor_id", unique: true
+    t.index ["initiator_id"], name: "index_friends_on_initiator_id"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", null: false
@@ -32,4 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_125901) do
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 
+  add_foreign_key "friends", "users", column: "acceptor_id"
+  add_foreign_key "friends", "users", column: "initiator_id"
 end

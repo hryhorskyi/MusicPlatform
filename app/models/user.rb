@@ -4,6 +4,8 @@ class User < ApplicationRecord
   include EmailValidations
   include PasswordValidations
 
+  has_many :friends, dependent: :destroy
+
   NICKNAME_LENGTH = (3..20)
   has_secure_password
 

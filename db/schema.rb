@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_26_134423) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_28_163943) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
 
   create_table "friends", force: :cascade do |t|
     t.bigint "initiator_id"
@@ -22,14 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_26_134423) do
     t.index ["acceptor_id"], name: "index_friends_on_acceptor_id"
     t.index ["initiator_id", "acceptor_id"], name: "index_friends_on_initiator_id_and_acceptor_id", unique: true
     t.index ["initiator_id"], name: "index_friends_on_initiator_id"
-  end
-
-  create_table "admins", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password_digest", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "users", force: :cascade do |t|

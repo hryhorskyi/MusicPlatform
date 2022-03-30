@@ -1,4 +1,14 @@
+ignore_unused_routes:
+  - ^active_admin/devise*
+  - ^admin/dashboard*
 ignore_unreachable_actions:
   - ^*request_method
   - ^*request_cookies
   - ^*request_headers
+  - ^inherited_resources/*
+  - ^active_admin/base*
+  - ^active_admin/page*
+  - ^active_admin/resource*
+  - ^active_admin/devise*
+  - ^devise*
+  - ^admin/dashboard*

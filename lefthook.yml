@@ -13,6 +13,6 @@ pre-commit:
   parallel: true
   commands:
     rubocop:
-      run: bundle exec rubocop
+      run: bundle exec rubocop --config .rubocop.yml
     brakeman:
-      run: brakeman --no-pager 
+      run: brakeman --no-pager

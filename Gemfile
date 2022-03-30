@@ -7,8 +7,10 @@ ruby File.read('.ruby-version').strip
 
 gem 'rails', '~> 7.0.1'
 
+gem 'activeadmin', '~> 2.11'
 gem 'bcrypt', '~> 3.1'
 gem 'bootsnap', require: false
+gem 'devise', '~> 4.8'
 gem 'jsonapi-serializer', '~> 2.2'
 gem 'jwt_sessions', '~> 2.7'
 gem 'pg', '~> 1.1'
@@ -16,6 +18,8 @@ gem 'puma', '~> 5.0'
 gem 'redis', '~> 4.6'
 gem 'rswag-api', '~> 2.5'
 gem 'rswag-ui', '~> 2.5'
+gem 'sass-rails', '~> 6.0'
+gem 'sprockets-rails', '~> 3.4', require: 'sprockets/railtie'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do

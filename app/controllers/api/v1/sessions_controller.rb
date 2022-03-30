@@ -15,9 +15,8 @@ module Api
       end
 
       def update
-        render json: { csrf: SecureRandom.hex(88).to_s,
-                       access: SecureRandom.hex(165).to_s,
-                       access_expires_at: DateTime.now }, status: :ok
+        session = SessionUpdate.call(token_from_headers(:refresh))
+        render json: session, status: :ok
       end
 
       def destroy

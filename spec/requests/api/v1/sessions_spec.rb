@@ -2,6 +2,10 @@
 
 RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
   path '/api/v1/session' do
+    before { JWTSessions.encryption_key = private_key }
+
+    let(:private_key) { '1234567890' }
+
     post(I18n.t('swagger.sessions.action.post')) do
       tags I18n.t('swagger.sessions.tags')
       consumes 'application/json'
@@ -21,7 +25,7 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
           { email: user.email, password: user.password }
         end
         run_test! do |response|
-          expect(response).to match_json_schema('v1/session')
+          expect(response).to match_json_schema('v1/session_create')
         end
       end
 
@@ -33,11 +37,14 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
 
     put(I18n.t('swagger.sessions.action.update')) do
       tags I18n.t('swagger.sessions.tags')
+      consumes 'application/json'
+      parameter name: 'x-refresh-token', in: :header, type: :string, required: true
+
       response '200', 'ok' do
-        run_test! do |responce|
-          %w[csrf access access_expires_at].each do |field|
-            expect(JSON.parse(responce.body).keys).to include(field)
-          end
+        let(:user_id) { '1' }
+        let(:'x-refresh-token') { SessionCreate.call(user_id)[:refresh] }
+        run_test! do |_responce|
+          expect(response).to match_json_schema('v1/session_update')
         end
       end
     end
@@ -48,9 +55,6 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
       parameter name: 'x-refresh-token', in: :header, type: :string, required: true
 
       response(204, 'no content') do
-        before { JWTSessions.encryption_key = private_key }
-
-        let(:private_key) { '1234567890' }
         let(:user_id) { '1' }
         let(:'x-refresh-token') { SessionCreate.call(user_id)[:refresh] }
 

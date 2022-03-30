@@ -1,0 +1,21 @@
+{
+    "description": "The schema for sessions update method. Contain token format for response body.",
+    "required": [
+        "csrf",
+        "access",
+        "access_expires_at"
+    ],
+    "properties": {
+        "csrf": {
+            "type": "string"
+        },
+        "access": {
+            "type": "string"
+        },
+        "access_expires_at": {
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+  }
+  

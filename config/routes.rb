@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :admins, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
       resource :session, only: %i[create destroy update]

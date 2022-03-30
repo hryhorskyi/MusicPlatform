@@ -1,2 +1,3 @@
 ---
 :run_all_checks: true
+:skip_files: ['config/initializers/active_admin.rb']

@@ -20,6 +20,7 @@ gem 'rswag-api', '~> 2.5'
 gem 'rswag-ui', '~> 2.5'
 gem 'sass-rails', '~> 6.0'
 gem 'sprockets-rails', '~> 3.4', require: 'sprockets/railtie'
+gem 'strong_migrations', '~> 0.8'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
@@ -35,7 +36,6 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rails', '~> 2.13'
   gem 'rubocop-rspec', '~> 2.8', require: false
-  gem 'strong_migrations', '~> 0.8'
   gem 'traceroute', '~> 0.8'
 end
 

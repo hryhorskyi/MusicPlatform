@@ -47,6 +47,14 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
           expect(response).to match_json_schema('v1/session_update')
         end
       end
+
+      response '401', 'unauthorized' do
+        let(:invalid_user_id) { '1' }
+        let(:'x-refresh-token') do
+          JWTSessions::Token.encode(payload: { user_id: invalid_user_id }, uid: 'fbd4a448-9615-4959')
+        end
+        run_test!
+      end
     end
 
     delete(I18n.t('swagger.sessions.action.delete')) do

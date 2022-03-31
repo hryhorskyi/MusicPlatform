@@ -27,10 +27,10 @@ group :development, :test do
   gem 'bullet', '~> 7.0'
   gem 'bundler-audit', '~> 0.9'
   gem 'bundler-leak', '~> 0.2'
-  gem 'debug', '~> 1.4', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'ffaker', '~> 2.20'
   gem 'lefthook', '~> 0.7'
+  gem 'pry', '~> 0.14'
   gem 'rubocop', '~> 1.25'
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rails', '~> 2.13'

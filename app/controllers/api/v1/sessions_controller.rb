@@ -3,6 +3,8 @@
 module Api
   module V1
     class SessionsController < ApiController
+      before_action :authorize_refresh_request!, only: %i[destroy update]
+
       def create
         user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
 

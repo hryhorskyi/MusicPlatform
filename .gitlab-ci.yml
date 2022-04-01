@@ -6,16 +6,16 @@ stages:
 image: "ruby:3.1.0"
 
 .base:
-  cache:
-    - key:
-        files:
-          - Gemfile.lock
-      paths:
-        - vendor/ruby
+  # cache:
+  #   - key:
+  #       files:
+  #         - Gemfile.lock
+  #     paths:
+  #       - vendor/ruby
   before_script:
-    - gem install bundler --no-document
+    - gem install bundler -v 2.3.9 --no-document
     - ruby -v
-    - bundle install -j $(nproc) --path=vendor
+    - bundle install -j $(nproc) #--path=vendor
 
 .base_db:
   extends: .base
@@ -27,7 +27,9 @@ image: "ruby:3.1.0"
     POSTGRES_USER: $POSTGRES_USER
     POSTGRES_PASSWORD: $POSTGRES_PASSWORD
   before_script:
-    - RAILS_ENV=test bundle install --path=vendor
+    - gem install bundler -v 2.3.9 --no-document
+    - bundle install
+    - RAILS_ENV=test bundle install #--path=vendor
     - cp config/database.yml.gitlab config/database.yml
     - RAILS_ENV=test bundle exec rake db:migrate
 

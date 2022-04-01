@@ -15,7 +15,7 @@ image: "ruby:3.1.0"
   before_script:
     - gem install bundler --no-document
     - ruby -v
-    - bundle install -j $(nproc) --path vendor/ruby
+    - bundle install -j $(nproc) --path=vendor
 
 .base_db:
   extends: .base
@@ -27,7 +27,7 @@ image: "ruby:3.1.0"
     POSTGRES_USER: $POSTGRES_USER
     POSTGRES_PASSWORD: $POSTGRES_PASSWORD
   before_script:
-    - RAILS_ENV=test bundle install --jobs $(nproc) --path vendor/ruby
+    - RAILS_ENV=test bundle install --path=vendor
     - cp config/database.yml.gitlab config/database.yml
     - RAILS_ENV=test bundle exec rake db:migrate
 

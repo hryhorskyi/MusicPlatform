@@ -27,7 +27,7 @@ group :development, :test do
   gem 'brakeman', '~> 5.2'
   gem 'bullet', '~> 7.0'
   gem 'bundler-audit', '~> 0.9'
-  gem 'bundler-leak', github: 'Quitehours/bundler-leak-extension', branch: 'main'
+  gem 'bundler-leak', github: 'Quitehours/bundler-leak', branch: 'main'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'ffaker', '~> 2.20'
   gem 'lefthook', '~> 0.7'

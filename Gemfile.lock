@@ -1,9 +1,9 @@
 GIT
-  remote: https://github.com/Quitehours/bundler-leak-extension.git
-  revision: 167df41e063c91e03eccf906f48d3ff9de70b949
+  remote: https://github.com/Quitehours/bundler-leak.git
+  revision: ead11b862de51f12b03458d14d7f458f3e5afbe9
   branch: main
   specs:
-    bundler-leak (0.3.0)
+    bundler-leak (0.2.0)
       bundler (>= 1.2.0, < 3)
       thor (>= 0.18, < 2)
 

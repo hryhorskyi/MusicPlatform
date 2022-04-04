@@ -10,5 +10,7 @@ module PasswordValidations
               presence: true,
               confirmation: true,
               format: { with: PASSWORD_REGEXP }
+
+    validates :password_confirmation, presence: true
   end
 end

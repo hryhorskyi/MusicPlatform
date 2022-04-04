@@ -8,5 +8,7 @@ FactoryBot.define do
     password do
       FFaker::Internet.password.delete('_') + %w[@ $ ! % * ? &].sample + rand(10).to_s
     end
+
+    password_confirmation { password }
   end
 end

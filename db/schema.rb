@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_04_132555) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_04_235355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,36 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_132555) do
     t.index ["requestor_id"], name: "index_invitations_on_requestor_id"
   end
 
+  create_table "song_artists", force: :cascade do |t|
+    t.bigint "song_id", null: false
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_song_artists_on_artist_id"
+    t.index ["song_id", "artist_id"], name: "index_song_artists_on_song_id_and_artist_id", unique: true
+    t.index ["song_id"], name: "index_song_artists_on_song_id"
+  end
+
+  create_table "song_genres", force: :cascade do |t|
+    t.bigint "song_id", null: false
+    t.bigint "genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_song_genres_on_genre_id"
+    t.index ["song_id", "genre_id"], name: "index_song_genres_on_song_id_and_genre_id", unique: true
+    t.index ["song_id"], name: "index_song_genres_on_song_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name", null: false
+    t.boolean "featured", default: false, null: false
+    t.bigint "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_songs_on_album_id"
+    t.index ["name", "album_id"], name: "index_songs_on_name_and_album_id", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -81,4 +111,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_132555) do
   add_foreign_key "friends", "users", column: "initiator_id"
   add_foreign_key "invitations", "users", column: "receiver_id"
   add_foreign_key "invitations", "users", column: "requestor_id"
+  add_foreign_key "song_artists", "artists"
+  add_foreign_key "song_artists", "songs"
+  add_foreign_key "song_genres", "genres"
+  add_foreign_key "song_genres", "songs"
+  add_foreign_key "songs", "albums"
 end

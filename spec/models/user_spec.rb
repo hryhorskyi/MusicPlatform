@@ -6,6 +6,10 @@ RSpec.describe User, type: :model do
       it { is_expected.to have_db_column(field).of_type(:string).with_options(null: false) }
     end
 
+    %i[first_name last_name avatar].each do |field|
+      it { is_expected.to have_db_column(field).of_type(:string) }
+    end
+
     it { is_expected.to have_db_index(:nickname).unique(true) }
     it { is_expected.to have_db_index(:email).unique(true) }
   end

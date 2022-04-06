@@ -9,3 +9,7 @@ en:
     users:
       tags: User
       action: create user
+    my_account:
+      tags: My Account
+      action:
+        show: show my account

@@ -1,0 +1,24 @@
+{
+  "description": "The schema for my account show method. Contain values for response body.",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "attributes": {
+        "required": [
+          "email",
+          "nickname",
+          "first_name",
+          "last_name",
+          "avatar"
+        ],
+        "properties": {
+          "email": { "type" : "string" },
+          "nickname": { "type" : "string" },
+          "first_name": { "type" : "string" },
+          "last_name": { "type" : "string" },
+          "avatar": { "type" : "string" }
+        }
+      }
+    }
+  }
+}

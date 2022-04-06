@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
+      resource :my_account, only: %i[show]
       resource :session, only: %i[create destroy update]
       resources :users, only: %i[create]
     end

@@ -6,6 +6,11 @@ RSpec.describe Artist, type: :model do
     it { is_expected.to have_db_index(:name).unique(true) }
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many(:song_artists) }
+    it { is_expected.to have_many(:songs).through(:song_artists) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
   end

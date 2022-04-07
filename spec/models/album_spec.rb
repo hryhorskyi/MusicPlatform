@@ -11,5 +11,6 @@ RSpec.describe Album, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
+    it { expect(build(:album)).to validate_uniqueness_of(:name).scoped_to(:artist_id) }
   end
 end

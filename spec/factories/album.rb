@@ -3,5 +3,6 @@
 FactoryBot.define do
   factory :album do
     name { FFaker::Music.album }
+    association :artist
   end
 end

@@ -6,16 +6,10 @@ stages:
 image: "ruby:3.1.0"
 
 .base:
-  # cache:
-  #   - key:
-  #       files:
-  #         - Gemfile.lock
-  #     paths:
-  #       - vendor/ruby
   before_script:
     - gem install bundler -v 2.3.9 --no-document
     - ruby -v
-    - bundle install -j $(nproc) #--path=vendor
+    - bundle install -j $(nproc)
 
 .base_db:
   extends: .base
@@ -29,7 +23,7 @@ image: "ruby:3.1.0"
   before_script:
     - gem install bundler -v 2.3.9 --no-document
     - bundle install
-    - RAILS_ENV=test bundle install #--path=vendor
+    - RAILS_ENV=test bundle install
     - cp config/database.yml.gitlab config/database.yml
     - RAILS_ENV=test bundle exec rake db:migrate
 
@@ -76,8 +70,8 @@ deploy:staging_heroku:
   environment:
     name: staging
     url: https://epam-music-staging.herokuapp.com/
-  only:
-    - dev
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_BUILD_REF_NAME == "dev"'
 
 deploy:production_heroku:
   extends: .base_deploy
@@ -87,5 +81,5 @@ deploy:production_heroku:
   environment:
     name: production
     url: https://epam-music.herokuapp.com/
-  only:
-    - main
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_BUILD_REF_NAME == "main"'

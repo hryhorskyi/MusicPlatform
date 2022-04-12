@@ -4,7 +4,10 @@ class User < ApplicationRecord
   include EmailValidations
   include PasswordValidations
 
-  has_many :friends, dependent: :destroy
+  has_many :initiated_friendships, class_name: 'Friend', foreign_key: 'initiator_id', inverse_of: :initiator,
+                                   dependent: :destroy
+  has_many :accepted_friendships, class_name: 'Friend', foreign_key: 'acceptor_id', inverse_of: :acceptor,
+                                  dependent: :destroy
   has_many :invitations, dependent: :destroy
 
   NICKNAME_LENGTH = (3..20)

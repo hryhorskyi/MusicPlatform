@@ -14,6 +14,18 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_index(:email).unique(true) }
   end
 
+  describe 'associations' do
+    it {
+      expect(build(:user)).to have_many(:initiated_friendships).class_name('Friend').with_foreign_key('initiator_id')
+                                                               .inverse_of(:initiator).dependent(:destroy)
+    }
+
+    it {
+      expect(build(:user)).to have_many(:accepted_friendships).class_name('Friend').with_foreign_key('acceptor_id')
+                                                              .inverse_of(:acceptor).dependent(:destroy)
+    }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:nickname) }
 

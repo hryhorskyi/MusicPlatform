@@ -1,0 +1,67 @@
+{
+  "description": "The schema for friends list",
+  "type": "object",
+  "required": [
+    "data",
+    "included"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "required": [
+        "attributes",
+        "id",
+        "type"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "required": [
+              "created_at"
+            ],
+            "properties": {
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    "included": {
+     "type": "array",
+     "required": [
+       "attributes",
+       "id",
+       "type"
+     ],
+     "items": {
+       "type": "object",
+       "properties": {
+         "attributes": {
+           "type": "object",
+           "required": [
+             "nickname",
+             "avatar",
+             "shared_playlists_number"
+           ],
+           "properties": {
+             "nickname": {
+               "type": "string"
+             },
+             "avatar": {
+               "type": "string"
+             },
+             "shared_playlists_number": {
+               "type": "number"
+             }
+           }
+         }
+       }
+     }
+   }
+  }
+}

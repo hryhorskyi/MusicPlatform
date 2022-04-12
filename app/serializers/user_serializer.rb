@@ -8,4 +8,9 @@ class UserSerializer < BaseSerializer
   attribute :avatar do |object|
     object.avatar.presence || DEFAULT_AVATAR_URL
   end
+
+  attribute :shared_playlists_number do |_object|
+    # TODO: Number of shared playlists logic
+    rand(10)
+  end
 end

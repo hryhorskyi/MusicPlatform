@@ -13,6 +13,10 @@ en:
       tags: My Account
       action:
         show: show my account
+    friends:
+      tags: Friend
+      action:
+        index: show list of friends
     invitations:
       tags: Invitations
       action:

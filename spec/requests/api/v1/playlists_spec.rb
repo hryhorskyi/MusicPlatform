@@ -8,11 +8,13 @@ xdescribe 'Playlists', swagger_doc: 'v1/swagger.yaml' do
 
       response '200', 'successful' do
         let(:playlist) { create(:playlist) }
+
         run_test!
       end
 
       response '404', 'playlist not found' do
         let(:playlist) { 'not found' }
+
         run_test!
       end
     end
@@ -39,11 +41,13 @@ xdescribe 'Playlists', swagger_doc: 'v1/swagger.yaml' do
 
       response '200', 'successful' do
         let(:id) { Playlist.update(name: 'Name').id }
+
         run_test!
       end
 
       response '404', 'playlist not found' do
         let(:id) { 'invalid' }
+
         run_test!
       end
     end
@@ -68,11 +72,13 @@ xdescribe 'Playlists', swagger_doc: 'v1/swagger.yaml' do
 
       response '200', 'successful' do
         let(:id) { Playlist.update(name: 'Name').id }
+
         run_test!
       end
 
       response '404', 'playlist not found' do
         let(:id) { 'invalid' }
+
         run_test!
       end
     end
@@ -96,16 +102,19 @@ xdescribe 'Playlists', swagger_doc: 'v1/swagger.yaml' do
                         logo: 'Logo', owner_id: 1 }
           }
         end
+
         run_test!
       end
 
       response '404', 'song not found' do
         let(:playlist) { 'not found' }
+
         run_test!
       end
 
       response '422', 'invalid request' do
         let(:playlist) { 'invalid' }
+
         run_test!
       end
     end
@@ -120,11 +129,13 @@ xdescribe 'Playlists', swagger_doc: 'v1/swagger.yaml' do
 
       response '204', 'song deleted from playlist' do
         let(:id) { playlist.id }
+
         run_test!
       end
 
       response '404', 'song not found' do
         let(:id) { 'invalid' }
+
         run_test!
       end
     end

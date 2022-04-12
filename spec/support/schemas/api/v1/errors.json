@@ -1,0 +1,46 @@
+{
+  "description": "The schema for errors.",
+  "type": "object",
+  "required": [
+    "errors"
+  ],
+  "properties": {
+    "errors": {
+      "type": "array",
+      "required": [
+        "attributes",
+        "id",
+        "type"
+      ],
+      "items": {
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "required": [
+              "status",
+              "title",
+              "source",
+              "detail"
+            ],
+            "properties": {
+              "status": {
+                "type": "number"
+              },
+              "title": {
+                  "type": "string"
+              },
+              "source": {
+                  "pointer": {
+                    "type": "string"
+                  }
+              },
+              "detail": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

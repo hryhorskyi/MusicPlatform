@@ -24,13 +24,15 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
           user = create(:user)
           { email: user.email, password: user.password }
         end
+
         run_test! do |response|
-          expect(response).to match_json_schema('v1/session_create')
+          expect(response).to match_json_schema('v1/sessions/session_create')
         end
       end
 
       response '400', 'bad request' do
         let(:session) { { email: 'email', password: 'password' } }
+
         run_test!
       end
     end
@@ -43,8 +45,9 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
       response '200', 'ok' do
         let(:user_id) { '1' }
         let(:'x-refresh-token') { SessionCreate.call(user_id)[:refresh] }
+
         run_test! do |_responce|
-          expect(response).to match_json_schema('v1/session_update')
+          expect(response).to match_json_schema('v1/sessions/session_update')
         end
       end
 
@@ -53,6 +56,7 @@ RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
         let(:'x-refresh-token') do
           JWTSessions::Token.encode(payload: { user_id: invalid_user_id }, uid: 'fbd4a448-9615-4959')
         end
+
         run_test!
       end
     end

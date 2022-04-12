@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resource :my_account, only: %i[show]
       resource :session, only: %i[create destroy update]
       resources :users, only: %i[create]
+      resources :invitations, only: %i[create]
     end
   end
   mount Rswag::Ui::Engine => '/api-docs'

@@ -25,11 +25,13 @@ RSpec.describe 'Users', type: :request do
       }
       response '201', 'user created' do
         let(:user) { { user: attributes_for(:user) } }
+
         run_test!
       end
 
       response '422', 'invalid request' do
         let(:user) { { email: '123' } }
+
         run_test!
       end
     end

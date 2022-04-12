@@ -1,0 +1,10 @@
+en:
+  invitation:
+    create:
+      errors:
+        user_not_exist: user doesn't exist
+        already_friend: already is friend
+        you_already_invited: you have already invite this user
+        user_already_invited: you are already invited by this user
+        declined_recently: this user decline your invitation less than 24 hours ago
+

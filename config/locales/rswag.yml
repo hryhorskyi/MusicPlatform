@@ -13,3 +13,7 @@ en:
       tags: My Account
       action:
         show: show my account
+    invitations:
+      tags: Invitations
+      action:
+        post: create invitation

@@ -16,11 +16,13 @@ xdescribe 'Admin', swagger_doc: 'v1/swagger_admin.yaml' do
 
       response '201', 'admin created' do
         let(:admin) { { email: 'email', password: 'password' } }
+
         run_test!
       end
 
       response '422', 'invalid request' do
         let(:admin) { { email: 'email' } }
+
         run_test!
       end
     end
@@ -41,11 +43,13 @@ xdescribe 'Admin', swagger_doc: 'v1/swagger_admin.yaml' do
 
       response '201', 'admin created' do
         let(:admin) { { email: 'email', password: 'password' } }
+
         run_test!
       end
 
       response '422', 'invalid request' do
         let(:admin) { { email: 'email' } }
+
         run_test!
       end
     end
@@ -66,11 +70,13 @@ xdescribe 'Admin', swagger_doc: 'v1/swagger_admin.yaml' do
                required: %w[id email password]
 
         let(:id) { Admin.create(email: 'email', password: 'password').id }
+
         run_test!
       end
 
       response '404', 'admin not found' do
         let(:id) { 'invalid' }
+
         run_test!
       end
     end

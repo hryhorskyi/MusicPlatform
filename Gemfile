@@ -20,6 +20,7 @@ gem 'redis', '~> 4.6'
 gem 'rswag-api', '~> 2.5'
 gem 'rswag-ui', '~> 2.5'
 gem 'sass-rails', '~> 6.0'
+gem 'seedbank', '~> 0.5.0'
 gem 'sprockets-rails', '~> 3.4', require: 'sprockets/railtie'
 gem 'strong_migrations', '~> 1.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

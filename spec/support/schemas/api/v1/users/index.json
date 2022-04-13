@@ -1,0 +1,49 @@
+{
+  "description": "The schema for users index method. Contains list of users data for response body.",
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "required": [
+        "attributes",
+        "id",
+        "type"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "required": [
+              "first_name",
+              "last_name",
+              "email",
+              "nickname",
+              "avatar"
+            ],
+            "properties": {
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "nickname": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

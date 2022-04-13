@@ -6,5 +6,9 @@ FactoryBot.define do
     nickname { FFaker::Lorem.characters(rand(User::NICKNAME_LENGTH)) }
     password { Support::Helpers::PassworCreatorHelper.call }
     password_confirmation { password }
+
+    first_name { FFaker::Lorem.characters(rand(User::NICKNAME_LENGTH)) }
+    last_name { FFaker::Lorem.characters(rand(User::NICKNAME_LENGTH)) }
+    avatar { FFaker::Lorem.characters(rand(User::NICKNAME_LENGTH)) }
   end
 end

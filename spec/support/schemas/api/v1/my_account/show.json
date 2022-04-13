@@ -1,22 +1,44 @@
 {
-  "description": "The schema for my account show method. Contain values for response body.",
-  "required": ["data"],
+  "description": "The schema for my_account show method. Contains current user data for response body.",
+  "type": "object",
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
-      "attributes": {
-        "required": [
-          "email",
-          "nickname",
-          "first_name",
-          "last_name",
-          "avatar"
-        ],
-        "properties": {
-          "email": { "type" : "string" },
-          "nickname": { "type" : "string" },
-          "first_name": { "type" : "string" },
-          "last_name": { "type" : "string" },
-          "avatar": { "type" : "string" }
+      "type": "object",
+      "required": [
+        "attributes",
+        "id",
+        "type"
+      ],
+      "properties": {
+        "attributes": {
+          "type": "object",
+          "required": [
+            "first_name",
+            "last_name",
+            "email",
+            "nickname",
+            "avatar"
+          ],
+          "properties": {
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "nickname": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          }
         }
       }
     }

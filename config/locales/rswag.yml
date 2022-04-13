@@ -8,7 +8,9 @@ en:
         update: update session
     users:
       tags: User
-      action: create user
+      action:
+        index: index users
+        create: create user
     my_account:
       tags: My Account
       action:

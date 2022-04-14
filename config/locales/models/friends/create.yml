@@ -1,0 +1,9 @@
+en:
+  friends:
+    create:
+      errors:
+        invite_not_exist: invitation doesn't exist
+        current_user_not_match: current user doesn't match invitation receiver 
+        invite_not_pending: status of invitation isn't pending
+        requestor_not_exist: requstor doesn't exist
+        persist_rollback: doesn't create

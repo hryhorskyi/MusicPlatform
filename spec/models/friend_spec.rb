@@ -8,8 +8,8 @@ RSpec.describe Friend, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to belong_to(:initiator).class_name('User') }
-    it { is_expected.to belong_to(:acceptor).class_name('User') }
+    it { is_expected.to belong_to(:initiator).class_name('User').inverse_of(:initiated_friendships) }
+    it { is_expected.to belong_to(:acceptor).class_name('User').inverse_of(:accepted_friendships) }
   end
 
   describe 'validations' do

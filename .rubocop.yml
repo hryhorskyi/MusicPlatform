@@ -36,7 +36,13 @@ RSpec:
         - run_test
 
 RSpec/MultipleMemoizedHelpers:
-    Max: 10
+  Max: 10
 
 RSpec/MultipleExpectations:
-    Max: 2
+  Max: 2
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ExpectChange:
+  EnforcedStyle: block

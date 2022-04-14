@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :user do
     email { FFaker::Internet.email }
     nickname { FFaker::Lorem.characters(rand(User::NICKNAME_LENGTH)) }
-    password { Support::Helpers::PassworCreatorHelper.call }
+    password { Support::Helpers::PasswordCreatorHelper.call }
     password_confirmation { password }
 
     first_name { FFaker::Lorem.characters(rand(User::NICKNAME_LENGTH)) }

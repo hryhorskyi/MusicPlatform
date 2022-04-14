@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :invitations, only: %i[create]
       resource :my_account, only: %i[show]
       resource :session, only: %i[create destroy update]
+      resources :friends, only: %i[create]
       resources :users, only: %i[index create]
     end
   end

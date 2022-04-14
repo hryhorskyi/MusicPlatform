@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :admin do
     email { FFaker::Internet.email }
-    password { Support::Helpers::PassworCreatorHelper.call }
+    password { Support::Helpers::PasswordCreatorHelper.call }
   end
 end

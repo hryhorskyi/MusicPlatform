@@ -10,8 +10,8 @@ RSpec.describe Invitation, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to belong_to(:requestor).class_name('User').inverse_of(:invitations) }
-    it { is_expected.to belong_to(:receiver).class_name('User').inverse_of(:invitations) }
+    it { is_expected.to belong_to(:requestor).class_name('User').inverse_of(:sent_invitations) }
+    it { is_expected.to belong_to(:receiver).class_name('User').inverse_of(:received_invitations) }
   end
 
   describe 'validations' do

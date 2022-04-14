@@ -24,6 +24,16 @@ RSpec.describe User, type: :model do
       expect(build(:user)).to have_many(:accepted_friendships).class_name('Friend').with_foreign_key('acceptor_id')
                                                               .inverse_of(:acceptor).dependent(:destroy)
     }
+
+    it {
+      expect(build(:user)).to have_many(:received_invitations).class_name('Invitation').with_foreign_key('receiver_id')
+                                                              .inverse_of(:receiver).dependent(:destroy)
+    }
+
+    it {
+      expect(build(:user)).to have_many(:sent_invitations).class_name('Invitation').with_foreign_key('requestor_id')
+                                                          .inverse_of(:requestor).dependent(:destroy)
+    }
   end
 
   describe 'validations' do

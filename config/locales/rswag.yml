@@ -18,7 +18,8 @@ en:
     friends:
       tags: Friend
       action:
-        index: show list of friends
+        create: create friend
+        index: show list of friends 
     invitations:
       tags: Invitations
       action:

@@ -2,7 +2,7 @@
 
 module Support
   module Helpers
-    class PassworCreatorHelper
+    class PasswordCreatorHelper
       DEFAULT_LENGTH_CHARACTERS = 20
 
       class << self

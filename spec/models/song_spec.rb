@@ -4,7 +4,7 @@ RSpec.describe Song, type: :model do
   describe 'fields' do
     it { is_expected.to have_db_column(:name).of_type(:string).with_options(null: false) }
     it { is_expected.to have_db_column(:featured).of_type(:boolean).with_options(null: false) }
-    it { is_expected.to have_db_column(:album_id).of_type(:uuid) }
+    it { is_expected.to have_db_column(:album_id).of_type(:integer) }
   end
 
   describe 'associations' do

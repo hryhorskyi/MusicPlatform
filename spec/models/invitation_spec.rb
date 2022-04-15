@@ -2,11 +2,10 @@
 
 RSpec.describe Invitation, type: :model do
   describe 'fields' do
-    %i[requestor_id receiver_id].each do |field|
-      it { is_expected.to have_db_column(field).of_type(:uuid) }
+    %i[requestor_id receiver_id status].each do |field|
+      it { is_expected.to have_db_column(field).of_type(:integer) }
     end
 
-    it { is_expected.to have_db_column(:status).of_type(:integer) }
     it { is_expected.to have_db_column(:declined_at).of_type(:datetime) }
   end
 

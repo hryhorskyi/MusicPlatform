@@ -4,13 +4,15 @@
 User.create(
   email: 'initiator@epam.com',
   nickname: 'Initiat0r',
-  password: 'P@ssword1'
+  password: 'P@ssword',
+  password_confirmation: 'P@ssword'
 )
 
 User.create(
   email: 'acceptor@epam.com',
   nickname: 'Accept0r',
-  password: 'P@ssword2'
+  password: 'P@ssword',
+  password_confirmation: 'P@ssword'
 )
 
 Friend.create(initiator_id: 1, acceptor_id: 2)
@@ -24,6 +26,7 @@ Friend.create(initiator_id: 1, acceptor_id: 2)
   User.create(
     email: email,
     nickname: nickname,
-    password: password
+    password: password,
+    password_confirmation: password
   )
 end

@@ -12,9 +12,10 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_04_07_180034) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
+  create_table "admins", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", null: false
     t.string "encrypted_password", null: false
     t.datetime "created_at", null: false
@@ -22,25 +23,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_180034) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
-  create_table "albums", force: :cascade do |t|
+  create_table "albums", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "artist_id"
+    t.uuid "artist_id"
     t.index ["artist_id"], name: "index_albums_on_artist_id"
     t.index ["name", "artist_id"], name: "index_albums_on_name_and_artist_id", unique: true
   end
 
-  create_table "artists", force: :cascade do |t|
+  create_table "artists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
-  create_table "friends", force: :cascade do |t|
-    t.bigint "initiator_id"
-    t.bigint "acceptor_id"
+  create_table "friends", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "initiator_id"
+    t.uuid "acceptor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["acceptor_id"], name: "index_friends_on_acceptor_id"
@@ -48,16 +49,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_180034) do
     t.index ["initiator_id"], name: "index_friends_on_initiator_id"
   end
 
-  create_table "genres", force: :cascade do |t|
+  create_table "genres", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_genres_on_name", unique: true
   end
 
-  create_table "invitations", force: :cascade do |t|
-    t.bigint "requestor_id"
-    t.bigint "receiver_id"
+  create_table "invitations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "requestor_id"
+    t.uuid "receiver_id"
     t.integer "status", default: 0, null: false
     t.datetime "declined_at"
     t.datetime "created_at", null: false
@@ -66,9 +67,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_180034) do
     t.index ["requestor_id"], name: "index_invitations_on_requestor_id"
   end
 
-  create_table "song_artists", force: :cascade do |t|
-    t.bigint "song_id", null: false
-    t.bigint "artist_id", null: false
+  create_table "song_artists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "song_id", null: false
+    t.uuid "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_song_artists_on_artist_id"
@@ -76,9 +77,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_180034) do
     t.index ["song_id"], name: "index_song_artists_on_song_id"
   end
 
-  create_table "song_genres", force: :cascade do |t|
-    t.bigint "song_id", null: false
-    t.bigint "genre_id", null: false
+  create_table "song_genres", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "song_id", null: false
+    t.uuid "genre_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_song_genres_on_genre_id"
@@ -86,17 +87,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_180034) do
     t.index ["song_id"], name: "index_song_genres_on_song_id"
   end
 
-  create_table "songs", force: :cascade do |t|
+  create_table "songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.boolean "featured", default: false, null: false
-    t.bigint "album_id"
+    t.uuid "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_songs_on_album_id"
     t.index ["name", "album_id"], name: "index_songs_on_name_and_album_id", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "nickname", null: false

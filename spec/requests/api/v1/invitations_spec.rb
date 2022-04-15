@@ -9,10 +9,10 @@ RSpec.describe 'Invitations', type: :request do
       parameter name: :invitation, in: :body, schema: {
         type: :object,
         properties: {
-          receiver_id: { type: :uuid }
+          receiver_id: { type: :integer }
         },
         example: {
-          receiver_id: SecureRandom.uuid
+          receiver_id: 2
         },
         required: %w[receiver_id]
       }

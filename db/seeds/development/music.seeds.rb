@@ -14,7 +14,6 @@ end
 end
 
 # 1 Album with several artist_id's
-# TODO: Ask about writing several artist_id's into one column in DB
 name        = FFaker::Music.album
 artists_ids = 1.upto(5).to_a.sample(2)
 Album.create(name: name, artist_id: artists_ids)

@@ -46,11 +46,11 @@ RSpec.describe 'Friends', type: :request do
                   items: {
                     type: :object,
                     properties: {
-                      invitation_id: { type: :integer }
+                      invitation_id: { type: :uuid }
                     }
                   },
                   example: {
-                    invitation_id: 1
+                    invitation_id: SecureRandom.uuid
                   },
                   required: %w[invitation_id]
                 }

@@ -2,9 +2,9 @@
 
 class CreateSongGenres < ActiveRecord::Migration[7.0]
   def change
-    create_table :song_genres do |t|
-      t.belongs_to :song, null: false, foreign_key: { to_table: :songs }
-      t.belongs_to :genre, null: false, foreign_key: { to_table: :genres }
+    create_table :song_genres, id: :uuid do |t|
+      t.belongs_to :song, null: false, foreign_key: { to_table: :songs }, type: :uuid
+      t.belongs_to :genre, null: false, foreign_key: { to_table: :genres }, type: :uuid
 
       t.timestamps
     end

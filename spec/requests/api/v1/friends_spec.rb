@@ -31,7 +31,7 @@ RSpec.describe 'Friends', type: :request do
       end
     end
 
-    post(I18n.t('swagger.friends.create')) do
+    post(I18n.t('swagger.friends.action.create')) do
       tags I18n.t('swagger.friends.tags')
 
       consumes 'application/json'

@@ -24,39 +24,43 @@
                         }
                     }
                 }
-            }
+            },
+            "included": [
+                {
+                    "id": "1591",
+                    "type": "user",
+                    "attributes": {
+                        "email": "nicole.breitenberg@kemmer.name",
+                        "nickname": "kq1d",
+                        "first_name": "nnnpqii1knrvz7fj",
+                        "last_name": "q19psclgrd2k44ls1",
+                        "avatar": "qsau3giwnzg2mpx6j",
+                        "shared_playlists_number": 1
+                    }
+                },
+                {
+                    "id": "1590",
+                    "type": "user",
+                    "attributes": {
+                        "email": "ingrid_smitham@okon.name",
+                        "nickname": "rd51",
+                        "first_name": "ocpg2vla",
+                        "last_name": "gj26al19gk0zdtt",
+                        "avatar": "ff5wzmger",
+                        "shared_playlists_number": 9
+                    }
+                }
+            ]
         }
     ],
     "required": [
-        "data"
+        "data",
+        "included"
     ],
     "properties": {
         "data": {
             "$id": "#/properties/data",
             "type": "object",
-            "examples": [
-                {
-                    "id": "90a5cd9f-5f58-4134-b6be-db893b6f1347",
-                    "type": "friend",
-                    "attributes": {
-                        "created_at": "2022-04-15T00:25:43.978Z"
-                    },
-                    "relationships": {
-                        "initiator": {
-                            "data": {
-                                "id": "f1a7b16c-53b8-464a-a2c7-ab6f56bbbedc",
-                                "type": "user"
-                            }
-                        },
-                        "acceptor": {
-                            "data": {
-                                "id": "af8b6966-1957-4e59-86f6-ec5ad9df1504",
-                                "type": "user"
-                            }
-                        }
-                    }
-                }
-            ],
             "required": [
                 "id",
                 "type",
@@ -102,22 +106,6 @@
                 "relationships": {
                     "$id": "#/properties/data/properties/relationships",
                     "type": "object",
-                    "examples": [
-                        {
-                            "initiator": {
-                                "data": {
-                                    "id": "f1a7b16c-53b8-464a-a2c7-ab6f56bbbedc",
-                                    "type": "user"
-                                }
-                            },
-                            "acceptor": {
-                                "data": {
-                                    "id": "af8b6966-1957-4e59-86f6-ec5ad9df1504",
-                                    "type": "user"
-                                }
-                            }
-                        }
-                    ],
                     "required": [
                         "initiator",
                         "acceptor"
@@ -126,14 +114,6 @@
                         "initiator": {
                             "$id": "#/properties/data/properties/relationships/properties/initiator",
                             "type": "object",
-                            "examples": [
-                                {
-                                    "data": {
-                                        "id": "f1a7b16c-53b8-464a-a2c7-ab6f56bbbedc",
-                                        "type": "user"
-                                    }
-                                }
-                            ],
                             "required": [
                                 "data"
                             ],
@@ -141,12 +121,6 @@
                                 "data": {
                                     "$id": "#/properties/data/properties/relationships/properties/initiator/properties/data",
                                     "type": "object",
-                                    "examples": [
-                                        {
-                                            "id": "f1a7b16c-53b8-464a-a2c7-ab6f56bbbedc",
-                                            "type": "user"
-                                        }
-                                    ],
                                     "required": [
                                         "id",
                                         "type"
@@ -173,14 +147,6 @@
                         "acceptor": {
                             "$id": "#/properties/data/properties/relationships/properties/acceptor",
                             "type": "object",
-                            "examples": [
-                                {
-                                    "data": {
-                                        "id": "af8b6966-1957-4e59-86f6-ec5ad9df1504",
-                                        "type": "user"
-                                    }
-                                }
-                            ],
                             "required": [
                                 "data"
                             ],
@@ -188,12 +154,6 @@
                                 "data": {
                                     "$id": "#/properties/data/properties/relationships/properties/acceptor/properties/data",
                                     "type": "object",
-                                    "examples": [
-                                        {
-                                            "id": "af8b6966-1957-4e59-86f6-ec5ad9df1504",
-                                            "type": "user"
-                                        }
-                                    ],
                                     "required": [
                                         "id",
                                         "type"
@@ -219,6 +179,96 @@
                         }
                     }
                 }
+            }
+        },
+        "included": {
+            "$id": "#/properties/included",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/included/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/included/items/anyOf/0",
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "type",
+                            "attributes"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/included/items/anyOf/0/properties/id",
+                                "type": "string",
+                                "examples": [
+                                    "1591"
+                                ]
+                            },
+                            "type": {
+                                "$id": "#/properties/included/items/anyOf/0/properties/type",
+                                "type": "string",
+                                "examples": [
+                                    "user"
+                                ]
+                            },
+                            "attributes": {
+                                "$id": "#/properties/included/items/anyOf/0/properties/attributes",
+                                "type": "object",
+                                "required": [
+                                    "email",
+                                    "nickname",
+                                    "first_name",
+                                    "last_name",
+                                    "avatar",
+                                    "shared_playlists_number"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/email",
+                                        "type": "string",
+                                        "examples": [
+                                            "nicole.breitenberg@kemmer.name"
+                                        ]
+                                    },
+                                    "nickname": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/nickname",
+                                        "type": "string",
+                                        "examples": [
+                                            "kq1d"
+                                        ]
+                                    },
+                                    "first_name": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/first_name",
+                                        "type": "string",
+                                        "examples": [
+                                            "nnnpqii1knrvz7fj"
+                                        ]
+                                    },
+                                    "last_name": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/last_name",
+                                        "type": "string",
+                                        "examples": [
+                                            "q19psclgrd2k44ls1"
+                                        ]
+                                    },
+                                    "avatar": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/avatar",
+                                        "type": "string",
+                                        "examples": [
+                                            "qsau3giwnzg2mpx6j"
+                                        ]
+                                    },
+                                    "shared_playlists_number": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/shared_playlists_number",
+                                        "type": "integer",
+                                        "examples": [
+                                            1
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
             }
         }
     }

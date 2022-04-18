@@ -16,7 +16,7 @@ module Api
         result = Friends::Create::Organizer.call(params: permitted_create_params, current_user: current_user)
 
         if result.success?
-          render json: FriendSerializer.new(result.model), status: :created
+          render json: FriendSerializer.new(result.model, { include: %i[initiator acceptor] }), status: :created
         else
           render_errors(object: result.model, status: :unprocessable_entity)
         end

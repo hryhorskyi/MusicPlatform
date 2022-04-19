@@ -52,5 +52,22 @@ RSpec.describe Friends::Create::CheckInvitationIsPending do
         expect(result.model.errors.messages[:invitation_id].first).to eq(expected_message)
       end
     end
+
+    context 'when invitation status is revoked' do
+      let(:status) { :revoked }
+
+      it 'has not successfull result' do
+        expect(result).to be_failure
+      end
+
+      it 'has invitation status is revoked' do
+        expect(invitation).to be_revoked_status
+      end
+
+      it 'has correct error message' do
+        expected_message = I18n.t('friends.create.errors.invite_not_pending')
+        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_message)
+      end
+    end
   end
 end

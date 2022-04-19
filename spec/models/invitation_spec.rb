@@ -23,7 +23,14 @@ RSpec.describe Invitation, type: :model do
     describe 'receiver_id' do
       it { is_expected.to validates_comparison_other_than(:initiator_id) }
     end
-  end
 
-  it { is_expected.to validate_presence_of(:status) }
+    describe 'status' do
+      it { is_expected.to validate_presence_of(:status) }
+
+      it do
+        expect(build(:invitation)).to define_enum_for(:status).with_values({ pending: 0, declined: 1, accepted: 2,
+                                                                             revoked: 3 }).with_suffix
+      end
+    end
+  end
 end

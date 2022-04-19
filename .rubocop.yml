@@ -15,7 +15,7 @@ Layout/LineLength:
   Max: 120
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let']
+  IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let', 'delete']
 
 RSpec/EmptyExampleGroup:
   Exclude:

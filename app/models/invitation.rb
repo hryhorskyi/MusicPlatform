@@ -9,5 +9,5 @@ class Invitation < ApplicationRecord
   validates_comparison_of :requestor_id, other_than: :receiver_id
   validates :status, presence: true
 
-  enum status: { pending: 0, declined: 1, accepted: 2 }, _suffix: true
+  enum status: { pending: 0, declined: 1, accepted: 2, revoked: 3 }, _suffix: true
 end

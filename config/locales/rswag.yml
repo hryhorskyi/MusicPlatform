@@ -19,8 +19,9 @@ en:
       tags: Friend
       action:
         create: create friend
-        index: show list of friends 
+        index: show list of friends
     invitations:
       tags: Invitations
       action:
         post: create invitation
+        delete: delete invitation

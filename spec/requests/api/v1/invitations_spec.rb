@@ -126,4 +126,76 @@ RSpec.describe 'Invitations', type: :request do
       end
     end
   end
+
+  path '/api/v1/invitations/id' do
+    delete(I18n.t('swagger.invitations.action.delete')) do
+      tags I18n.t('swagger.invitations.tags')
+
+      consumes 'application/json'
+      produces 'application/json'
+
+      parameter name: 'authorization', in: :header, type: :string, required: true
+
+      parameter name: :params,
+                in: :body,
+                schema: {
+                  type: :object,
+                  items: {
+                    type: :object,
+                    properties: {
+                      invitation_id: { type: :integer }
+                    }
+                  },
+                  example: {
+                    invitation_id: 1
+                  },
+                  required: %w[invitation_id]
+                }
+
+      let(:requestor) { create(:user) }
+      let(:receiver) { create(:user) }
+      let(:invitation) do
+        create(:invitation, requestor: requestor, receiver: receiver)
+      end
+
+      response '204', 'when invitation status became revoked' do
+        let(:authorization) { SessionCreate.call(requestor.id)[:access] }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test!
+      end
+
+      response '401', 'unauthorized' do
+        let(:authorization) { nil }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test!
+      end
+
+      response '404', 'when invitation does not exist' do
+        let(:authorization) { SessionCreate.call(requestor.id)[:access] }
+        let(:params) { { invitation_id: -1 } }
+
+        run_test!
+      end
+
+      response '404', 'when current_user is not requestor for provided invitation' do
+        let(:authorization) { SessionCreate.call(create(:user).id)[:access] }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test!
+      end
+
+      response '404', 'when invitation status is not pending' do
+        let(:authorization) { SessionCreate.call(requestor.id)[:access] }
+        let(:invitation) do
+          create(:invitation, requestor: requestor, receiver: receiver, status: :revoked)
+        end
+
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test!
+      end
+    end
+  end
 end

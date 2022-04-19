@@ -41,6 +41,14 @@ RSpec.describe Invitations::Create::CheckExistingFriendship do
       end
     end
 
+    context 'when invitation exist with revoked status' do
+      let(:status_param) { 'revoked' }
+
+      it 'has successfull result' do
+        expect(result).to be_success
+      end
+    end
+
     context 'when invitation exist with accepted status and requestor invited receiver' do
       let(:status_param) { 'accepted' }
 

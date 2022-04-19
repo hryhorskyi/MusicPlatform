@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "49212ca9-fa8f-4be6-8a77-2456b17fe4c2",
+		"_postman_id": "87384758-079d-40c2-9dbc-a3ba00180ab3",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -3894,6 +3894,221 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Destroy",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Destroy",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "invitation_id",
+													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Current user is not requesor",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "invitation_id",
+													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Invitation status is not pending",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "invitation_id",
+													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "bad token",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "invitation_id",
+													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Invitation does not exist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "invitation_id",
+													"value": "bad id",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -4815,6 +5030,79 @@
 											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Invitation_id\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/invitation_id\"\n            },\n            \"detail\": \"Invitation_id invitation doesn't exist\"\n        }\n    ]\n}"
 										}
 									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Success",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "bad token",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends"
+											]
+										}
+									},
+									"response": []
 								}
 							]
 						}

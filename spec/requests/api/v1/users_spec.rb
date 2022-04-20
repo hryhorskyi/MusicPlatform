@@ -27,6 +27,33 @@ RSpec.describe 'Users', type: :request do
         end
       end
 
+      response '200', 'when test n+1 query' do
+        let!(:user) { create(:user) }
+        let(:access_token) { "Bearer #{SessionCreate.call(user.id)[:access]}" }
+
+        before { create_list(:friend, 5, initiator: user) }
+
+        context 'when call without params', :n_plus_one do
+          populate { |n| create_list(:user, n) }
+
+          specify do
+            expect do
+              get '/api/v1/users', headers: { authorization: access_token }
+            end.to perform_constant_number_of_queries
+          end
+        end
+
+        context 'when call with exclude_friends=true param', :n_plus_one do
+          populate { |n| create_list(:user, n) }
+
+          specify do
+            expect do
+              get '/api/v1/users', params: { exclude_friends: 'true' }, headers: { authorization: access_token }
+            end.to perform_constant_number_of_queries
+          end
+        end
+      end
+
       response '401', 'unauthorized' do
         let(:authorization) { nil }
 

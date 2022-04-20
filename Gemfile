@@ -27,7 +27,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'brakeman', '~> 5.2'
-  gem 'bullet', '~> 7.0'
   gem 'bundler-audit', '~> 0.9'
   gem 'bundler-leak', github: 'Quitehours/bundler-leak', branch: 'main'
   gem 'factory_bot_rails', '~> 6.2'
@@ -43,6 +42,7 @@ end
 
 group :test do
   gem 'json_matchers', '~> 0.11.1'
+  gem 'n_plus_one_control', '~> 0.6.2'
   gem 'rspec-rails', '~> 5.1'
   gem 'rswag-specs', '~> 2.5'
   gem 'shoulda-matchers', '~> 5.1'

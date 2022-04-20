@@ -95,9 +95,6 @@ GEM
       msgpack (~> 1.2)
     brakeman (5.2.2)
     builder (3.2.4)
-    bullet (7.0.1)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.11)
     bundler-audit (0.9.0.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
@@ -174,6 +171,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.15.0)
     msgpack (1.5.1)
+    n_plus_one_control (0.6.2)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -332,7 +330,6 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
-    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     websocket-driver (0.7.5)
@@ -350,7 +347,6 @@ DEPENDENCIES
   bcrypt (~> 3.1)
   bootsnap
   brakeman (~> 5.2)
-  bullet (~> 7.0)
   bundler-audit (~> 0.9)
   bundler-leak!
   devise (~> 4.8)
@@ -361,6 +357,7 @@ DEPENDENCIES
   jsonapi-serializer (~> 2.2)
   jwt_sessions (~> 2.7)
   lefthook (~> 0.7)
+  n_plus_one_control (~> 0.6.2)
   pg (~> 1.3)
   pry (~> 0.14)
   puma (~> 5.0)

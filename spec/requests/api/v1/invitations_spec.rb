@@ -124,6 +124,15 @@ RSpec.describe 'Invitations', type: :request do
           expect(responce).to match_json_schema('v1/errors')
         end
       end
+
+      response '422', 'when invitation receiver equal current_user' do
+        let(:authorization) { SessionCreate.call(requestor.id)[:access] }
+        let(:invitation) { { receiver_id: requestor.id } }
+
+        run_test! do |responce|
+          expect(responce).to match_json_schema('v1/errors')
+        end
+      end
     end
   end
 

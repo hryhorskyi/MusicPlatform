@@ -21,6 +21,7 @@ RSpec.describe Invitations::Create::Organizer do
     let(:expected_interactors) do
       [
         Invitations::Create::SetBaseModel,
+        Invitations::Create::CheckReceiverEqualCurrentUser,
         Invitations::Create::FindReceiver,
         Invitations::Create::FindExistingInvitation,
         Invitations::Create::CheckExistingInvitationIsPending,
@@ -122,6 +123,19 @@ RSpec.describe Invitations::Create::Organizer do
 
         expect(result.model.errors.messages[:receiver_id].first).to eq(expected_message)
         expect(result).to be_failure
+      end
+    end
+
+    context 'when invitation receiver equal current_user' do
+      let(:receiver_id) { requestor.id }
+
+      it 'has failure result' do
+        expect(result).to be_failure
+      end
+
+      it 'has correct error message' do
+        expected_error = I18n.t('invitation.create.errors.receiver_equal_current_user')
+        expect(result.model.errors.messages[:receiver_id].first).to eq(expected_error)
       end
     end
   end

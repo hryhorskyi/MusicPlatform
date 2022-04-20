@@ -24,6 +24,31 @@ RSpec.describe 'Friends', type: :request do
         end
       end
 
+      response '200', 'when test n+1 query' do
+        let!(:user) { create(:user) }
+        let(:access_token) { "Bearer #{SessionCreate.call(user.id)[:access]}" }
+
+        context 'when current_user is initiator', :n_plus_one do
+          populate { |n| create_list(:friend, n, initiator: user) }
+
+          specify do
+            expect do
+              get '/api/v1/friends', headers: { authorization: access_token }
+            end.to perform_constant_number_of_queries
+          end
+        end
+
+        context 'when current_user is acceptor', :n_plus_one do
+          populate { |n| create_list(:friend, n, acceptor: user) }
+
+          specify do
+            expect do
+              get '/api/v1/friends', headers: { authorization: access_token }
+            end.to perform_constant_number_of_queries
+          end
+        end
+      end
+
       response '401', 'unauthorized' do
         let(:authorization) { nil }
 

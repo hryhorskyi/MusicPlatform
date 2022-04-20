@@ -7,3 +7,4 @@ en:
         you_already_invited: you have already invite this user
         user_already_invited: you are already invited by this user
         declined_recently: this user decline your invitation less than 24 hours ago
+        receiver_equal_current_user: invitation receiver equal current_user

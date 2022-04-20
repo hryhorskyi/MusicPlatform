@@ -4,6 +4,7 @@ module Invitations
   module Create
     class Organizer < Common::BaseOrganizer
       organize SetBaseModel,
+               CheckReceiverEqualCurrentUser,
                FindReceiver,
                FindExistingInvitation,
                CheckExistingInvitationIsPending,

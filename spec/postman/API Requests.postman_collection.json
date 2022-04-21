@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "87384758-079d-40c2-9dbc-a3ba00180ab3",
+		"_postman_id": "8b0cb32a-b45e-45f6-9bd5-fd8951ab32a2",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -43,7 +43,7 @@
 										"method": "POST",
 										"header": [],
 										"url": {
-											"raw": "{{url}}/api/v1/session?email=initiator@epam.com&password=P@ssword1",
+											"raw": "{{url}}/api/v1/session?email=example@gmail.com&password=P@ssw0rd",
 											"host": [
 												"{{url}}"
 											],
@@ -55,11 +55,11 @@
 											"query": [
 												{
 													"key": "email",
-													"value": "initiator@epam.com"
+													"value": "example@gmail.com"
 												},
 												{
 													"key": "password",
-													"value": "P@ssword1"
+													"value": "P@ssw0rd"
 												}
 											]
 										}
@@ -3033,6 +3033,640 @@
 												{
 													"key": "Server-Timing",
 													"value": "start_processing.action_controller;dur=0.0517578125, process_action.action_controller;dur=0.229248046875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"my_account\": {\"nickname\": \"kasper1234\", \"first_name\": \"kasper12345\", \"last_name\": \"last_name\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/my_account",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"my_account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"my_account\": {\"nickname\": \"kasper1234\", \"first_name\": \"kasper12345\", \"last_name\": \"last_name\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/my_account",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"my_account"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"886f0f3296955a99076885648b95090c\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "be7d7a06-bb79-460f-a564-b59326d6b8b0"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.373599"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.16748046875, sql.active_record;dur=70.84521484375, instantiation.active_record;dur=0.091552734375, process_action.action_controller;dur=338.944580078125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n        \"type\": \"user\",\n        \"attributes\": {\n            \"email\": \"example@gmail.com\",\n            \"nickname\": \"kasper1234\",\n            \"first_name\": \"kasper12345\",\n            \"last_name\": \"last_name\",\n            \"avatar\": \"dummy_avatar_url.png\",\n            \"shared_playlists_number\": 5\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Incorrect nickname",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"my_account\": {\"nickname\": \".\", \"first_name\": \"kasper12345\", \"last_name\": \"last_name\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/my_account",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"my_account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect nickname",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"my_account\": {\"nickname\": \".\", \"first_name\": \"kasper12345\", \"last_name\": \"last_name\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/my_account",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"my_account"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "5ded2e07-d901-4dbd-a955-a1e86e0a8ff1"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.122957"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=3.42626953125, sql.active_record;dur=6.73388671875, instantiation.active_record;dur=0.087158203125, process_action.action_controller;dur=85.69482421875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Nickname\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/nickname\"\n            },\n            \"detail\": \"Nickname is too short (minimum is 3 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Incorrect first_name",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"my_account\": {\"nickname\": \"kasper1234\", \"first_name\": \".\", \"last_name\": \"last_name\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/my_account",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"my_account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect first_name",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"my_account\": {\"nickname\": \"kasper1234\", \"first_name\": \".\", \"last_name\": \"last_name\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/my_account",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"my_account"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "ec9d8efd-7e64-49e0-a25e-d3ab9d4b3d89"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.051911"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=11.386962890625, sql.active_record;dur=5.42919921875, instantiation.active_record;dur=0.056396484375, process_action.action_controller;dur=23.103271484375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"First_name\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/first_name\"\n            },\n            \"detail\": \"First_name is too short (minimum is 3 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Incorrect last_name",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"my_account\": {\"nickname\": \"kasper1234\", \"first_name\": \"kasper12345\", \"last_name\": \".\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/my_account",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"my_account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect last_name",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"my_account\": {\"nickname\": \"kasper1234\", \"first_name\": \"kasper12345\", \"last_name\": \".\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/my_account",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"my_account"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "bc7d752f-8237-4482-aec0-38575761e680"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.042537"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=1.957275390625, sql.active_record;dur=4.901611328125, instantiation.active_record;dur=0.053955078125, process_action.action_controller;dur=17.424072265625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Last_name\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/last_name\"\n            },\n            \"detail\": \"Last_name is too short (minimum is 3 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "invalid_token",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/my_account",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"my_account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/my_account",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"my_account"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "1bed8dfe-15ea-401c-9f32-0773cfc6a06c"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.032935"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=10.689697265625, process_action.action_controller;dur=2.258544921875"
 												},
 												{
 													"key": "Transfer-Encoding",

@@ -15,6 +15,7 @@ en:
       tags: My Account
       action:
         show: show my account
+        update: update my account
     friends:
       tags: Friend
       action:

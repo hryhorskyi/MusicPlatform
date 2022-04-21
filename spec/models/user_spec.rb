@@ -35,18 +35,4 @@ RSpec.describe User, type: :model do
                                                           .inverse_of(:requestor).dependent(:destroy)
     }
   end
-
-  describe 'validations' do
-    it { is_expected.to validate_presence_of(:nickname) }
-
-    %i[nickname email].each do |field|
-      it { expect(build(:user)).to validate_uniqueness_of(field) }
-    end
-
-    it { is_expected.to validate_length_of(:nickname).is_at_least(User::NICKNAME_LENGTH.first) }
-    it { is_expected.to validate_length_of(:nickname).is_at_most(User::NICKNAME_LENGTH.last) }
-
-    it_behaves_like 'email is valid'
-    it_behaves_like 'password is valid'
-  end
 end

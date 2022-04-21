@@ -1,0 +1,5 @@
+en:
+  my_account:
+    update:
+      errors:
+        nickname_exist: already exist

@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  include EmailValidations
-  include PasswordValidations
+  NICKNAME_LENGTH = (3..20)
+  FIRST_NAME_LENGTH = (3..20)
+  LAST_NAME_LENGTH = (3..20)
+
+  has_secure_password
 
   has_many :received_invitations,
            class_name: 'Invitation',
@@ -27,10 +30,4 @@ class User < ApplicationRecord
            foreign_key: 'acceptor_id',
            inverse_of: :acceptor,
            dependent: :destroy
-
-  NICKNAME_LENGTH = (3..20)
-  has_secure_password
-
-  validates :nickname, presence: true, uniqueness: true, length: { minimum: NICKNAME_LENGTH.min,
-                                                                   maximum: NICKNAME_LENGTH.max }
 end

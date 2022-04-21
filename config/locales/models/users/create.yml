@@ -1,0 +1,6 @@
+en:
+  users:
+    create:
+      errors:
+        nickname_exist: already exist
+        email_exist: already exist

@@ -26,5 +26,6 @@ module EpamMusic
     config.middleware.use ActionDispatch::Flash
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, key: Rails.application.credentials.cookie_store_key
+    config.action_mailer.preview_path = Rails.root.join('spec/mailers/previews')
   end
 end

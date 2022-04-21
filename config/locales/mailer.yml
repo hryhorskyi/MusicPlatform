@@ -1,0 +1,5 @@
+en:
+  mailer:
+    invitation:
+      action:
+        create: You get friends invitation

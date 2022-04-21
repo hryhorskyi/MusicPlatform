@@ -11,11 +11,11 @@ module Api
       end
 
       def create
-        @user = User.new(permitted_create_params)
-        if @user.save
+        result = Users::Create::Organizer.call(params: permitted_create_params)
+        if result.success?
           head :created
         else
-          render_errors(object: @user, status: :unprocessable_entity)
+          render_errors(object: result.model, status: :unprocessable_entity)
         end
       end
 

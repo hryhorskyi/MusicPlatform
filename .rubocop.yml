@@ -15,9 +15,9 @@ Layout/LineLength:
   Max: 120
 
 Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let', 'patch', 'delete', 'get', 'response']
   Exclude:
     - config/environments/*
-  IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let', 'patch', 'delete', 'get']
 
 RSpec/EmptyExampleGroup:
   Exclude:
@@ -48,3 +48,6 @@ RSpec/AnyInstance:
 
 RSpec/ExpectChange:
   EnforcedStyle: block
+
+RSpec/NestedGroups:
+  Max: 5

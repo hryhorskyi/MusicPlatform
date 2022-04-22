@@ -30,4 +30,8 @@ class User < ApplicationRecord
            foreign_key: 'acceptor_id',
            inverse_of: :acceptor,
            dependent: :destroy
+
+  def invitations
+    received_invitations.or(sent_invitations)
+  end
 end

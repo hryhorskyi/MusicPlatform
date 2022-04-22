@@ -35,4 +35,13 @@ RSpec.describe User, type: :model do
                                                           .inverse_of(:requestor).dependent(:destroy)
     }
   end
+
+  describe 'method invintations' do
+    let(:user) { create(:user) }
+    let(:invitation_list) { create_list(:invitation, 2, requestor_id: user.id) }
+
+    it 'returns users invitation' do
+      expect(user.invitations).to eq(invitation_list)
+    end
+  end
 end

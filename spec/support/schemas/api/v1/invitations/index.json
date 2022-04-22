@@ -1,0 +1,304 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "examples": [
+        {
+            "data": [
+                {
+                    "id": "13",
+                    "type": "invitation",
+                    "attributes": {
+                        "status": "pending",
+                        "created_at": "2022-04-14 00:14:20"
+                    },
+                    "relationships": {
+                        "requestor": {
+                            "data": {
+                                "id": "2",
+                                "type": "user"
+                            }
+                        },
+                        "receiver": {
+                            "data": {
+                                "id": "5",
+                                "type": "user"
+                            }
+                        }
+                    }
+                }
+            ],
+            "included": [
+                {
+                    "id": "5",
+                    "type": "user",
+                    "attributes": {
+                        "nickname": "niki4",
+                        "avatar": "dummy_avatar_url.png"
+                    }
+                },
+                {
+                    "id": "2",
+                    "type": "user",
+                    "attributes": {
+                        "nickname": "niki1",
+                        "avatar": "dummy_avatar_url.png"
+                    }
+                }
+            ]
+        }
+    ],
+    "required": [
+        "data",
+        "included"
+    ],
+    "properties": {
+        "data": {
+            "$id": "#/properties/data",
+            "type": "array",
+            "items": {
+                "$id": "#/properties/data/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/data/items/anyOf/0",
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "type",
+                            "attributes",
+                            "relationships"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/id",
+                                "type": "string",
+                                "examples": [
+                                    "13"
+                                ]
+                            },
+                            "type": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/type",
+                                "type": "string",
+                                "examples": [
+                                    "invitation"
+                                ]
+                            },
+                            "attributes": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/attributes",
+                                "type": "object",
+                                "examples": [
+                                    {
+                                        "status": "pending",
+                                        "created_at": "2022-04-14 00:14:20"
+                                    }
+                                ],
+                                "required": [
+                                    "status",
+                                    "created_at"
+                                ],
+                                "properties": {
+                                    "status": {
+                                        "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/status",
+                                        "type": "string",
+                                        "examples": [
+                                            "pending"
+                                        ]
+                                    },
+                                    "created_at": {
+                                        "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/created_at",
+                                        "type": "string",
+                                        "examples": [
+                                            "2022-04-14 00:14:20"
+                                        ]
+                                    }
+                                }
+                            },
+                            "relationships": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/relationships",
+                                "type": "object",
+                                "required": [
+                                    "requestor",
+                                    "receiver"
+                                ],
+                                "properties": {
+                                    "requestor": {
+                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor",
+                                        "type": "object",
+                                        "required": [
+                                            "data"
+                                        ],
+                                        "properties": {
+                                            "data": {
+                                                "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor/properties/data",
+                                                "type": "object",
+                                                "examples": [
+                                                    {
+                                                        "id": "2",
+                                                        "type": "user"
+                                                    }
+                                                ],
+                                                "required": [
+                                                    "id",
+                                                    "type"
+                                                ],
+                                                "properties": {
+                                                    "id": {
+                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor/properties/data/properties/id",
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "2"
+                                                        ]
+                                                    },
+                                                    "type": {
+                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor/properties/data/properties/type",
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "user"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "receiver": {
+                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver",
+                                        "type": "object",
+                                        "examples": [
+                                            {
+                                                "data": {
+                                                    "id": "5",
+                                                    "type": "user"
+                                                }
+                                            }
+                                        ],
+                                        "required": [
+                                            "data"
+                                        ],
+                                        "properties": {
+                                            "data": {
+                                                "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver/properties/data",
+                                                "type": "object",
+                                                "examples": [
+                                                    {
+                                                        "id": "5",
+                                                        "type": "user"
+                                                    }
+                                                ],
+                                                "required": [
+                                                    "id",
+                                                    "type"
+                                                ],
+                                                "properties": {
+                                                    "id": {
+                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver/properties/data/properties/id",
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "5"
+                                                        ]
+                                                    },
+                                                    "type": {
+                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver/properties/data/properties/type",
+                                                        "type": "string",
+                                                        "examples": [
+                                                            "user"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "included": {
+            "$id": "#/properties/included",
+            "type": "array",
+            "title": "The included schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "id": "5",
+                        "type": "user",
+                        "attributes": {
+                            "nickname": "niki4",
+                            "avatar": "dummy_avatar_url.png"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "type": "user",
+                        "attributes": {
+                            "nickname": "niki1",
+                            "avatar": "dummy_avatar_url.png"
+                        }
+                    }
+                ]
+            ],
+            "items": {
+                "$id": "#/properties/included/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/included/items/anyOf/0",
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "type",
+                            "attributes"
+                        ],
+                        "properties": {
+                            "id": {
+                                "$id": "#/properties/included/items/anyOf/0/properties/id",
+                                "type": "string",
+                                "examples": [
+                                    "5"
+                                ]
+                            },
+                            "type": {
+                                "$id": "#/properties/included/items/anyOf/0/properties/type",
+                                "type": "string",
+                                "examples": [
+                                    "user"
+                                ]
+                            },
+                            "attributes": {
+                                "$id": "#/properties/included/items/anyOf/0/properties/attributes",
+                                "type": "object",
+                                "examples": [
+                                    {
+                                        "nickname": "niki4",
+                                        "avatar": "dummy_avatar_url.png"
+                                    }
+                                ],
+                                "required": [
+                                    "nickname",
+                                    "avatar"
+                                ],
+                                "properties": {
+                                    "nickname": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/nickname",
+                                        "type": "string",
+                                        "examples": [
+                                            "niki4"
+                                        ]
+                                    },
+                                    "avatar": {
+                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/avatar",
+                                        "type": "string",
+                                        "examples": [
+                                            "dummy_avatar_url.png"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

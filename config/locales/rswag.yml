@@ -25,4 +25,5 @@ en:
       tags: Invitations
       action:
         post: create invitation
+        index: show invitation list
         delete: delete invitation

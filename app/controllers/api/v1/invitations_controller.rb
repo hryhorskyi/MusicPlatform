@@ -3,7 +3,14 @@
 module Api
   module V1
     class InvitationsController < ApiController
-      before_action :authorize_access_request!, only: %i[create destroy]
+      before_action :authorize_access_request!, only: %i[create index destroy]
+
+      def index
+        result = Invitations::Index::Organizer.call(current_user: current_user, params: permitted_index_params)
+
+        render json: InvitationSerializer.new(result.collection.includes(:requestor, :receiver),
+                                              { include: %i[receiver requestor] }), status: :ok
+      end
 
       def create
         result = Invitations::Create::Organizer.call(current_user: current_user, params: permitted_create_params)
@@ -29,6 +36,10 @@ module Api
 
       def permitted_create_params
         params.require(:invitation).permit(:receiver_id)
+      end
+
+      def permitted_index_params
+        params.permit(:role_filter)
       end
 
       def permitted_destroy_params

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :friends, only: %i[create index]
-      resources :invitations, only: %i[create index destroy]
+      resources :invitations, only: %i[create index destroy update]
       resource :my_account, only: %i[show update]
       resource :session, only: %i[create destroy update]
       resources :users, only: %i[index create]

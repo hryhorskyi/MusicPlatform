@@ -3,7 +3,7 @@
 module Api
   module V1
     class InvitationsController < ApiController
-      before_action :authorize_access_request!, only: %i[create index destroy]
+      before_action :authorize_access_request!
 
       def index
         result = Invitations::Index::Organizer.call(current_user: current_user, params: permitted_index_params)
@@ -17,6 +17,16 @@ module Api
 
         if result.success?
           render json: InvitationSerializer.new(result.model), status: :created
+        else
+          render_errors(object: result.model, status: :unprocessable_entity)
+        end
+      end
+
+      def update
+        result = Invitations::Update::Organizer.call(current_user: current_user, params: permitted_update_params)
+
+        if result.success?
+          render json: InvitationSerializer.new(result.model), status: :ok
         else
           render_errors(object: result.model, status: :unprocessable_entity)
         end
@@ -40,6 +50,10 @@ module Api
 
       def permitted_index_params
         params.permit(:role_filter)
+      end
+
+      def permitted_update_params
+        params.permit(:invitation_id)
       end
 
       def permitted_destroy_params

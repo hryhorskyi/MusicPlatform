@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+      "data"
+  ],
+  "properties": {
+      "data": {
+          "$id": "#/properties/data",
+          "type": "object",
+          "examples": [
+              {
+                  "id": "d62818f3-f878-441a-a1e1-a1fc25593a68",
+                  "type": "invitation",
+                  "attributes": {
+                      "status": "declined",
+                      "created_at": "2022-04-22 19:10:48"
+                  },
+                  "relationships": {
+                      "requestor": {
+                          "data": {
+                              "id": "2b72715c-1e41-4f63-b2bb-4daeb31245c3",
+                              "type": "user"
+                          }
+                      },
+                      "receiver": {
+                          "data": {
+                              "id": "e874519a-d741-40dc-aeb7-5e4706c6c38f",
+                              "type": "user"
+                          }
+                      }
+                  }
+              }
+          ],
+          "required": [
+              "id",
+              "type",
+              "attributes",
+              "relationships"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/data/properties/id",
+                  "type": "string",
+                  "examples": [
+                      "d62818f3-f878-441a-a1e1-a1fc25593a68"
+                  ]
+              },
+              "type": {
+                  "$id": "#/properties/data/properties/type",
+                  "type": "string",
+                  "examples": [
+                      "invitation"
+                  ]
+              },
+              "attributes": {
+                  "$id": "#/properties/data/properties/attributes",
+                  "type": "object",
+                  "examples": [
+                      {
+                          "status": "declined",
+                          "created_at": "2022-04-22 19:10:48"
+                      }
+                  ],
+                  "required": [
+                      "status",
+                      "created_at"
+                  ],
+                  "properties": {
+                      "status": {
+                          "$id": "#/properties/data/properties/attributes/properties/status",
+                          "type": "string",
+                          "examples": [
+                              "declined"
+                          ]
+                      },
+                      "created_at": {
+                          "$id": "#/properties/data/properties/attributes/properties/created_at",
+                          "type": "string",
+                          "examples": [
+                              "2022-04-22 19:10:48"
+                          ]
+                      }
+                  }
+              },
+              "relationships": {
+                  "$id": "#/properties/data/properties/relationships",
+                  "type": "object",
+                  "examples": [
+                      {
+                          "requestor": {
+                              "data": {
+                                  "id": "2b72715c-1e41-4f63-b2bb-4daeb31245c3",
+                                  "type": "user"
+                              }
+                          },
+                          "receiver": {
+                              "data": {
+                                  "id": "e874519a-d741-40dc-aeb7-5e4706c6c38f",
+                                  "type": "user"
+                              }
+                          }
+                      }
+                  ],
+                  "required": [
+                      "requestor",
+                      "receiver"
+                  ],
+                  "properties": {
+                      "requestor": {
+                          "$id": "#/properties/data/properties/relationships/properties/requestor",
+                          "type": "object",
+                          "examples": [
+                              {
+                                  "data": {
+                                      "id": "2b72715c-1e41-4f63-b2bb-4daeb31245c3",
+                                      "type": "user"
+                                  }
+                              }
+                          ],
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "$id": "#/properties/data/properties/relationships/properties/requestor/properties/data",
+                                  "type": "object",
+                                  "examples": [
+                                      {
+                                          "id": "2b72715c-1e41-4f63-b2bb-4daeb31245c3",
+                                          "type": "user"
+                                      }
+                                  ],
+                                  "required": [
+                                      "id",
+                                      "type"
+                                  ],
+                                  "properties": {
+                                      "id": {
+                                          "$id": "#/properties/data/properties/relationships/properties/requestor/properties/data/properties/id",
+                                          "type": "string",
+                                          "examples": [
+                                              "2b72715c-1e41-4f63-b2bb-4daeb31245c3"
+                                          ]
+                                      },
+                                      "type": {
+                                          "$id": "#/properties/data/properties/relationships/properties/requestor/properties/data/properties/type",
+                                          "type": "string",
+                                          "examples": [
+                                              "user"
+                                          ]
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "receiver": {
+                          "$id": "#/properties/data/properties/relationships/properties/receiver",
+                          "type": "object",
+                          "examples": [
+                              {
+                                  "data": {
+                                      "id": "e874519a-d741-40dc-aeb7-5e4706c6c38f",
+                                      "type": "user"
+                                  }
+                              }
+                          ],
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "$id": "#/properties/data/properties/relationships/properties/receiver/properties/data",
+                                  "type": "object",
+                                  "examples": [
+                                      {
+                                          "id": "e874519a-d741-40dc-aeb7-5e4706c6c38f",
+                                          "type": "user"
+                                      }
+                                  ],
+                                  "required": [
+                                      "id",
+                                      "type"
+                                  ],
+                                  "properties": {
+                                      "id": {
+                                          "$id": "#/properties/data/properties/relationships/properties/receiver/properties/data/properties/id",
+                                          "type": "string",
+                                          "examples": [
+                                              "e874519a-d741-40dc-aeb7-5e4706c6c38f"
+                                          ]
+                                      },
+                                      "type": {
+                                          "$id": "#/properties/data/properties/relationships/properties/receiver/properties/data/properties/type",
+                                          "type": "string",
+                                          "examples": [
+                                              "user"
+                                          ]
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

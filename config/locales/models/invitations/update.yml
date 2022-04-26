@@ -1,0 +1,6 @@
+en:
+  invitation:
+    update:
+      errors:
+        invitation_not_exist: invitation doesn't exist
+        

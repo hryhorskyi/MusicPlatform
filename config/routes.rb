@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,4 +16,10 @@ Rails.application.routes.draw do
   end
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
+
+  devise_scope :admin do
+    authenticated :admin do
+      mount Sidekiq::Web => '/sidekiq'
+    end
+  end
 end

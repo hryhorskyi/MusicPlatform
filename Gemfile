@@ -22,7 +22,8 @@ gem 'redis', '~> 4.6'
 gem 'rswag-api', '~> 2.5'
 gem 'rswag-ui', '~> 2.5'
 gem 'sass-rails', '~> 6.0'
-gem 'seedbank', '~> 0.5.0'
+gem 'seedbank', '~> 0.5'
+gem 'sidekiq', '~> 6.4'
 gem 'sprockets-rails', '~> 3.4', require: 'sprockets/railtie'
 gem 'strong_migrations', '~> 1.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -43,8 +44,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'json_matchers', '~> 0.11.1'
-  gem 'n_plus_one_control', '~> 0.6.2'
+  gem 'json_matchers', '~> 0.11'
+  gem 'n_plus_one_control', '~> 0.6'
   gem 'rspec-rails', '~> 5.1'
   gem 'rswag-specs', '~> 2.5'
   gem 'shoulda-matchers', '~> 5.1'

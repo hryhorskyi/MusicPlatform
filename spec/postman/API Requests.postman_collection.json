@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f5f9d3c2-8ddc-41ab-9a3b-b01b0d0cf615",
+		"_postman_id": "e040f66e-3e1a-4011-a232-2920896757f0",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -4642,6 +4642,406 @@
 										}
 									},
 									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"id"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"334f5f75d1714fc19104e87304fb04b5\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "47eda0ff-125e-4d93-b5c3-3300bd0adcb4"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.117688"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=3.36865234375, sql.active_record;dur=71.72119140625, instantiation.active_record;dur=0.376220703125, unpermitted_parameters.action_controller;dur=0.2470703125, process_action.action_controller;dur=88.1171875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\",\n        \"type\": \"invitation\",\n        \"attributes\": {\n            \"status\": \"declined\",\n            \"created_at\": \"2022-04-21 19:50:44\"\n        },\n        \"relationships\": {\n            \"requestor\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"receiver\": {\n                \"data\": {\n                    \"id\": \"37e7adb2-3805-4719-9bdc-2b925c860581\",\n                    \"type\": \"user\"\n                }\n            }\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Incorrect invitation id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect invitation id",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"invitation_id\": null}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"id"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "7ae4c663-f95e-40b4-b339-94f264c58d54"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.096577"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=1.743896484375, sql.active_record;dur=8.267333984375, instantiation.active_record;dur=0.063720703125, unpermitted_parameters.action_controller;dur=2.261962890625, process_action.action_controller;dur=81.18798828125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Invitation_id\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/invitation_id\"\n            },\n            \"detail\": \"Invitation_id invitation doesn't exist\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"id"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"id"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "3f9d207c-fe03-4a44-8f5e-041e2b51f02f"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.028634"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=3.604248046875, process_action.action_controller;dur=0.777587890625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
 								}
 							]
 						}

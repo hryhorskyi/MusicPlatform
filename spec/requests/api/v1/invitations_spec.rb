@@ -340,5 +340,82 @@ RSpec.describe 'Invitations', type: :request do
         run_test!
       end
     end
+
+    patch(I18n.t('swagger.invitations.action.patch')) do
+      tags I18n.t('swagger.invitations.tags')
+
+      consumes 'application/json'
+      produces 'application/json'
+
+      parameter name: 'authorization', in: :header, type: :string, required: true
+      parameter name: :params,
+                in: :body,
+                schema: {
+                  type: :object,
+                  items: {
+                    type: :object,
+                    properties: {
+                      invitation_id: { type: :string }
+                    }
+                  },
+                  example: {
+                    invitation_id: '67faeb8e-c223-4c92-a0ad-56fa07eb1344'
+                  },
+                  required: %w[invitation_id]
+                }
+
+      let(:requestor) { create(:user) }
+      let(:current_user) { create(:user) }
+      let(:receiver) { current_user }
+      let(:status) { :pending }
+      let!(:invitation) do
+        create(:invitation, requestor: requestor, receiver: receiver, status: status)
+      end
+
+      response '200', 'when invitation successfully updated and response match with schema' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/invitations/update')
+        end
+      end
+
+      response '401', 'unauthorized' do
+        let(:authorization) { ' ' }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test!
+      end
+
+      response '422', 'when invitation does not exist' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:params) { { invitation_id: nil } }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/errors')
+        end
+      end
+
+      response '422', 'when invitation exist but receiver is not current user' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:receiver) { create(:user) }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/errors')
+        end
+      end
+
+      response '422', 'when invitation exist but status is not pending' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:status) { :accepted }
+        let(:params) { { invitation_id: invitation.id } }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/errors')
+        end
+      end
+    end
   end
 end

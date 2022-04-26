@@ -27,3 +27,4 @@ en:
         post: create invitation
         index: show invitation list
         delete: delete invitation
+        patch: update invitation

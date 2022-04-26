@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
-  if ENV['RAILS_ENV'] == 'development' || ENV['RAILS_ENV'] == 'test'
+  if Rails.env.development? || Rails.env.test?
 
     config.after_initialize do
       StrongMigrations.start_after = 20_220_221_122_958

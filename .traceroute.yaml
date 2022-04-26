@@ -1,6 +1,7 @@
 ignore_unused_routes:
   - ^active_admin/devise*
   - ^admin/dashboard*
+  - /sidekiq
 ignore_unreachable_actions:
   - ^*request_method
   - ^*request_cookies

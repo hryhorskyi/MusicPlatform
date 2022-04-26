@@ -102,3 +102,11 @@ https://epam-music.herokuapp.com/
 ### Postman Collect
 Added to the attachment in the link:
 https://beattrey.atlassian.net/jira/software/projects/EM/boards/1?selectedIssue=EM-8
+
+## To use sidekiq
+
+* Install sidekiq gem through `bundle install`
+* Run `bundle exec sidekiq -C congfig/sidekiq.yml` from bash
+* Run `rails server` from bash
+
+Now you can access sidekiq UI, to do this you have to be logged as admin and go to /sidekiq url

@@ -131,7 +131,11 @@ RSpec.describe 'Invitations', type: :request do
       produces 'application/json'
       consumes 'application/json'
       parameter name: 'authorization', in: :header, type: :string, required: true
-      parameter name: :role_filter, in: :query, type: :string, example: %w[receiver requestor]
+
+      parameter name: :filter_role, in: :query, type: :string, required: false, example: %w[requestor receiver]
+      parameter name: :page, in: :query, type: :string, required: false, example: 2
+      parameter name: :per_page, in: :query, type: :string, required: false, example: 20
+      parameter name: :after, in: :query, type: :string, required: false, example: SecureRandom.uuid
 
       let(:user) { create(:user) }
       let(:receiver) { create(:user) }
@@ -139,14 +143,12 @@ RSpec.describe 'Invitations', type: :request do
 
       response '401', 'when the user unauthorized' do
         let(:authorization) { '' }
-        let(:role_filter) { '' }
 
         run_test!
       end
 
       response '200', 'when the user has no invitations' do
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:role_filter) { '' }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/empty_response')
@@ -162,7 +164,7 @@ RSpec.describe 'Invitations', type: :request do
         end
 
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:role_filter) { 'requestor' }
+        let(:filter_role) { 'requestor' }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/invitations/index')
@@ -178,7 +180,6 @@ RSpec.describe 'Invitations', type: :request do
         end
 
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:role_filter) { 'receiver' }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/invitations/index')
@@ -194,7 +195,6 @@ RSpec.describe 'Invitations', type: :request do
         end
 
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:role_filter) { '' }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/invitations/index')
@@ -210,7 +210,74 @@ RSpec.describe 'Invitations', type: :request do
         end
 
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:role_filter) { 'blabla' }
+        let(:filter_role) { 'blabla' }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/invitations/index')
+        end
+      end
+
+      response '200', 'when the user provide page, per_page parameters' do
+        before do
+          create_list(:invitation, 10,
+                      requestor_id: requestor.id,
+                      receiver_id: user.id,
+                      status: :pending)
+        end
+
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:page) { 1 }
+        let(:per_page) { 5 }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/invitations/index')
+        end
+      end
+
+      response '200', 'when the user provide all parameters' do
+        before do
+          create_list(:invitation, 10,
+                      requestor_id: user.id,
+                      receiver_id: requestor.id,
+                      status: :pending)
+        end
+
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:filter_role) { 'receiver' }
+        let(:page) { 1 }
+        let(:per_page) { 5 }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/invitations/index')
+        end
+      end
+
+      response '200', 'when the user provide after, per_page parameters' do
+        before do
+          create_list(:invitation, 10,
+                      requestor_id: user.id,
+                      receiver_id: requestor.id,
+                      status: :pending)
+        end
+
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:after) { Invitation.first.id }
+        let(:per_page) { 5 }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/invitations/index')
+        end
+      end
+
+      response '200', 'when the user not provide parameters' do
+        before do
+          create_list(:invitation, 10,
+                      requestor_id: user.id,
+                      receiver_id: requestor.id,
+                      status: :pending)
+        end
+
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/invitations/index')
@@ -226,7 +293,7 @@ RSpec.describe 'Invitations', type: :request do
         end
 
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:role_filter) { 'requestor' }
+        let(:filter_role) { 'requestor' }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/empty_response')
@@ -242,7 +309,8 @@ RSpec.describe 'Invitations', type: :request do
 
           specify do
             expect do
-              get '/api/v1/invitations', params: { role_filter: 'requestor' }, headers: { authorization: authorization }
+              get '/api/v1/invitations', params: { role_filter: 'requestor' },
+                                         headers: { authorization: authorization }
             end.to perform_constant_number_of_queries
           end
         end
@@ -252,7 +320,8 @@ RSpec.describe 'Invitations', type: :request do
 
           specify do
             expect do
-              get '/api/v1/invitations', params: { role_filter: 'receiver' }, headers: { authorization: authorization }
+              get '/api/v1/invitations', params: { role_filter: 'receiver' },
+                                         headers: { authorization: authorization }
             end.to perform_constant_number_of_queries
           end
         end

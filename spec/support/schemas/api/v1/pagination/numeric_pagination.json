@@ -1,0 +1,37 @@
+{
+  "id": "file:/pagination/numeric_pagination.json#",
+
+  "type": "object",
+  "required": [
+    "per_page",
+    "max_per_page",
+    "count",
+    "self",
+    "next",
+    "last",
+    "prev"
+  ],
+  "properties": {
+    "per_page": {
+      "type": "integer"
+    },
+    "max_per_page": {
+      "type": "integer"
+    },
+    "count": {
+      "type": "integer"
+    },
+    "self": {
+      "type": "integer"
+    },
+    "next": {
+      "oneOf": [{ "type": "null" }, { "type": "integer" }]
+    },
+    "last": {
+      "oneOf": [{ "type": "null" }, { "type": "integer" }]
+    },
+    "prev": {
+      "oneOf": [{ "type": "null" }, { "type": "integer" }]
+    }
+  }
+}

@@ -5,7 +5,8 @@ module Invitations
     class Organizer < Common::BaseOrganizer
       organize FilterByRequestor,
                FilterByReceiver,
-               AllInvitations
+               AllInvitations,
+               Common::Service::Pagination
     end
   end
 end

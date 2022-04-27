@@ -1,0 +1,33 @@
+{
+  "id": "file:/pagination/cursor_pagination.json#",
+  "type": "object",
+  "required": [
+    "per_page",
+    "max_per_page",
+    "comparation",
+    "after",
+    "next",
+    "has_more"
+  ],
+  "properties": {
+    "per_page": {
+      "type": "integer"
+    },
+    "max_per_page": {
+      "type": "integer"
+    },
+    "comparation": {
+      "type": "string"
+    },
+    "after": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "next": {
+      "oneOf": [{ "type": "null" }, { "type": "string" }]
+    },
+    "has_more": {
+      "type": "boolean"
+    }
+  }
+}

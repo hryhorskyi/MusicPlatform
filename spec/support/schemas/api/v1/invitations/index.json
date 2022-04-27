@@ -1,304 +1,131 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "examples": [
+  "$schema": "http://json-schema.org/draft/2019-09/schema",
+  "id": "file:/invitations/index#",
+  "type": "object",
+  "required": ["data", "included", "meta"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "attributes", "relationships"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "examples": ["f035e105-d18c-4eb2-9c6c-0e81f3949282"]
+          },
+          "type": {
+            "type": "string",
+            "examples": ["invitation"]
+          },
+          "attributes": {
+            "type": "object",
+            "required": ["status", "created_at"],
+            "properties": {
+              "status": {
+                "type": "string",
+                "examples": ["pending"]
+              },
+              "created_at": {
+                "type": "string",
+                "examples": ["2022-04-26 12:39:27"]
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "required": ["requestor", "receiver"],
+            "properties": {
+              "requestor": {
+                "type": "object",
+                "required": ["data"],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": ["id", "type"],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "examples": ["6efb20a6-aed7-47e4-888d-35d4462e419a"]
+                      },
+                      "type": {
+                        "type": "string",
+                        "examples": ["user"]
+                      }
+                    }
+                  }
+                }
+              },
+              "receiver": {
+                "type": "object",
+                "required": ["data"],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": ["id", "type"],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "examples": ["3cdce220-78f3-41f6-8e52-2ad8a17d158b"]
+                      },
+                      "type": {
+                        "type": "string",
+                        "examples": ["user"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "included": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "attributes"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "examples": ["3cdce220-78f3-41f6-8e52-2ad8a17d158b"]
+          },
+          "type": {
+            "type": "string",
+            "examples": ["user"]
+          },
+          "attributes": {
+            "type": "object",
+            "required": ["nickname", "avatar"],
+            "properties": {
+              "nickname": {
+                "type": "string",
+                "examples": ["2if1f5ywlamh93biyy"]
+              },
+              "avatar": {
+                "type": "string",
+                "format": "uri",
+                "examples": ["dummy_avatar_url.png"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "anyOf": [
         {
-            "data": [
-                {
-                    "id": "13",
-                    "type": "invitation",
-                    "attributes": {
-                        "status": "pending",
-                        "created_at": "2022-04-14 00:14:20"
-                    },
-                    "relationships": {
-                        "requestor": {
-                            "data": {
-                                "id": "2",
-                                "type": "user"
-                            }
-                        },
-                        "receiver": {
-                            "data": {
-                                "id": "5",
-                                "type": "user"
-                            }
-                        }
-                    }
-                }
-            ],
-            "included": [
-                {
-                    "id": "5",
-                    "type": "user",
-                    "attributes": {
-                        "nickname": "niki4",
-                        "avatar": "dummy_avatar_url.png"
-                    }
-                },
-                {
-                    "id": "2",
-                    "type": "user",
-                    "attributes": {
-                        "nickname": "niki1",
-                        "avatar": "dummy_avatar_url.png"
-                    }
-                }
-            ]
-        }
-    ],
-    "required": [
-        "data",
-        "included"
-    ],
-    "properties": {
-        "data": {
-            "$id": "#/properties/data",
-            "type": "array",
-            "items": {
-                "$id": "#/properties/data/items",
-                "anyOf": [
-                    {
-                        "$id": "#/properties/data/items/anyOf/0",
-                        "type": "object",
-                        "required": [
-                            "id",
-                            "type",
-                            "attributes",
-                            "relationships"
-                        ],
-                        "properties": {
-                            "id": {
-                                "$id": "#/properties/data/items/anyOf/0/properties/id",
-                                "type": "string",
-                                "examples": [
-                                    "13"
-                                ]
-                            },
-                            "type": {
-                                "$id": "#/properties/data/items/anyOf/0/properties/type",
-                                "type": "string",
-                                "examples": [
-                                    "invitation"
-                                ]
-                            },
-                            "attributes": {
-                                "$id": "#/properties/data/items/anyOf/0/properties/attributes",
-                                "type": "object",
-                                "examples": [
-                                    {
-                                        "status": "pending",
-                                        "created_at": "2022-04-14 00:14:20"
-                                    }
-                                ],
-                                "required": [
-                                    "status",
-                                    "created_at"
-                                ],
-                                "properties": {
-                                    "status": {
-                                        "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/status",
-                                        "type": "string",
-                                        "examples": [
-                                            "pending"
-                                        ]
-                                    },
-                                    "created_at": {
-                                        "$id": "#/properties/data/items/anyOf/0/properties/attributes/properties/created_at",
-                                        "type": "string",
-                                        "examples": [
-                                            "2022-04-14 00:14:20"
-                                        ]
-                                    }
-                                }
-                            },
-                            "relationships": {
-                                "$id": "#/properties/data/items/anyOf/0/properties/relationships",
-                                "type": "object",
-                                "required": [
-                                    "requestor",
-                                    "receiver"
-                                ],
-                                "properties": {
-                                    "requestor": {
-                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor",
-                                        "type": "object",
-                                        "required": [
-                                            "data"
-                                        ],
-                                        "properties": {
-                                            "data": {
-                                                "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor/properties/data",
-                                                "type": "object",
-                                                "examples": [
-                                                    {
-                                                        "id": "2",
-                                                        "type": "user"
-                                                    }
-                                                ],
-                                                "required": [
-                                                    "id",
-                                                    "type"
-                                                ],
-                                                "properties": {
-                                                    "id": {
-                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor/properties/data/properties/id",
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "2"
-                                                        ]
-                                                    },
-                                                    "type": {
-                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/requestor/properties/data/properties/type",
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "user"
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "receiver": {
-                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver",
-                                        "type": "object",
-                                        "examples": [
-                                            {
-                                                "data": {
-                                                    "id": "5",
-                                                    "type": "user"
-                                                }
-                                            }
-                                        ],
-                                        "required": [
-                                            "data"
-                                        ],
-                                        "properties": {
-                                            "data": {
-                                                "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver/properties/data",
-                                                "type": "object",
-                                                "examples": [
-                                                    {
-                                                        "id": "5",
-                                                        "type": "user"
-                                                    }
-                                                ],
-                                                "required": [
-                                                    "id",
-                                                    "type"
-                                                ],
-                                                "properties": {
-                                                    "id": {
-                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver/properties/data/properties/id",
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "5"
-                                                        ]
-                                                    },
-                                                    "type": {
-                                                        "$id": "#/properties/data/items/anyOf/0/properties/relationships/properties/receiver/properties/data/properties/type",
-                                                        "type": "string",
-                                                        "examples": [
-                                                            "user"
-                                                        ]
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
+          "ref": "file:/pagination/cursor_pagination.json#"
         },
-        "included": {
-            "$id": "#/properties/included",
-            "type": "array",
-            "title": "The included schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": [],
-            "examples": [
-                [
-                    {
-                        "id": "5",
-                        "type": "user",
-                        "attributes": {
-                            "nickname": "niki4",
-                            "avatar": "dummy_avatar_url.png"
-                        }
-                    },
-                    {
-                        "id": "2",
-                        "type": "user",
-                        "attributes": {
-                            "nickname": "niki1",
-                            "avatar": "dummy_avatar_url.png"
-                        }
-                    }
-                ]
-            ],
-            "items": {
-                "$id": "#/properties/included/items",
-                "anyOf": [
-                    {
-                        "$id": "#/properties/included/items/anyOf/0",
-                        "type": "object",
-                        "required": [
-                            "id",
-                            "type",
-                            "attributes"
-                        ],
-                        "properties": {
-                            "id": {
-                                "$id": "#/properties/included/items/anyOf/0/properties/id",
-                                "type": "string",
-                                "examples": [
-                                    "5"
-                                ]
-                            },
-                            "type": {
-                                "$id": "#/properties/included/items/anyOf/0/properties/type",
-                                "type": "string",
-                                "examples": [
-                                    "user"
-                                ]
-                            },
-                            "attributes": {
-                                "$id": "#/properties/included/items/anyOf/0/properties/attributes",
-                                "type": "object",
-                                "examples": [
-                                    {
-                                        "nickname": "niki4",
-                                        "avatar": "dummy_avatar_url.png"
-                                    }
-                                ],
-                                "required": [
-                                    "nickname",
-                                    "avatar"
-                                ],
-                                "properties": {
-                                    "nickname": {
-                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/nickname",
-                                        "type": "string",
-                                        "examples": [
-                                            "niki4"
-                                        ]
-                                    },
-                                    "avatar": {
-                                        "$id": "#/properties/included/items/anyOf/0/properties/attributes/properties/avatar",
-                                        "type": "string",
-                                        "examples": [
-                                            "dummy_avatar_url.png"
-                                        ]
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
+        {
+          "ref": "file:/pagination/numeric_pagination.json#"
         }
+      ]
     }
+  }
 }

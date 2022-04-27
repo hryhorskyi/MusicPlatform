@@ -8,6 +8,8 @@ module Api
         render status: :unauthorized
       end
 
+      PAGINATION_PARAMS = %i[after page per_page].freeze
+
       private
 
       def current_user

@@ -1,0 +1,5 @@
+en:
+  services:
+    pagination:
+      errors:
+        not_paginated_yet_error: Executed not paginated collection!

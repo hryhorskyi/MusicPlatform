@@ -14,10 +14,18 @@ Style/Documentation:
 Layout/LineLength:
   Max: 120
 
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*
+
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let', 'patch', 'delete', 'get', 'response']
   Exclude:
     - config/environments/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
 
 RSpec/EmptyExampleGroup:
   Exclude:

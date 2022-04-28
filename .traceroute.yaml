@@ -1,6 +1,7 @@
 ignore_unused_routes:
   - ^active_admin/devise*
   - ^admin/dashboard*
+  - ^active_storage*
   - /sidekiq
 ignore_unreachable_actions:
   - ^*request_method
@@ -13,3 +14,4 @@ ignore_unreachable_actions:
   - ^active_admin/devise*
   - ^devise*
   - ^admin/dashboard*
+  - ^active_storage*

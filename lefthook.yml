@@ -17,3 +17,5 @@ pre-commit:
       run: bundle exec rubocop --config .rubocop.yml
     brakeman:
       run: brakeman --no-pager
+    db_migration_consistency:
+      run: bundle exec rake checks:db_schema

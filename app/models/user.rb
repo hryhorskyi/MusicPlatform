@@ -7,6 +7,18 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :comments, dependent: :destroy
+
+  has_many :playlist_songs, dependent: :destroy
+
+  has_many :user_reactions, dependent: :destroy
+
+  has_many :owned_playlists,
+           class_name: 'Playlist',
+           foreign_key: 'owner_id',
+           inverse_of: :owner,
+           dependent: :destroy
+
   has_many :received_invitations,
            class_name: 'Invitation',
            foreign_key: 'receiver_id',

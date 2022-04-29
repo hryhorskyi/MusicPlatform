@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_26_003304) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_104209) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -77,6 +77,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_003304) do
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
+  create_table "comments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.text "text"
+    t.uuid "playlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_comments_on_playlist_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "friends", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "initiator_id"
     t.uuid "acceptor_id"
@@ -112,6 +122,30 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_003304) do
     t.index ["page_slug"], name: "index_page_contents_on_page_slug", unique: true
   end
 
+  create_table "playlist_songs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "song_id", null: false
+    t.uuid "user_id", null: false
+    t.uuid "playlist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
+    t.index ["song_id", "playlist_id"], name: "index_playlist_songs_on_song_id_and_playlist_id", unique: true
+    t.index ["song_id"], name: "index_playlist_songs_on_song_id"
+    t.index ["user_id"], name: "index_playlist_songs_on_user_id"
+  end
+
+  create_table "playlists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.integer "playlist_type", null: false
+    t.string "logo"
+    t.uuid "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "owner_id"], name: "index_playlists_on_name_and_owner_id", unique: true
+    t.index ["owner_id"], name: "index_playlists_on_owner_id"
+  end
+
   create_table "song_artists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "song_id", null: false
     t.uuid "artist_id", null: false
@@ -142,6 +176,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_003304) do
     t.index ["name", "album_id"], name: "index_songs_on_name_and_album_id", unique: true
   end
 
+  create_table "user_reactions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "playlist_id", null: false
+    t.integer "reaction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_user_reactions_on_playlist_id"
+    t.index ["user_id", "reaction"], name: "index_user_reactions_on_user_id_and_reaction", unique: true
+    t.index ["user_id"], name: "index_user_reactions_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -157,13 +202,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_003304) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "playlists"
+  add_foreign_key "comments", "users"
   add_foreign_key "friends", "users", column: "acceptor_id"
   add_foreign_key "friends", "users", column: "initiator_id"
   add_foreign_key "invitations", "users", column: "receiver_id"
   add_foreign_key "invitations", "users", column: "requestor_id"
+  add_foreign_key "playlist_songs", "playlists"
+  add_foreign_key "playlist_songs", "songs"
+  add_foreign_key "playlist_songs", "users"
+  add_foreign_key "playlists", "users", column: "owner_id"
   add_foreign_key "song_artists", "artists"
   add_foreign_key "song_artists", "songs"
   add_foreign_key "song_genres", "genres"
   add_foreign_key "song_genres", "songs"
   add_foreign_key "songs", "albums"
+  add_foreign_key "user_reactions", "playlists"
+  add_foreign_key "user_reactions", "users"
 end

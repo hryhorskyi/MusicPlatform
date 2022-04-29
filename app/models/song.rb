@@ -2,6 +2,7 @@
 
 class Song < ApplicationRecord
   belongs_to :album
+  has_many :playlist_songs, dependent: :destroy
   has_many :song_artists, dependent: :destroy
   has_many :artists, through: :song_artists
   has_many :song_genres, dependent: :destroy

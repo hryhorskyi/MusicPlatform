@@ -9,6 +9,7 @@ RSpec.describe Song, type: :model do
 
   describe 'associations' do
     it { is_expected.to belong_to(:album) }
+    it { is_expected.to have_many(:playlist_songs).dependent(:destroy) }
     it { is_expected.to have_many(:song_artists) }
     it { is_expected.to have_many(:artists).through(:song_artists) }
     it { is_expected.to have_many(:song_genres) }

@@ -15,6 +15,15 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
+    it { is_expected.to have_many(:comments).dependent(:destroy) }
+    it { is_expected.to have_many(:playlist_songs).dependent(:destroy) }
+    it { expect(build(:user)).to have_many(:user_reactions).dependent(:destroy) }
+
+    it {
+      expect(build(:user)).to have_many(:owned_playlists).class_name('Playlist').with_foreign_key('owner_id')
+                                                         .inverse_of(:owner).dependent(:destroy)
+    }
+
     it {
       expect(build(:user)).to have_many(:initiated_friendships).class_name('Friend').with_foreign_key('initiator_id')
                                                                .inverse_of(:initiator).dependent(:destroy)

@@ -40,8 +40,8 @@ lintering:rubocop:
   extends: .base
   stage: lintering
   script:
-    - bundle exec lefthook run pre-commit
-    - bundle exec lefthook run pre-push
+    - CI=true bundle exec lefthook run pre-commit
+    - CI=true bundle exec lefthook run pre-push 
 
 test:rspec:
   extends: .base_db

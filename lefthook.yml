@@ -7,6 +7,8 @@ pre-push:
       run: bundle exec bundler-audit check --update
     traceroute:
       run: FAIL_ON_ERROR=1 rake traceroute
+    checker_credentials:
+      run: bundle exec rake checks:credentials
 
 pre-commit:
   parallel: true

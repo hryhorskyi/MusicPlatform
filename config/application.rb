@@ -28,5 +28,6 @@ module EpamMusic
     config.middleware.use ActionDispatch::Session::CookieStore, key: Rails.application.credentials.cookie_store_key
     config.active_job.queue_adapter = :sidekiq
     config.action_mailer.preview_path = Rails.root.join('spec/mailers/previews')
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end

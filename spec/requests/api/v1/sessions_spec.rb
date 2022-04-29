@@ -2,10 +2,6 @@
 
 RSpec.describe 'Sessions', swagger_doc: 'v1/swagger.yaml', type: 'request' do
   path '/api/v1/session' do
-    before { JWTSessions.encryption_key = private_key }
-
-    let(:private_key) { '1234567890' }
-
     post(I18n.t('swagger.sessions.action.post')) do
       tags I18n.t('swagger.sessions.tags')
       consumes 'application/json'

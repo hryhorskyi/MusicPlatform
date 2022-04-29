@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe 'Friends', type: :request do
-  let(:private_key) { '1234567890' }
-
-  before do
-    JWTSessions.encryption_key = private_key
-  end
-
   path '/api/v1/friends' do
     get(I18n.t('swagger.friends.action.index')) do
       tags I18n.t('swagger.friends.tags')

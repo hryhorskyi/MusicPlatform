@@ -4,9 +4,6 @@ RSpec.describe SessionCreate, type: :service do
   describe '.call' do
     subject(:session) { described_class.call(user_id) }
 
-    before { JWTSessions.encryption_key = private_key }
-
-    let(:private_key) { '1234567890' }
     let(:user_id) { 1 }
 
     it 'has correct fields' do

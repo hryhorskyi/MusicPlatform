@@ -12,10 +12,8 @@ RSpec.describe 'Users', type: :request do
       let(:user1) { create(:user) }
       let(:user2) { create(:user) }
       let(:exclude_friends) { 'true' }
-      let(:private_key) { '1234567890' }
 
       before do
-        JWTSessions.encryption_key = private_key
         create(:friend, initiator_id: user1.id, acceptor_id: user2.id)
       end
 

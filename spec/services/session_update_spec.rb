@@ -2,9 +2,6 @@
 
 RSpec.describe SessionUpdate, type: :service do
   describe '.call' do
-    before { JWTSessions.encryption_key = private_key }
-
-    let(:private_key) { '1234567890' }
     let(:user_id) { 1 }
     let(:session) { SessionCreate.call(user_id) }
     let(:refresh_token) { session[:refresh] }

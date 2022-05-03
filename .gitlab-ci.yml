@@ -2,6 +2,7 @@ stages:
   - lintering
   - test
   - deploy
+  - notify
 
 image: "ruby:3.1.0"
 
@@ -67,6 +68,7 @@ deploy:staging_heroku:
   stage: deploy
   script:
     - dpl --provider=heroku --app=$HEROKU_STAGING_APP_NAME --api_key=$HEROKU_API_KEY --skip_cleanup
+    - sh .ci-notify.sh ✅
   environment:
     name: staging
     url: https://epam-music-staging.herokuapp.com/
@@ -78,8 +80,14 @@ deploy:production_heroku:
   stage: deploy
   script:
     - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP_NAME --api_key=$HEROKU_API_KEY --skip_cleanup
+    - sh .ci-notify.sh ✅
   environment:
     name: production
     url: https://epam-music.herokuapp.com/
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_BUILD_REF_NAME == "main"'
+notify_error:
+  stage: notify
+  script:
+    - sh .ci-notify.sh ❌
+  when: on_failure #deploy fail

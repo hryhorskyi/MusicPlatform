@@ -58,11 +58,11 @@ module Api
       end
 
       def permitted_update_params
-        params.permit(:invitation_id)
+        params.permit(:id)
       end
 
       def permitted_destroy_params
-        params.permit(:invitation_id)
+        params.permit(:id)
       end
     end
   end

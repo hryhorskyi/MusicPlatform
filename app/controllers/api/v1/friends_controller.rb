@@ -7,7 +7,7 @@ module Api
 
       def index
         friends = current_user.initiated_friendships
-                              .or(current_user.accepted_friendships).includes(:initiator, :acceptor)
+                              .or(current_user.accepted_friendships).lazy_preload(:initiator, :acceptor)
 
         render json: FriendSerializer.new(friends, { include: %i[initiator acceptor] }), status: :ok
       end

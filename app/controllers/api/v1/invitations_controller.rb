@@ -9,7 +9,7 @@ module Api
         result = Invitations::Index::Organizer.call(current_user: current_user, params: permitted_index_params)
 
         render json: InvitationSerializer.new(
-          result.collection.includes(:requestor, :receiver),
+          result.collection.lazy_preload(:requestor, :receiver),
           {
             meta: result.pagination_meta,
             include: %i[receiver requestor]

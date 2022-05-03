@@ -8,6 +8,7 @@ ruby File.read('.ruby-version').strip
 gem 'rails', '~> 7.0.1'
 
 gem 'activeadmin', '~> 2.11'
+gem 'ar_lazy_preload', '~> 1.0'
 gem 'bcrypt', '~> 3.1'
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.8'

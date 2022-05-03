@@ -86,6 +86,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ar_lazy_preload (1.0.0)
+      rails (>= 5.2)
     arbre (1.5.0)
       activesupport (>= 3.0.0, < 7.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
@@ -371,6 +373,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (~> 2.11)
+  ar_lazy_preload (~> 1.0)
   bcrypt (~> 3.1)
   bootsnap
   brakeman (~> 5.2)

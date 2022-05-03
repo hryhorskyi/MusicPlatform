@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :playlist do
-    name { FFaker::Music.album }
+    sequence(:name) { |n| FFaker::Music.album + n.to_s }
     description { FFaker::Lorem.paragraph }
     playlist_type { Playlist.playlist_types.values.first }
     owner { association(:user) }

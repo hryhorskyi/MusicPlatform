@@ -14,7 +14,7 @@ module Invitations
       private
 
       def invitation
-        context.current_user.sent_invitations.pending_status.find_by(id: context.params[:invitation_id])
+        context.current_user.sent_invitations.pending_status.find_by(id: context.params[:id])
       end
     end
   end

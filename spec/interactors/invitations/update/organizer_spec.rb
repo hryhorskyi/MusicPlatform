@@ -3,7 +3,7 @@
 RSpec.describe Invitations::Update::Organizer do
   describe '.call' do
     subject(:result) do
-      described_class.call(current_user: current_user, params: { invitation_id: invitation_id })
+      described_class.call(current_user: current_user, params: { id: invitation_id })
     end
 
     let(:current_user) { create(:user) }
@@ -50,7 +50,7 @@ RSpec.describe Invitations::Update::Organizer do
 
       it 'has correct error' do
         expected_error = I18n.t('invitation.update.errors.invitation_not_exist')
-        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_error)
+        expect(result.model.errors.messages[:id].first).to eq(expected_error)
       end
     end
 
@@ -63,7 +63,7 @@ RSpec.describe Invitations::Update::Organizer do
 
       it 'has correct error' do
         expected_error = I18n.t('invitation.update.errors.invitation_not_exist')
-        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_error)
+        expect(result.model.errors.messages[:id].first).to eq(expected_error)
       end
     end
 
@@ -77,7 +77,7 @@ RSpec.describe Invitations::Update::Organizer do
 
       it 'has correct error' do
         expected_error = I18n.t('invitation.update.errors.invitation_not_exist')
-        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_error)
+        expect(result.model.errors.messages[:id].first).to eq(expected_error)
       end
     end
 
@@ -90,7 +90,7 @@ RSpec.describe Invitations::Update::Organizer do
 
       it 'has correct error' do
         expected_error = I18n.t('invitation.update.errors.invitation_not_exist')
-        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_error)
+        expect(result.model.errors.messages[:id].first).to eq(expected_error)
       end
     end
 
@@ -103,7 +103,7 @@ RSpec.describe Invitations::Update::Organizer do
 
       it 'has correct error' do
         expected_error = I18n.t('invitation.update.errors.invitation_not_exist')
-        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_error)
+        expect(result.model.errors.messages[:id].first).to eq(expected_error)
       end
     end
 
@@ -116,7 +116,7 @@ RSpec.describe Invitations::Update::Organizer do
 
       it 'has correct error' do
         expected_error = I18n.t('invitation.update.errors.invitation_not_exist')
-        expect(result.model.errors.messages[:invitation_id].first).to eq(expected_error)
+        expect(result.model.errors.messages[:id].first).to eq(expected_error)
       end
     end
   end

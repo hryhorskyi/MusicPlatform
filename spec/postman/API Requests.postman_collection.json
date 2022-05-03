@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8bb86306-68fd-440e-925a-86e3521dc737",
+		"_postman_id": "454b9853-d67a-4ffe-b028-6cf91ca98b22",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -4550,18 +4550,8 @@
 										},
 										"method": "DELETE",
 										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "invitation_id",
-													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
-													"type": "text"
-												}
-											]
-										},
 										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
+											"raw": "{{url}}/api/v1/invitations/e3f75c76-cbd6-4534-b138-53bc10dc2d94",
 											"host": [
 												"{{url}}"
 											],
@@ -4569,11 +4559,82 @@
 												"api",
 												"v1",
 												"invitations",
-												"id"
+												"e3f75c76-cbd6-4534-b138-53bc10dc2d94"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Destroy",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/e3f75c76-cbd6-4534-b138-53bc10dc2d94",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"e3f75c76-cbd6-4534-b138-53bc10dc2d94"
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f80704c4-e36c-4334-8833-2819f12c5701"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.031004"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.216064453125, sql.active_record;dur=5.487548828125, instantiation.active_record;dur=0.25, process_action.action_controller;dur=16.684814453125"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
 								}
 							]
 						},
@@ -4606,7 +4667,7 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
+											"raw": "{{url}}/api/v1/invitations/436ad865-59c3-455a-bfed-8dac2a0e9881",
 											"host": [
 												"{{url}}"
 											],
@@ -4614,11 +4675,100 @@
 												"api",
 												"v1",
 												"invitations",
-												"id"
+												"436ad865-59c3-455a-bfed-8dac2a0e9881"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Current user is not requesor",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "invitation_id",
+															"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/436ad865-59c3-455a-bfed-8dac2a0e9881",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"436ad865-59c3-455a-bfed-8dac2a0e9881"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "27a57302-0190-40e8-8e58-bb293702d7f0"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.039950"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.167724609375, sql.active_record;dur=1.428955078125, instantiation.active_record;dur=0.046142578125, unpermitted_parameters.action_controller;dur=0.136962890625, process_action.action_controller;dur=4.319091796875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
 								},
 								{
 									"name": "Invitation status is not pending",
@@ -4635,18 +4785,8 @@
 										},
 										"method": "DELETE",
 										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "invitation_id",
-													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
-													"type": "text"
-												}
-											]
-										},
 										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
+											"raw": "{{url}}/api/v1/invitations/436ad865-59c3-455a-bfed-8dac2a0e9881",
 											"host": [
 												"{{url}}"
 											],
@@ -4654,11 +4794,90 @@
 												"api",
 												"v1",
 												"invitations",
-												"id"
+												"436ad865-59c3-455a-bfed-8dac2a0e9881"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Invitation status is not pending",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/436ad865-59c3-455a-bfed-8dac2a0e9881",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"436ad865-59c3-455a-bfed-8dac2a0e9881"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "8c0d1f81-e298-44e3-a30a-cc32681bed18"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.029306"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.14599609375, sql.active_record;dur=7.40576171875, instantiation.active_record;dur=0.0478515625, process_action.action_controller;dur=13.351318359375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
 								},
 								{
 									"name": "Unauthorized",
@@ -4675,18 +4894,8 @@
 										},
 										"method": "DELETE",
 										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "invitation_id",
-													"value": "5147f158-40e9-4923-abe2-4a918c75f8bc",
-													"type": "text"
-												}
-											]
-										},
 										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
+											"raw": "{{url}}/api/v1/invitations/436ad865-59c3-455a-bfed-8dac2a0e9881",
 											"host": [
 												"{{url}}"
 											],
@@ -4694,359 +4903,7 @@
 												"api",
 												"v1",
 												"invitations",
-												"id"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Invitation does not exist",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{access_token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "DELETE",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "invitation_id",
-													"value": "bad id",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"invitations",
-												"id"
-											]
-										}
-									},
-									"response": []
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "Update",
-					"item": [
-						{
-							"name": "Success",
-							"item": [
-								{
-									"name": "Update",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{access_token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"invitations",
-												"id"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Update",
-											"originalRequest": {
-												"method": "PATCH",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{url}}/api/v1/invitations/id",
-													"host": [
-														"{{url}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"invitations",
-														"id"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-XSS-Protection",
-													"value": "0"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "X-Download-Options",
-													"value": "noopen"
-												},
-												{
-													"key": "X-Permitted-Cross-Domain-Policies",
-													"value": "none"
-												},
-												{
-													"key": "Referrer-Policy",
-													"value": "strict-origin-when-cross-origin"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=utf-8"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept"
-												},
-												{
-													"key": "ETag",
-													"value": "W/\"334f5f75d1714fc19104e87304fb04b5\""
-												},
-												{
-													"key": "Cache-Control",
-													"value": "max-age=0, private, must-revalidate"
-												},
-												{
-													"key": "X-Request-Id",
-													"value": "47eda0ff-125e-4d93-b5c3-3300bd0adcb4"
-												},
-												{
-													"key": "X-Runtime",
-													"value": "0.117688"
-												},
-												{
-													"key": "Server-Timing",
-													"value": "start_processing.action_controller;dur=3.36865234375, sql.active_record;dur=71.72119140625, instantiation.active_record;dur=0.376220703125, unpermitted_parameters.action_controller;dur=0.2470703125, process_action.action_controller;dur=88.1171875"
-												},
-												{
-													"key": "Transfer-Encoding",
-													"value": "chunked"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\",\n        \"type\": \"invitation\",\n        \"attributes\": {\n            \"status\": \"declined\",\n            \"created_at\": \"2022-04-21 19:50:44\"\n        },\n        \"relationships\": {\n            \"requestor\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"receiver\": {\n                \"data\": {\n                    \"id\": \"37e7adb2-3805-4719-9bdc-2b925c860581\",\n                    \"type\": \"user\"\n                }\n            }\n        }\n    }\n}"
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "Failure",
-							"item": [
-								{
-									"name": "Incorrect invitation id",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{access_token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"invitations",
-												"id"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Incorrect invitation id",
-											"originalRequest": {
-												"method": "PATCH",
-												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "{\"invitation_id\": null}",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{url}}/api/v1/invitations/id",
-													"host": [
-														"{{url}}"
-													],
-													"path": [
-														"api",
-														"v1",
-														"invitations",
-														"id"
-													]
-												}
-											},
-											"status": "Unprocessable Entity",
-											"code": 422,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-XSS-Protection",
-													"value": "0"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "X-Download-Options",
-													"value": "noopen"
-												},
-												{
-													"key": "X-Permitted-Cross-Domain-Policies",
-													"value": "none"
-												},
-												{
-													"key": "Referrer-Policy",
-													"value": "strict-origin-when-cross-origin"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=utf-8"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept"
-												},
-												{
-													"key": "Cache-Control",
-													"value": "no-cache"
-												},
-												{
-													"key": "X-Request-Id",
-													"value": "7ae4c663-f95e-40b4-b339-94f264c58d54"
-												},
-												{
-													"key": "X-Runtime",
-													"value": "0.096577"
-												},
-												{
-													"key": "Server-Timing",
-													"value": "start_processing.action_controller;dur=1.743896484375, sql.active_record;dur=8.267333984375, instantiation.active_record;dur=0.063720703125, unpermitted_parameters.action_controller;dur=2.261962890625, process_action.action_controller;dur=81.18798828125"
-												},
-												{
-													"key": "Transfer-Encoding",
-													"value": "chunked"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Invitation_id\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/invitation_id\"\n            },\n            \"detail\": \"Invitation_id invitation doesn't exist\"\n        }\n    ]\n}"
-										}
-									]
-								},
-								{
-									"name": "Unauthorized",
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{access_token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "PATCH",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{url}}/api/v1/invitations/id",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"api",
-												"v1",
-												"invitations",
-												"id"
+												"436ad865-59c3-455a-bfed-8dac2a0e9881"
 											]
 										}
 									},
@@ -5054,19 +4911,10 @@
 										{
 											"name": "Unauthorized",
 											"originalRequest": {
-												"method": "PATCH",
+												"method": "DELETE",
 												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
 												"url": {
-													"raw": "{{url}}/api/v1/invitations/id",
+													"raw": "{{url}}/api/v1/invitations/436ad865-59c3-455a-bfed-8dac2a0e9881",
 													"host": [
 														"{{url}}"
 													],
@@ -5074,7 +4922,7 @@
 														"api",
 														"v1",
 														"invitations",
-														"id"
+														"436ad865-59c3-455a-bfed-8dac2a0e9881"
 													]
 												}
 											},
@@ -5120,15 +4968,488 @@
 												},
 												{
 													"key": "X-Request-Id",
-													"value": "3f9d207c-fe03-4a44-8f5e-041e2b51f02f"
+													"value": "48abc90d-6ae8-4b8c-afc7-c589f1ea94b5"
 												},
 												{
 													"key": "X-Runtime",
-													"value": "0.028634"
+													"value": "0.017810"
 												},
 												{
 													"key": "Server-Timing",
-													"value": "start_processing.action_controller;dur=3.604248046875, process_action.action_controller;dur=0.777587890625"
+													"value": "start_processing.action_controller;dur=0.1552734375, process_action.action_controller;dur=0.408203125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Invitation does not exist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/abra-ka-da-bra",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"abra-ka-da-bra"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Invitation does not exist",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/abra-ka-da-bra",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"abra-ka-da-bra"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f0fa1950-11a8-4092-a17f-503397e1dc2f"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.014548"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.14990234375, sql.active_record;dur=1.624755859375, instantiation.active_record;dur=0.046875, process_action.action_controller;dur=3.92236328125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Update",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/51ecee09-ec6e-4749-b8e0-2066dedbdd6f",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"51ecee09-ec6e-4749-b8e0-2066dedbdd6f"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Update",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/51ecee09-ec6e-4749-b8e0-2066dedbdd6f",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"51ecee09-ec6e-4749-b8e0-2066dedbdd6f"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"36164ff7328634f245c70e66f4dd869c\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "735deb2f-039b-4af7-82d0-206b51615b96"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.022231"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.678955078125, sql.active_record;dur=5.3349609375, instantiation.active_record;dur=0.308837890625, process_action.action_controller;dur=10.504150390625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"51ecee09-ec6e-4749-b8e0-2066dedbdd6f\",\n        \"type\": \"invitation\",\n        \"attributes\": {\n            \"status\": \"declined\",\n            \"created_at\": \"2022-05-03 15:47:01\"\n        },\n        \"relationships\": {\n            \"requestor\": {\n                \"data\": {\n                    \"id\": \"43e718b9-3b58-4e6c-8705-dc8adb284848\",\n                    \"type\": \"user\"\n                }\n            },\n            \"receiver\": {\n                \"data\": {\n                    \"id\": \"bfbf52d9-fbd7-4258-a601-dbeb4ed7239a\",\n                    \"type\": \"user\"\n                }\n            }\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Incorrect invitation id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/51ecee09-ec6e-4749-b8e0-2066dedbdd6f",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"51ecee09-ec6e-4749-b8e0-2066dedbdd6f"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect invitation id",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/51ecee09-ec6e-4749-b8e0-2066dedbdd6f",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"51ecee09-ec6e-4749-b8e0-2066dedbdd6f"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "0017cc4d-ec67-449c-86c3-33a5d673200a"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.014945"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.15283203125, sql.active_record;dur=1.76806640625, instantiation.active_record;dur=0.048828125, unpermitted_parameters.action_controller;dur=0.13720703125, process_action.action_controller;dur=4.718017578125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Id\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/id\"\n            },\n            \"detail\": \"Id invitation doesn't exist\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/invitations/51ecee09-ec6e-4749-b8e0-2066dedbdd6f",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"invitations",
+												"51ecee09-ec6e-4749-b8e0-2066dedbdd6f"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"invitation_id\": \"c4c0e07b-07f5-4e9a-b1fb-55abbcf8ac84\"}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/invitations/51ecee09-ec6e-4749-b8e0-2066dedbdd6f",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"invitations",
+														"51ecee09-ec6e-4749-b8e0-2066dedbdd6f"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "e052191a-c74e-4914-8166-810e122868dc"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.013009"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.513916015625, process_action.action_controller;dur=0.750732421875"
 												},
 												{
 													"key": "Transfer-Encoding",
@@ -8156,6 +8477,460 @@
 										}
 									},
 									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Playlists",
+			"item": [
+				{
+					"name": "Destroy",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Destroy",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/id?playlist_id=bc9095fa-bc4b-4770-b6fc-3a7089e4b673",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"id"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "bc9095fa-bc4b-4770-b6fc-3a7089e4b673"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Destroy",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": []
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/dd4ca49e-65ba-4a98-af28-03ca747cc188",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"dd4ca49e-65ba-4a98-af28-03ca747cc188"
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "1b06897e-943a-45ea-976d-2789cc350882"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.098447"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.200927734375, sql.active_record;dur=25.8740234375, instantiation.active_record;dur=7.311279296875, process_action.action_controller;dur=63.9619140625"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "When inccorect playlist_id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/abra-ka-da-bra",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"abra-ka-da-bra"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When inccorect playlist_id",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": []
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/abra-ka-da-bra",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"abra-ka-da-bra"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f9c13ff4-6d88-44cb-bbd2-20514eb66b12"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.021241"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.32373046875, sql.active_record;dur=1.8662109375, instantiation.active_record;dur=0.06201171875, process_action.action_controller;dur=4.9931640625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When playlist_id not provided",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												""
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When playlist_id not provided",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": []
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														""
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=UTF-8"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "db1469c5-87e4-4b47-9709-42a39945d7e0"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.016078"
+												},
+												{
+													"key": "Server-Timing",
+													"value": ""
+												},
+												{
+													"key": "Content-Length",
+													"value": "7584"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"exception\": \"#<ActionController::RoutingError: No route matches [DELETE] \\\"/api/v1/playlists\\\">\",\n    \"traces\": {\n        \"Application Trace\": [],\n        \"Framework Trace\": [\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 0,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 1,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/rack/capture_exceptions.rb:26:in `block (2 levels) in call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 2,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/hub.rb:199:in `with_session_tracking'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 3,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry-ruby.rb:350:in `with_session_tracking'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 4,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/rack/capture_exceptions.rb:17:in `block in call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 5,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/hub.rb:59:in `with_scope'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 6,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry-ruby.rb:330:in `with_scope'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 7,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/rack/capture_exceptions.rb:16:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 8,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 9,\n                \"trace\": \"railties (7.0.2.4) lib/rails/rack/logger.rb:36:in `call_app'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 10,\n                \"trace\": \"railties (7.0.2.4) lib/rails/rack/logger.rb:25:in `block in call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 11,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 12,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:37:in `tagged'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 13,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:99:in `tagged'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 14,\n                \"trace\": \"railties (7.0.2.4) lib/rails/rack/logger.rb:25:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 15,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 16,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 17,\n                \"trace\": \"rack (2.2.3) lib/rack/runtime.rb:22:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 18,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 19,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/server_timing.rb:20:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 20,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 21,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/static.rb:23:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 22,\n                \"trace\": \"rack (2.2.3) lib/rack/sendfile.rb:110:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 23,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 24,\n                \"trace\": \"railties (7.0.2.4) lib/rails/engine.rb:530:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 25,\n                \"trace\": \"puma (5.6.4) lib/puma/configuration.rb:252:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 26,\n                \"trace\": \"puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 27,\n                \"trace\": \"puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 28,\n                \"trace\": \"puma (5.6.4) lib/puma/request.rb:76:in `handle_request'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 29,\n                \"trace\": \"puma (5.6.4) lib/puma/server.rb:441:in `process_client'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 30,\n                \"trace\": \"puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'\"\n            }\n        ],\n        \"Full Trace\": [\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 0,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 1,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/rack/capture_exceptions.rb:26:in `block (2 levels) in call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 2,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/hub.rb:199:in `with_session_tracking'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 3,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry-ruby.rb:350:in `with_session_tracking'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 4,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/rack/capture_exceptions.rb:17:in `block in call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 5,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/hub.rb:59:in `with_scope'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 6,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry-ruby.rb:330:in `with_scope'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 7,\n                \"trace\": \"sentry-ruby-core (5.2.1) lib/sentry/rack/capture_exceptions.rb:16:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 8,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 9,\n                \"trace\": \"railties (7.0.2.4) lib/rails/rack/logger.rb:36:in `call_app'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 10,\n                \"trace\": \"railties (7.0.2.4) lib/rails/rack/logger.rb:25:in `block in call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 11,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 12,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:37:in `tagged'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 13,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/tagged_logging.rb:99:in `tagged'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 14,\n                \"trace\": \"railties (7.0.2.4) lib/rails/rack/logger.rb:25:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 15,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 16,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 17,\n                \"trace\": \"rack (2.2.3) lib/rack/runtime.rb:22:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 18,\n                \"trace\": \"activesupport (7.0.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 19,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/server_timing.rb:20:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 20,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 21,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/static.rb:23:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 22,\n                \"trace\": \"rack (2.2.3) lib/rack/sendfile.rb:110:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 23,\n                \"trace\": \"actionpack (7.0.2.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 24,\n                \"trace\": \"railties (7.0.2.4) lib/rails/engine.rb:530:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 25,\n                \"trace\": \"puma (5.6.4) lib/puma/configuration.rb:252:in `call'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 26,\n                \"trace\": \"puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 27,\n                \"trace\": \"puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 28,\n                \"trace\": \"puma (5.6.4) lib/puma/request.rb:76:in `handle_request'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 29,\n                \"trace\": \"puma (5.6.4) lib/puma/server.rb:441:in `process_client'\"\n            },\n            {\n                \"exception_object_id\": 37800,\n                \"id\": 30,\n                \"trace\": \"puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "When unathorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/dd4ca49e-65ba-4a98-af28-03ca747cc188",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"dd4ca49e-65ba-4a98-af28-03ca747cc188"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When unathorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": []
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/dd4ca49e-65ba-4a98-af28-03ca747cc188",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"dd4ca49e-65ba-4a98-af28-03ca747cc188"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f2112d9f-6f6f-4591-8c40-042513c2a2af"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.081775"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "sql.active_record;dur=14.16943359375, start_processing.action_controller;dur=0.161865234375, process_action.action_controller;dur=0.865966796875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
 								}
 							]
 						}

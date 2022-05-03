@@ -339,7 +339,7 @@ RSpec.describe 'Invitations', type: :request do
     end
   end
 
-  path '/api/v1/invitations/id' do
+  path '/api/v1/invitations/{id}' do
     delete(I18n.t('swagger.invitations.action.delete')) do
       tags I18n.t('swagger.invitations.tags')
 
@@ -347,22 +347,7 @@ RSpec.describe 'Invitations', type: :request do
       produces 'application/json'
 
       parameter name: 'authorization', in: :header, type: :string, required: true
-
-      parameter name: :params,
-                in: :body,
-                schema: {
-                  type: :object,
-                  items: {
-                    type: :object,
-                    properties: {
-                      invitation_id: { type: :integer }
-                    }
-                  },
-                  example: {
-                    invitation_id: 1
-                  },
-                  required: %w[invitation_id]
-                }
+      parameter name: :id, in: :path, type: :string, example: SecureRandom.uuid
 
       let(:requestor) { create(:user) }
       let(:receiver) { create(:user) }
@@ -372,28 +357,28 @@ RSpec.describe 'Invitations', type: :request do
 
       response '204', 'when invitation status became revoked' do
         let(:authorization) { SessionCreate.call(requestor.id)[:access] }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test!
       end
 
       response '401', 'unauthorized' do
         let(:authorization) { nil }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test!
       end
 
       response '404', 'when invitation does not exist' do
         let(:authorization) { SessionCreate.call(requestor.id)[:access] }
-        let(:params) { { invitation_id: -1 } }
+        let(:id) { -1 }
 
         run_test!
       end
 
       response '404', 'when current_user is not requestor for provided invitation' do
         let(:authorization) { SessionCreate.call(create(:user).id)[:access] }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test!
       end
@@ -404,7 +389,7 @@ RSpec.describe 'Invitations', type: :request do
           create(:invitation, requestor: requestor, receiver: receiver, status: :revoked)
         end
 
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test!
       end
@@ -417,21 +402,7 @@ RSpec.describe 'Invitations', type: :request do
       produces 'application/json'
 
       parameter name: 'authorization', in: :header, type: :string, required: true
-      parameter name: :params,
-                in: :body,
-                schema: {
-                  type: :object,
-                  items: {
-                    type: :object,
-                    properties: {
-                      invitation_id: { type: :string }
-                    }
-                  },
-                  example: {
-                    invitation_id: '67faeb8e-c223-4c92-a0ad-56fa07eb1344'
-                  },
-                  required: %w[invitation_id]
-                }
+      parameter name: :id, in: :path, type: :string, example: SecureRandom.uuid
 
       let(:requestor) { create(:user) }
       let(:current_user) { create(:user) }
@@ -443,7 +414,7 @@ RSpec.describe 'Invitations', type: :request do
 
       response '200', 'when invitation successfully updated and response match with schema' do
         let(:authorization) { SessionCreate.call(current_user.id)[:access] }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/invitations/update')
@@ -452,14 +423,14 @@ RSpec.describe 'Invitations', type: :request do
 
       response '401', 'unauthorized' do
         let(:authorization) { ' ' }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test!
       end
 
       response '422', 'when invitation does not exist' do
         let(:authorization) { SessionCreate.call(current_user.id)[:access] }
-        let(:params) { { invitation_id: nil } }
+        let(:id) { -1 }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/errors')
@@ -469,7 +440,7 @@ RSpec.describe 'Invitations', type: :request do
       response '422', 'when invitation exist but receiver is not current user' do
         let(:authorization) { SessionCreate.call(current_user.id)[:access] }
         let(:receiver) { create(:user) }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/errors')
@@ -479,7 +450,7 @@ RSpec.describe 'Invitations', type: :request do
       response '422', 'when invitation exist but status is not pending' do
         let(:authorization) { SessionCreate.call(current_user.id)[:access] }
         let(:status) { :accepted }
-        let(:params) { { invitation_id: invitation.id } }
+        let(:id) { invitation.id }
 
         run_test! do |response|
           expect(response).to match_json_schema('v1/errors')

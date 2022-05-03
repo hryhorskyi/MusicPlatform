@@ -3,7 +3,7 @@
 RSpec.describe Invitations::Destroy::Organizer do
   describe '.call' do
     subject(:result) do
-      described_class.call(current_user: requestor, params: { invitation_id: invitation_id })
+      described_class.call(current_user: requestor, params: { id: invitation_id })
     end
 
     let(:requestor) { create(:user) }

@@ -36,6 +36,8 @@ image: "ruby:3.1.0"
     - gem install dpl
     - gem install faraday -v 1.10.0
     - apt-get update
+    - curl -sL https://sentry.io/get-cli/ | bash
+    - export RELEASE_VERSION=$(git rev-parse --short=5 HEAD)
 
 lintering:rubocop:
   extends: .base
@@ -66,8 +68,12 @@ test:rspec:
 deploy:staging_heroku:
   extends: .base_deploy
   stage: deploy
+  variables:
+    SENTRY_ENV: staging
   script:
     - dpl --provider=heroku --app=$HEROKU_STAGING_APP_NAME --api_key=$HEROKU_API_KEY --skip_cleanup
+    - sentry-cli releases --org $PROJECT_NAME -p $PROJECT_NAME new $RELEASE_VERSION
+    - sentry-cli releases --org $PROJECT_NAME -p $PROJECT_NAME deploys $RELEASE_VERSION new -e $SENTRY_ENV
     - sh .ci-notify.sh ✅
   environment:
     name: staging
@@ -78,8 +84,12 @@ deploy:staging_heroku:
 deploy:production_heroku:
   extends: .base_deploy
   stage: deploy
+  variables:
+    SENTRY_ENV: production
   script:
     - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP_NAME --api_key=$HEROKU_API_KEY --skip_cleanup
+    - sentry-cli releases --org $PROJECT_NAME -p $PROJECT_NAME new $RELEASE_VERSION
+    - sentry-cli releases --org $PROJECT_NAME -p $PROJECT_NAME deploys $RELEASE_VERSION new -e $SENTRY_ENV
     - sh .ci-notify.sh ✅
   environment:
     name: production

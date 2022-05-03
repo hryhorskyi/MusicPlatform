@@ -28,3 +28,7 @@ en:
         index: show invitation list
         delete: delete invitation
         patch: update invitation
+    playlists:
+      tags: Playlists
+      action:
+        delete: delete playlist

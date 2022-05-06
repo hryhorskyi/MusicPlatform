@@ -32,3 +32,4 @@ en:
       tags: Playlists
       action:
         delete: delete playlist
+        post: create playlist

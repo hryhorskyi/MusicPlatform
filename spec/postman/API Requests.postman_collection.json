@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "454b9853-d67a-4ffe-b028-6cf91ca98b22",
+		"_postman_id": "212d90d2-8668-4c2f-bd01-80231b683d6f",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -4632,7 +4632,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								}
@@ -8604,7 +8604,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								}
@@ -8935,8 +8935,1175 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Create public playlist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"public\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create public playlist",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"public\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"06866e798558a9f8932a1d2df7eb356c\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "cac0e704-19b6-4adb-b5a7-196d50b3e21a"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.158991"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.39453125, sql.active_record;dur=89.216552734375, instantiation.active_record;dur=0.082763671875, process_action.action_controller;dur=112.784423828125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"c5f6f896-fc68-41ea-840a-30c6bdfcdc2e\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"best_playlist\",\n            \"description\": \"best music of 2022\",\n            \"likes_count\": 0,\n            \"unlikes_count\": 0,\n            \"logo\": \"dummy_logo_url.png\",\n            \"created_at\": \"2022-05-05 15:59:26\",\n            \"updated_at\": \"2022-05-05 15:59:26\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"songs\": {\n                \"data\": []\n            },\n            \"comments\": {\n                \"data\": []\n            }\n        }\n    }\n}"
+										},
+										{
+											"name": "Create public playlist Copy",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"public\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"06866e798558a9f8932a1d2df7eb356c\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "cac0e704-19b6-4adb-b5a7-196d50b3e21a"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.158991"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.39453125, sql.active_record;dur=89.216552734375, instantiation.active_record;dur=0.082763671875, process_action.action_controller;dur=112.784423828125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"c5f6f896-fc68-41ea-840a-30c6bdfcdc2e\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"best_playlist\",\n            \"description\": \"best music of 2022\",\n            \"likes_count\": 0,\n            \"unlikes_count\": 0,\n            \"logo\": \"dummy_logo_url.png\",\n            \"created_at\": \"2022-05-05 15:59:26\",\n            \"updated_at\": \"2022-05-05 15:59:26\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"songs\": {\n                \"data\": []\n            },\n            \"comments\": {\n                \"data\": []\n            }\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create shared playlist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"shared\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create shared playlist",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"shared\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"65e443a3e727f718326d3fed97e2f22b\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "83872e1d-5f84-4d37-854d-e0dff2002995"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.143265"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=5.390380859375, sql.active_record;dur=82.1953125, instantiation.active_record;dur=0.142822265625, process_action.action_controller;dur=120.281494140625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"a1cf9b1b-eae7-4f54-b4cd-f7f957a2083a\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"best_playlist\",\n            \"description\": \"best music of 2022\",\n            \"likes_count\": 0,\n            \"unlikes_count\": 0,\n            \"logo\": \"dummy_logo_url.png\",\n            \"created_at\": \"2022-05-05 16:01:17\",\n            \"updated_at\": \"2022-05-05 16:01:17\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"songs\": {\n                \"data\": []\n            },\n            \"comments\": {\n                \"data\": []\n            }\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create private playlist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"private\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create private playlist",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"best music of 2022\", \"playlist_type\": \"private\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"aca48f44c81aaf1565d3ef37ee8f3b48\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "47ed470c-5a21-471e-b3f8-dea3ca83bd07"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.132445"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.259033203125, sql.active_record;dur=77.375, instantiation.active_record;dur=0.089599609375, process_action.action_controller;dur=105.940185546875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"50beeec5-1479-48d2-8db3-830ded6a61f7\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"best_playlist\",\n            \"description\": \"best music of 2022\",\n            \"likes_count\": 0,\n            \"unlikes_count\": 0,\n            \"logo\": \"dummy_logo_url.png\",\n            \"created_at\": \"2022-05-05 16:03:14\",\n            \"updated_at\": \"2022-05-05 16:03:14\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"songs\": {\n                \"data\": []\n            },\n            \"comments\": {\n                \"data\": []\n            }\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create playlist without description",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"playlist_type\": \"shared\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create playlist without description",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"playlist_type\": \"shared\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"a72d4075056603817f94c381e4939289\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "68b518df-47ca-4e55-953b-4def1c04f51d"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.132853"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=4.42919921875, sql.active_record;dur=84.59619140625, instantiation.active_record;dur=0.10400390625, process_action.action_controller;dur=106.6328125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"acecf9cd-639c-4fc8-889b-d01f55701a3d\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"best_playlist\",\n            \"description\": null,\n            \"likes_count\": 0,\n            \"unlikes_count\": 0,\n            \"logo\": \"dummy_logo_url.png\",\n            \"created_at\": \"2022-05-05 16:04:29\",\n            \"updated_at\": \"2022-05-05 16:04:29\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"67bd36cb-66bd-4318-a40c-f36f29beedd7\",\n                    \"type\": \"user\"\n                }\n            },\n            \"songs\": {\n                \"data\": []\n            },\n            \"comments\": {\n                \"data\": []\n            }\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "When name is too short",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"b\", \"description\": \"description\",\"playlist_type\": \"shared\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When name is too short",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"b\", \"description\": \"description\",\"playlist_type\": \"shared\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "a255b38b-b02b-4d24-86f5-8a7cb573c85c"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.059314"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=3.1337890625, sql.active_record;dur=14.78955078125, instantiation.active_record;dur=0.0810546875, process_action.action_controller;dur=28.316162109375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Name\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/name\"\n            },\n            \"detail\": \"Name is too short (minimum is 2 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "When name is too long",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"too_long_name\", \"1\".repeat(81));"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.environment.unset(\"too_long_name\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": " {\"playlist\": {\"name\": \"{{too_long_name}}\", \"playlist_type\": \"shared\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When name is too long",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": " {\"playlist\": {\"name\": \"{{too_long_name}}\", \"playlist_type\": \"shared\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "32fb79eb-033e-46a6-bee4-87b3bfab39bd"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.065698"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=1.47021484375, sql.active_record;dur=18.814453125, instantiation.active_record;dur=0.0927734375, process_action.action_controller;dur=34.64990234375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Name\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/name\"\n            },\n            \"detail\": \"Name is too long (maximum is 80 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "When description is too long",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"too_long_description\", \"1\".repeat(256));"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.environment.unset(\"too_long_description\");"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"{{too_long_description}}\", \"playlist_type\": \"shared\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When description is too long",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"{{too_long_description}}\", \"playlist_type\": \"shared\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "bb120b4f-7c28-4fd9-b530-aed9491fd2b1"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.054567"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=2.1103515625, sql.active_record;dur=12.53125, instantiation.active_record;dur=0.102783203125, process_action.action_controller;dur=27.94091796875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Description\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/description\"\n            },\n            \"detail\": \"Description is too long (maximum is 255 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "When playlist_type is invalid",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"description\", \"playlist_type\": \"invalid\"}}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When playlist_type is invalid",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"playlist\": {\"name\": \"best_playlist\", \"description\": \"description\", \"playlist_type\": \"invalid\"}}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f69e5d63-c2c6-4b13-90af-a581cd3ecb95"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.042359"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=3.047607421875, sql.active_record;dur=5.407958984375, instantiation.active_record;dur=0.156494140625, process_action.action_controller;dur=16.666259765625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Playlist_type\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/playlist_type\"\n            },\n            \"detail\": \"Playlist_type is invalid\"\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "too_long_name",
+			"value": ""
 		}
 	]
 }

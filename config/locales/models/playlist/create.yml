@@ -1,0 +1,5 @@
+en:
+  playlist:
+    create:
+      errors:
+        invalid_playlist_type: is invalid

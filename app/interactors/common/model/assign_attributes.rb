@@ -4,7 +4,7 @@ module Common
   module Model
     class AssignAttributes < Common::BaseInteractor
       def call
-        context.model.assign_attributes(context.params)
+        context.model.assign_attributes(context.model_params || context.params)
       end
     end
   end

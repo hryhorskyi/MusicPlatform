@@ -20,6 +20,14 @@ RSpec.describe Playlist, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
+
+    it do
+      expect(described_class.new).to validate_length_of(:name)
+        .is_at_least(Playlist::NAME_LENGTH_RANGE.first)
+        .is_at_most(Playlist::NAME_LENGTH_RANGE.last)
+    end
+
+    it { is_expected.to validate_length_of(:description).is_at_most(Playlist::DESCRIPTION_MAX_LENGTH) }
     it { is_expected.to validate_presence_of(:playlist_type) }
     it { expect(build(:playlist)).to validate_uniqueness_of(:name).scoped_to(:owner_id) }
   end

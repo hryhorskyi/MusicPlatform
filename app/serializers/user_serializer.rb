@@ -13,4 +13,8 @@ class UserSerializer < BaseSerializer
     # TODO: Number of shared playlists logic
     rand(10)
   end
+
+  attribute :created_at do |object|
+    object.created_at.strftime(DATE_TIME_FORMAT)
+  end
 end

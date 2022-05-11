@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Playlist do
-  includes :song
-  includes :user_reaction
-  includes :comment
+  includes :songs
+  includes :user_reactions
+  includes :comments
   actions :index
 end

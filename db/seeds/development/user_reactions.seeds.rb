@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-USER_REACTIONS_QUANTITY = 10
+USER_REACTIONS_QUANTITY = 1
 
 after 'development:playlists', 'development:users' do
   USER_REACTIONS_QUANTITY.times do

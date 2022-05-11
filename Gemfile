@@ -41,6 +41,7 @@ group :development, :test do
   gem 'ffaker', '~> 2.21'
   gem 'lefthook', '~> 0.7'
   gem 'pry', '~> 0.14'
+  gem 'pry-byebug', '~> 3.8', require: false
   gem 'rubocop', '~> 1.27'
   gem 'rubocop-performance', '~> 1.13'
   gem 'rubocop-rails', '~> 2.13'

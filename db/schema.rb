@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_26_104209) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_103718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -61,13 +61,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_104209) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
+  create_table "album_artists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "album_id", null: false
+    t.uuid "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id", "artist_id"], name: "index_album_artists_on_album_id_and_artist_id", unique: true
+    t.index ["album_id"], name: "index_album_artists_on_album_id"
+    t.index ["artist_id"], name: "index_album_artists_on_artist_id"
+  end
+
   create_table "albums", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "artist_id"
-    t.index ["artist_id"], name: "index_albums_on_artist_id"
-    t.index ["name", "artist_id"], name: "index_albums_on_name_and_artist_id", unique: true
   end
 
   create_table "artists", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -202,6 +209,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_104209) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "album_artists", "albums"
+  add_foreign_key "album_artists", "artists"
   add_foreign_key "comments", "playlists"
   add_foreign_key "comments", "users"
   add_foreign_key "friends", "users", column: "acceptor_id"

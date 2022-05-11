@@ -19,7 +19,7 @@ Metrics/AbcSize:
     - db/migrate/*
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let', 'patch', 'delete', 'get', 'response']
+  IgnoredMethods: ['describe', 'path', 'xdescribe', 'post', 'context', 'it', 'let', 'patch', 'delete', 'get', 'response', 'register']
   Exclude:
     - config/environments/*
 

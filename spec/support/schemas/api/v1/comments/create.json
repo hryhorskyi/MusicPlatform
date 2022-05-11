@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "required": [
+    "data",
+    "included"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "attributes",
+        "relationships"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "examples": [
+            "9ae07406-8d05-4eb0-a9cb-a5cb75d4bb15"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "examples": [
+            "comment"
+          ]
+        },
+        "attributes": {
+          "type": "object",
+          "required": [
+            "text",
+            "created_at"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "examples": [
+                "Comment from Beattrey2"
+              ]
+            },
+            "created_at": {
+              "type": "string",
+              "examples": [
+                "2022-05-08 12:02:00"
+              ]
+            }
+          }
+        },
+        "relationships": {
+          "type": "object",
+          "required": [
+            "user"
+          ],
+          "properties": {
+            "user": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "type"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "examples": [
+                        "5594e5bd-ee17-420b-9cb0-4461e85e1bea"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "examples": [
+                        "user"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "included": {
+      "type": "array",
+      "items": {
+      "$ref": "file:/entities/public_user.json#"
+      }
+    }
+  }
+}

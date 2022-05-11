@@ -1,0 +1,56 @@
+{
+    "id": "file:/entities/public_user.json#",
+    "type": "object",
+    "required": [
+        "id",
+        "type",
+        "attributes"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "examples": [
+                "5594e5bd-ee17-420b-9cb0-4461e85e1bea"
+            ]
+        },
+        "type": {
+            "type": "string",
+            "examples": [
+                "user"
+            ]
+        },
+        "attributes": {
+            "type": "object",
+            "required": [
+                "nickname",
+                "avatar"
+            ],
+            "properties": {
+                "nickname": {
+                    "type": "string",
+                    "examples": [
+                        "beattrey1"
+                    ]
+                },
+                "avatar": {
+                    "type": "string",
+                    "examples": [
+                        "dummy_avatar_url.png"
+                    ]
+                }
+            },
+            "examples": [{
+                "nickname": "beattrey1",
+                "avatar": "dummy_avatar_url.png"
+            }]
+        }
+    },
+    "examples": [{
+        "id": "5594e5bd-ee17-420b-9cb0-4461e85e1bea",
+        "type": "user",
+        "attributes": {
+            "nickname": "beattrey1",
+            "avatar": "dummy_avatar_url.png"
+        }
+    }]
+}

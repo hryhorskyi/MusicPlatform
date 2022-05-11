@@ -1,0 +1,7 @@
+en:
+  comments:
+    create:
+      errors:
+        text_too_short: is too short, should be more 10 characters
+        text_too_long: is too long, should be less 500 characters
+        comments_send_too_often: is sent too often

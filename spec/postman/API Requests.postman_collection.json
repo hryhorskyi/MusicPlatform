@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "212d90d2-8668-4c2f-bd01-80231b683d6f",
+		"_postman_id": "bd471193-aec0-4639-adae-1cf376639139",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10090,6 +10090,1031 @@
 											],
 											"cookie": [],
 											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Playlist_type\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/playlist_type\"\n            },\n            \"detail\": \"Playlist_type is invalid\"\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User reactions",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "like",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "like",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"795acf3fce2dd65d4d16c16b99a61802\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "2d33b4f5-ab8b-46ca-9e48-00fd6ddf20ef"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.096628"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.399169921875, sql.active_record;dur=33.687744140625, instantiation.active_record;dur=5.971435546875, process_action.action_controller;dur=86.2939453125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"ae1af41c-6ea6-49f7-9805-0409d16e9f10\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"Lovish\",\n            \"description\": \"Aperiam laboriosam possimus ipsa ullam doloribus dolorem quis quam. Tenetur blanditiis molestiae iste ipsam rerum temporibus ratione. Ipsa dolorum eos incidunt nam hic corporis dolore. Nesciunt nam sed hic ad explicabo quo voluptas labore. Hic itaque quos ullam recusandae reprehenderit sed odio labore.\",\n            \"likes_count\": 1,\n            \"dislikes_count\": 0,\n            \"logo\": \"DUMMY\",\n            \"created_at\": \"2022-05-05 20:59:49\",\n            \"updated_at\": \"2022-05-05 20:59:49\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"377a0bbd-5acd-4549-8b32-7d71fc65c536\",\n                    \"type\": \"user\"\n                }\n            },\n            \"user_reactions\": {\n                \"data\": [\n                    {\n                        \"id\": \"8ebdd9b4-ec61-4b19-9b3e-01b7ee768603\",\n                        \"type\": \"user_reaction\"\n                    }\n                ]\n            },\n            \"songs\": {\n                \"data\": [\n                    {\n                        \"id\": \"2f13dafe-b346-435d-ae21-f9f23ceb7468\",\n                        \"type\": \"song\"\n                    },\n                    {\n                        \"id\": \"a49043a2-2ae1-4298-8a91-ccbb2b3cbe33\",\n                        \"type\": \"song\"\n                    }\n                ]\n            },\n            \"comments\": {\n                \"data\": [\n                    {\n                        \"id\": \"1f1e44a4-48c1-41cc-acd2-9cd62f838ca5\",\n                        \"type\": \"comment\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "bad token",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "like",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "like",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "2e189f66-95af-4b86-a168-18b7d289a2d8"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.004858"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.14697265625, process_action.action_controller;dur=0.541259765625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Playlist not found",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "like",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/1/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"1",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Playlist not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "like",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/1/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"1",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "50e32106-85a4-4761-993c-e110c7475c4a"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.022576"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.16748046875, sql.active_record;dur=1.935546875, instantiation.active_record;dur=0.111328125, process_action.action_controller;dur=18.955078125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Invalid reaction",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "bad reaction",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Invalid reaction",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "bad reaction",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "ab792fa9-e85a-4d86-b880-f5ddc124dfcf"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.011241"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.139892578125, sql.active_record;dur=3.210205078125, instantiation.active_record;dur=0.139892578125, process_action.action_controller;dur=7.2646484375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Reaction\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/reaction\"\n            },\n            \"detail\": \"Reaction reaction for such playlist already exists\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Reaction already exists",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "like",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Reaction already exists",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "like",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/ae1af41c-6ea6-49f7-9805-0409d16e9f10/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"ae1af41c-6ea6-49f7-9805-0409d16e9f10",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "756ee62c-50fb-48b8-aa02-e99218be8e0d"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.010961"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.15087890625, sql.active_record;dur=3.6533203125, instantiation.active_record;dur=0.183349609375, process_action.action_controller;dur=7.625732421875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Reaction\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/reaction\"\n            },\n            \"detail\": \"Reaction reaction for such playlist already exists\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Playlist is private",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "like",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/38946622-e295-43e9-8766-e94d00aebb74/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"38946622-e295-43e9-8766-e94d00aebb74",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Playlist is private",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "like",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/38946622-e295-43e9-8766-e94d00aebb74/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"38946622-e295-43e9-8766-e94d00aebb74",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "fdcbe0ef-d5c8-4b9c-b053-8a226d15e461"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.011624"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.16064453125, sql.active_record;dur=3.28125, instantiation.active_record;dur=0.292724609375, process_action.action_controller;dur=7.56640625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "User is playlist owner",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "reaction",
+													"value": "like",
+													"type": "text"
+												},
+												{
+													"key": "",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/d46e11e7-1f68-4bdf-b5cb-824e365bce05/user_reactions",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"d46e11e7-1f68-4bdf-b5cb-824e365bce05",
+												"user_reactions"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "User is playlist owner",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "reaction",
+															"value": "like",
+															"type": "text"
+														},
+														{
+															"key": "",
+															"value": "",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/d46e11e7-1f68-4bdf-b5cb-824e365bce05/user_reactions",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"d46e11e7-1f68-4bdf-b5cb-824e365bce05",
+														"user_reactions"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "13384381-f559-4ece-88ce-100ec9738b6a"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.013462"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.2001953125, sql.active_record;dur=4.23876953125, instantiation.active_record;dur=0.421875, process_action.action_controller;dur=9.771728515625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
 										}
 									]
 								}

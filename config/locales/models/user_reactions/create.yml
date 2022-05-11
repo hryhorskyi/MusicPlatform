@@ -1,0 +1,6 @@
+en:
+  user_reactions:
+    create:
+      errors:
+        invalid_reaction: incorrect type of reaction
+        exist: reaction for such playlist already exists

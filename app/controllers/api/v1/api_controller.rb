@@ -22,7 +22,11 @@ module Api
       end
 
       def render_errors(object:, status:)
-        render json: BuildErrors.call(object, status), status: status
+        if BuildErrors::ERRORS_WITHOUT_BODY.include?(status)
+          render status: status
+        else
+          render json: BuildErrors.call(object, status), status: status
+        end
       end
     end
   end

@@ -4,7 +4,7 @@ class PlaylistSerializer < BaseSerializer
   DEFAULT_LOGO_URL = 'dummy_logo_url.png'
 
   belongs_to :owner, serializer: UserSerializer
-
+  has_many :user_reactions
   has_many :songs
   has_many :comments
 
@@ -14,8 +14,8 @@ class PlaylistSerializer < BaseSerializer
     object.user_reactions.like_reaction.count
   end
 
-  attribute :unlikes_count do |object|
-    object.user_reactions.unlike_reaction.count
+  attribute :dislikes_count do |object|
+    object.user_reactions.dislike_reaction.count
   end
 
   attribute :logo do |object|

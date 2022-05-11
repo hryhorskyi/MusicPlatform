@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_103718) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_05_192841) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -190,7 +190,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_103718) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["playlist_id"], name: "index_user_reactions_on_playlist_id"
-    t.index ["user_id", "reaction"], name: "index_user_reactions_on_user_id_and_reaction", unique: true
+    t.index ["user_id", "playlist_id"], name: "index_user_reactions_on_user_id_and_playlist_id", unique: true
     t.index ["user_id"], name: "index_user_reactions_on_user_id"
   end
 

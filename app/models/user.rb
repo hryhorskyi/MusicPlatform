@@ -46,4 +46,8 @@ class User < ApplicationRecord
   def invitations
     received_invitations.or(sent_invitations)
   end
+
+  def friends
+    initiated_friendships.or(accepted_friendships)
+  end
 end

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bd471193-aec0-4639-adae-1cf376639139",
+		"_postman_id": "88cfaf4a-2a80-4754-9194-22b4c6837cb3",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11107,6 +11107,1046 @@
 												{
 													"key": "Server-Timing",
 													"value": "start_processing.action_controller;dur=0.2001953125, sql.active_record;dur=4.23876953125, instantiation.active_record;dur=0.421875, process_action.action_controller;dur=9.771728515625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Create comment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"3b56470a-6ae7-4974-ba6e-6dbc24c3261c\", \"text\": \"some\"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create comment",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"87ec16a6-b260-49e3-8f22-0b532d58c5db\", \"text\": \"Comment from Beattrey2\"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"43e7e80e38b942b87d7b24ae7ba371d0\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "c36c617d-8a28-4506-930a-74c198778cdd"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "13.844723"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "active_admin.application.before_load;dur=0.7177734375, active_admin.resource.register;dur=0.544921875, active_admin.application.after_load;dur=0.113037109375, start_processing.action_controller;dur=0.548583984375, sql.active_record;dur=176.862060546875, instantiation.active_record;dur=19.026123046875, process_action.action_controller;dur=13254.597412109375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"9ae07406-8d05-4eb0-a9cb-a5cb75d4bb15\",\n        \"type\": \"comment\",\n        \"attributes\": {\n            \"text\": \"Comment from Beattrey2\",\n            \"created_at\": \"2022-05-08 12:02:00\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"data\": {\n                    \"id\": \"5594e5bd-ee17-420b-9cb0-4461e85e1bea\",\n                    \"type\": \"user\"\n                }\n            }\n        }\n    },\n    \"included\": [\n        {\n            \"id\": \"5594e5bd-ee17-420b-9cb0-4461e85e1bea\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"nickname\": \"beattrey1\",\n                \"avatar\": \"dummy_avatar_url.png\"\n            }\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "In private playlist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"3b56470a-6ae7-4974-ba6e-6dbc24c3261c\", \"text\": \"12345678  \"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "In private playlist",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"3b56470a-6ae7-4974-ba6e-6dbc24c3261c\", \"text\": \"12345678  \"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "e6ea8ae2-142f-4b08-ba5e-ee5d8cc94844"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.010739"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.333984375, process_action.action_controller;dur=1.108642578125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "With incorrect token",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"3b56470a-6ae7-4974-ba6e-6dbc24c3261c\", \"text\": \"12345678  \"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "With incorrect token",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"3b56470a-6ae7-4974-ba6e-6dbc24c3261c\", \"text\": \"12345678  \"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "b86c5c09-da69-416f-9be0-323626a4832f"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.007723"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.2099609375, process_action.action_controller;dur=0.594970703125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When playlist not found",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"123\", \"text\": \"12345678  \"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When playlist not found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"123\", \"text\": \"12345678  \"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "7e896d80-4f57-4b83-b01f-f3ee8c38a446"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.017799"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=1.67529296875, sql.active_record;dur=4.09521484375, instantiation.active_record;dur=0.2119140625, process_action.action_controller;dur=8.356689453125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "In shared list not friend",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"cc314542-7d39-42b8-bdb5-8316cd0dcb26\", \"text\": \"12345678  \"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "In shared list not friend",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"cc314542-7d39-42b8-bdb5-8316cd0dcb26\", \"text\": \"12345678  \"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "06c169e1-97b5-4711-b338-8b422a3935e6"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.306911"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "sql.active_record;dur=113.399658203125, start_processing.action_controller;dur=0.474609375, process_action.action_controller;dur=2.218505859375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When text is too short",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"cc314542-7d39-42b8-bdb5-8316cd0dcb26\", \"text\": \"12345678  \"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When text is too short",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"cc314542-7d39-42b8-bdb5-8316cd0dcb26\", \"text\": \"12345678  \"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "550d7b1a-5441-47a4-b977-0f13081fd977"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.178214"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.440673828125, sql.active_record;dur=47.070068359375, instantiation.active_record;dur=24.45654296875, process_action.action_controller;dur=152.74609375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Text\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/text\"\n            },\n            \"detail\": \"Text is too short (minimum is 10 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "When text is too long",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"cc314542-7d39-42b8-bdb5-8316cd0dcb26\", \"text\": \"Mge8caSMtLHuFSqpn2Fx86ujMqjLIJ2St6hI5nM4U5hh65xTYhfrd4X0h2wi3uyeOM2OTgQyCUZWYLxNsL4JzdJWyieeslWdLhXQgTt8lV2mMqDdFrFxYOB0qctIMcofOHyhb5B7b3IYMYgGdAk9ZdMqnDYjXe2iFt67R6b8ew5OBesxRLHNjO9MRdCcFrYb28HRTfhNBvRzgaiS9j8DUlGKJXr8rG15JkYwLZMKzSoEwaeH3quqlNR13LnosmOHWQeICjtsXUvR5VTlxhpYkYTMnMH85mqiD7jzKfuUAkRUSIOOfUSfCK1UCTC8GV7wa3DwSzgN9T0yhgZXXr1eNT57q8QU8pQ8rgUlWM5SQAcrnuNHsITueH4ZpGrn2bGF3XwizjArR6AtwyUFrs5dDZgvhzHZ6vCMHdXVip2eI8ibGzA4vnTQcnwyFXd0EMMSTUnPZyHB4WtLI89zSGSxaIECkxOBbQSlewatqRMdw2X0YZXQTvIpr\"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When text is too long",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"cc314542-7d39-42b8-bdb5-8316cd0dcb26\", \"text\": \"Mge8caSMtLHuFSqpn2Fx86ujMqjLIJ2St6hI5nM4U5hh65xTYhfrd4X0h2wi3uyeOM2OTgQyCUZWYLxNsL4JzdJWyieeslWdLhXQgTt8lV2mMqDdFrFxYOB0qctIMcofOHyhb5B7b3IYMYgGdAk9ZdMqnDYjXe2iFt67R6b8ew5OBesxRLHNjO9MRdCcFrYb28HRTfhNBvRzgaiS9j8DUlGKJXr8rG15JkYwLZMKzSoEwaeH3quqlNR13LnosmOHWQeICjtsXUvR5VTlxhpYkYTMnMH85mqiD7jzKfuUAkRUSIOOfUSfCK1UCTC8GV7wa3DwSzgN9T0yhgZXXr1eNT57q8QU8pQ8rgUlWM5SQAcrnuNHsITueH4ZpGrn2bGF3XwizjArR6AtwyUFrs5dDZgvhzHZ6vCMHdXVip2eI8ibGzA4vnTQcnwyFXd0EMMSTUnPZyHB4WtLI89zSGSxaIECkxOBbQSlewatqRMdw2X0YZXQTvIpr\"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "1a5aa7c0-ef1b-49b2-8491-30a644b0a542"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.038917"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.6318359375, sql.active_record;dur=13.8154296875, instantiation.active_record;dur=0.286865234375, process_action.action_controller;dur=27.177734375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Text\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/text\"\n            },\n            \"detail\": \"Text is too long (maximum is 500 characters)\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "When sent too often",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"comment\":{\"playlist_id\": \"87ec16a6-b260-49e3-8f22-0b532d58c5db\", \"text\": \"some comment\"}}"
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When sent too often",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\"comment\":{\"playlist_id\": \"87ec16a6-b260-49e3-8f22-0b532d58c5db\", \"text\": \"some comment\"}}"
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "b1bbeb5e-cd89-4c67-91dc-83a0c0846312"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.037011"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.2783203125, sql.active_record;dur=13.34423828125, instantiation.active_record;dur=0.28466796875, process_action.action_controller;dur=25.605224609375"
 												},
 												{
 													"key": "Transfer-Encoding",

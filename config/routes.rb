@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
+      resources :comments, only: %i[create]
       resources :friends, only: %i[create index]
       resources :invitations, only: %i[create index destroy update]
+      resource :my_account, only: %i[show update]
       resources :playlists, only: %i[destroy create] do
         resources :user_reactions, only: %i[create]
       end
-      resource :my_account, only: %i[show update]
       resource :session, only: %i[create destroy update]
       resources :users, only: %i[index create]
     end

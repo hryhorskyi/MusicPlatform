@@ -12,4 +12,14 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to belong_to(:playlist) }
   end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:text) }
+
+    it do
+      expect(described_class.new).to validate_length_of(:text)
+        .is_at_least(Comment::TEXT_LENGTH.min)
+        .is_at_most(Comment::TEXT_LENGTH.max)
+    end
+  end
 end

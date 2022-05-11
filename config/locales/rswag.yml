@@ -33,6 +33,10 @@ en:
       action:
         post: create playlist
         delete: delete playlist
+    comments:
+      tags: Comments
+      action:
+        post: create comment
     user_reactions:
       tags: User Reactions
       action:

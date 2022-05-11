@@ -1,163 +1,135 @@
 {
-  "$id": "http://example.com/example.json",
-  "title": "Playlist create schema",
+  "id": "file:/playlist/create.json#",
+  "description": "The schema for playlist create method.",
   "type": "object",
   "required": [
-      "data"
+    "data"
   ],
   "properties": {
-      "data": {
-          "title": "The data Schema",
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "attributes": {
           "type": "object",
-          "required": [
-              "id",
-              "type",
-              "attributes",
-              "relationships"
-          ],
           "properties": {
-              "id": {
-                  "title": "The id Schema",
-                  "type": "string"
-              },
-              "type": {
-                  "title": "The type Schema",
-                  "type": "string"
-              },
-              "attributes": {
-                  "title": "The attributes Schema",
-                  "type": "object",
-                  "required": [
-                      "name",
-                      "likes_count",
-                      "unlikes_count",
-                      "logo",
-                      "created_at",
-                      "updated_at"
-                  ],
-                  "properties": {
-                      "name": {
-                          "title": "The name Schema",
-                          "type": "string"
-                      },
-                      "description": {
-                          "title": "The description Schema",
-                          "anyOf": [
-                            { "type": null },
-                            { "type": "string" }
-                          ]
-                      },
-                      "likes_count": {
-                          "title": "The likes_count Schema",
-                          "type": "integer"
-                      },
-                      "unlikes_count": {
-                          "title": "The unlikes_count Schema",
-                          "type": "integer"
-                      },
-                      "logo": {
-                          "title": "The logo Schema",
-                          "type": "string"
-                      },
-                      "created_at": {
-                          "title": "The created_at Schema",
-                          "type": "string"
-                      },
-                      "updated_at": {
-                          "title": "The updated_at Schema",
-                          "type": "string"
-                      }
-                  }
-              },
-              "relationships": {
-                  "title": "The relationships Schema",
-                  "type": "object",
-                  "required": [
-                      "owner",
-                      "songs",
-                      "comments"
-                  ],
-                  "properties": {
-                      "owner": {
-                          "title": "The owner Schema",
-                          "type": "object",
-                          "properties": {
-                              "data": {
-                                  "title": "The data Schema",
-                                  "type": "object",
-                                  "properties": {
-                                      "id": {
-                                          "title": "The id Schema",
-                                          "type": "string"
-                                      },
-                                      "type": {
-                                          "title": "The type Schema",
-                                          "type": "string"
-                                      }
-                                  }
-                              }
-                          }
-                      },
-                      "songs": {
-                          "title": "The songs Schema",
-                          "type": "object",
-                          "required": [
-                              "data"
-                          ],
-                          "properties": {
-                              "data": {
-                                  "title": "The data Schema",
-                                  "type": "array",
-                                  "items": {}
-                              }
-                          }
-                      },
-                      "comments": {
-                          "title": "The comments Schema",
-                          "type": "object",
-                          "required": [
-                              "data"
-                          ],
-                          "properties": {
-                              "data": {
-                                  "title": "The data Schema",
-                                  "type": "array",
-                                  "items": {}
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-      }
-  },
-  "examples": [{
-      "data": {
-          "id": "ccf0cac5-8432-4862-9494-8c09d9b59237",
-          "type": "playlist",
-          "attributes": {
-              "name": "playlist",
-              "description": "description",
-              "likes_count": 0,
-              "unlikes_count": 0,
-              "logo": "dummy_logo_url.png",
-              "created_at": "2022-05-04 22:49:17",
-              "updated_at": "2022-05-04 22:49:17"
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "anyOf": [
+                { "type": null },
+                { "type": "string" }
+              ]
+            },
+            "likes_count": {
+              "type": "integer"
+            },
+            "dislikes_count": {
+              "type": "integer"
+            },
+            "logo": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
           },
-          "relationships": {
-              "owner": {
-                  "data": {
-                      "id": "aa53e240-fb3d-4d1b-a4e6-ca2fc68b856b",
-                      "type": "user"
-                  }
+          "required": [
+            "name",
+            "description",
+            "likes_count",
+            "dislikes_count",
+            "logo",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        "relationships": {
+          "type": "object",
+          "properties": {
+            "owner": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "type"
+                  ]
+                }
               },
-              "songs": {
-                  "data": []
+              "required": [
+                "data"
+              ]
+            },
+            "user_reactions": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {}
+                }
               },
-              "comments": {
-                  "data": []
-              }
-          }
-      }
-  }]
+              "required": [
+                "data"
+              ]
+            },
+            "songs": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {}
+                }
+              },
+              "required": [
+                "data"
+              ]
+            },
+            "comments": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {}
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          },
+          "required": [
+            "owner",
+            "user_reactions",
+            "songs",
+            "comments"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "attributes",
+        "relationships"
+      ]
+    }
+  }
 }

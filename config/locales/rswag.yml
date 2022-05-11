@@ -31,5 +31,9 @@ en:
     playlists:
       tags: Playlists
       action:
-        delete: delete playlist
         post: create playlist
+        delete: delete playlist
+    user_reactions:
+      tags: User Reactions
+      action:
+        post: create user reaction

@@ -45,12 +45,22 @@ RSpec.describe User, type: :model do
     }
   end
 
-  describe 'method invintations' do
+  describe '#invintations' do
     let(:user) { create(:user) }
     let(:invitation_list) { create_list(:invitation, 2, requestor_id: user.id) }
 
     it 'returns users invitation' do
       expect(user.invitations).to eq(invitation_list)
+    end
+  end
+
+  describe '#friends' do
+    let(:user) { create(:user) }
+    let(:friends_list_for_initiator) { create_list(:friend, 3, initiator_id: user.id) }
+    let(:friends_list_for_acceptor) { create_list(:friend, 3, acceptor_id: user.id) }
+
+    it 'returns user friends' do
+      expect(user.friends).to match_array(friends_list_for_initiator + friends_list_for_acceptor)
     end
   end
 end

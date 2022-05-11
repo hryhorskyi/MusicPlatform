@@ -11,6 +11,26 @@ RSpec.describe Album, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
-    it { expect(build(:album)).to validate_uniqueness_of(:name).scoped_to(:artist_id) }
+
+    context 'when try to create album with not unique name to single artist' do
+      subject(:album) { build(:album, name: album_name, artists: [artist]) }
+
+      let(:artist) { create(:artist) }
+      let(:album_name) { 'test' }
+
+      before do
+        create(:album, name: album_name, artists: [artist])
+
+        album.validate
+      end
+
+      it 'returns correct validation error' do
+        expect(album.errors[:name].first).to eq(I18n.t('albums.create.errors.name.is_not_unique'))
+      end
+
+      it 'is expected to be invalid' do
+        expect(album).not_to be_valid
+      end
+    end
   end
 end

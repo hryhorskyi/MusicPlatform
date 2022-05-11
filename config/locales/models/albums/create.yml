@@ -1,0 +1,6 @@
+en:
+  albums:
+    create:
+      errors:
+        name:
+          is_not_unique: is not unique

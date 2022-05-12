@@ -7,8 +7,7 @@ Rails.application.configure do
   config.eager_load = true
   config.consider_all_requests_local = false
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  # config.active_storage.service = :local
-  config.force_ssl = true
+  config.force_ssl = ENV['DISABLE_FORCE_SSL'] ? false : true
   config.log_level = :info
   config.log_tags = [:request_id]
   config.action_mailer.perform_caching = false

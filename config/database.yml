@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: <%= Rails.application.credentials.dig(:database_name) %>
-  host: <%= Rails.application.credentials.dig(:database_host) %>
+  host: <%= ENV['DOCKER_HOST'] || Rails.application.credentials.dig(:database_host) %> 
   username: <%= Rails.application.credentials.dig(:database_username) %>
   password: <%= Rails.application.credentials.dig(:database_password) %>
 

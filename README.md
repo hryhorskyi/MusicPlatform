@@ -110,3 +110,16 @@ https://beattrey.atlassian.net/jira/software/projects/EM/boards/1?selectedIssue=
 * Run `rails server` from bash
 
 Now you can access sidekiq UI, to do this you have to be logged as admin and go to /sidekiq url
+
+## Dockerfile
+
+* Install docker for your system `https://www.docker.com/get-started/`
+* Go to the folder with the project epam-music
+* Execute building image command: You can choose development, staging, production envs:  
+  1. `docker build -t epam-music-image .` - default dev env
+  2. `docker build -t epam-music-image --build-arg RAILS_ENV_VARIABLE=staging .` - chose staging env
+  3. `docker build -t epam-music-image --build-arg RAILS_ENV_VARIABLE=production .` - chose production env
+* Run container command `docker run --name epam-music -dp 3000:3000 epam-music-image` <strong> IT'S work on MAC or WINDOWS</strong>
+* Run container command `docker run --name epam-music -dp 3000:3000 epam-music-image` <strong> IT'S work on MAC or WINDOWS</strong>
+* Run container command `docker run --name epam-music -dp 3000:3000 --add-host host.docker.internal:host-gateway epam-music-image` <strong> IT'S work on the LINUX</strong>
+* Open your browser and go to the `http://localhost:3000`

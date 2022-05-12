@@ -5,7 +5,8 @@ module Invitations
     class Organizer < Common::BaseOrganizer
       organize FindInvitation,
                SetDeclinedStatus,
-               Common::Model::Persist
+               Common::Model::Persist,
+               SendEmail
     end
   end
 end

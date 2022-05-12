@@ -1,5 +1,7 @@
 en:
   mailer:
     invitation:
+      subject: Epam Music invitation notification
       action:
         create: You get friends invitation
+        update: Your invitation were declined by %{nickname}

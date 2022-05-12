@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema",
+  "id": "file:/static_pages/show_json#",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["id", "type", "attributes"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid", 
+          "examples": ["2656adf0-f976-4d72-8c09-6e562c99de2b"]
+        },
+        "type": {
+          "type": "string",
+          "examples": ["static_page"]
+        },
+        "attributes": {
+          "type": "object",
+          "required": ["page_slug", "content"],
+          "properties": {
+            "page_slug": {
+              "type": "string",
+              "examples": ["consequuntur"]
+            },
+            "content": {
+              "type": "string",
+              "examples": ["Illum doloribus in sint et."]
+            }
+          }
+        }
+      }
+    }
+  }
+}

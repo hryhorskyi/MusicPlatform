@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         resources :user_reactions, only: %i[create]
       end
       resource :session, only: %i[create destroy update]
+      resources :static_pages, only: %i[show]
       resources :users, only: %i[index create]
     end
   end

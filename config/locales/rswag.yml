@@ -41,3 +41,7 @@ en:
       tags: User Reactions
       action:
         post: create user reaction
+    static_pages:
+      tags: Static Pages
+      action:
+        show: show slug content

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "88cfaf4a-2a80-4754-9194-22b4c6837cb3",
+		"_postman_id": "2f7ac428-f915-41ba-b0af-8da084c9d0ab",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12147,6 +12147,280 @@
 												{
 													"key": "Server-Timing",
 													"value": "start_processing.action_controller;dur=0.2783203125, sql.active_record;dur=13.34423828125, instantiation.active_record;dur=0.28466796875, process_action.action_controller;dur=25.605224609375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Static pages",
+			"item": [
+				{
+					"name": "Show",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Show",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/static_pages/about",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"static_pages",
+												"about"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Show",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": []
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/static_pages/about",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"static_pages",
+														"about"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"382770ee890c10a98b8e5fc156535720\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "7ccc3e0e-5218-4680-9fda-c8208e964ce8"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.023843"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.15673828125, sql.active_record;dur=1.488037109375, instantiation.active_record;dur=0.139404296875, process_action.action_controller;dur=4.482666015625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"86634bd8-932d-48d2-8f76-47e059a63545\",\n        \"type\": \"static_page\",\n        \"attributes\": {\n            \"page_slug\": \"about\",\n            \"content\": \"<div>Hello User! </div>\"\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "When page_slug not found",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/static_pages?page_slug=abra-ka-da-bra",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"static_pages"
+											],
+											"query": [
+												{
+													"key": "page_slug",
+													"value": "abra-ka-da-bra"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When page_slug not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": []
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/static_pages?page_slug=abra-ka-da-bra",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"static_pages"
+													],
+													"query": [
+														{
+															"key": "page_slug",
+															"value": "abra-ka-da-bra"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "46c4166a-d157-485e-8a9c-c4557f55d648"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.018377"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.15478515625, sql.active_record;dur=0.633056640625, instantiation.active_record;dur=0.02197265625, process_action.action_controller;dur=1.712158203125"
 												},
 												{
 													"key": "Transfer-Encoding",

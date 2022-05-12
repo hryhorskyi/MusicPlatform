@@ -2,7 +2,16 @@
 %html
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    :css
-      /* Email styles need to be inline */
   %body
-    = yield
+    %div
+      %div{:style => "background-color: blue"}
+        %h1
+          Epam Music notification
+      %div
+      = yield
+      %div{:style => "background-color: yellow"}
+        Sent with
+        Evil Corp. #1 Doker Street
+        %br/
+        Dnipro Dist, 80085 Ukraine
+        %br/

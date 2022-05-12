@@ -17,7 +17,8 @@ RSpec.describe Invitations::Update::Organizer do
       [
         Invitations::Update::FindInvitation,
         Invitations::Update::SetDeclinedStatus,
-        Common::Model::Persist
+        Common::Model::Persist,
+        Invitations::Update::SendEmail
       ]
     end
 

@@ -19,4 +19,14 @@ class InvitationMailer < ApplicationMailer
       subject: I18n.t('mailer.invitation.subject')
     )
   end
+
+  def destroy
+    @invitation = Invitation.find_by(id: params[:invitation_id])
+    mail(
+      template_path: 'mailers/invitations',
+      template_name: 'destroy',
+      to: @invitation.receiver.email,
+      subject: I18n.t('mailer.invitation.subject')
+    )
+  end
 end

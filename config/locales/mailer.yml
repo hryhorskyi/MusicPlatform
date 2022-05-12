@@ -5,3 +5,4 @@ en:
       action:
         create: You get friends invitation
         update: Your invitation were declined by %{nickname}
+        destroy: You had invitation from %{nickname}, but requestor canceled it

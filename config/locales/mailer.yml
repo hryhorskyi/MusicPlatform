@@ -3,6 +3,6 @@ en:
     invitation:
       subject: Epam Music invitation notification
       action:
-        create: You get friends invitation
+        create: You get friends invitation from %{nickname}
         update: Your invitation were declined by %{nickname}
         destroy: You had invitation from %{nickname}, but requestor canceled it

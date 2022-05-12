@@ -10,7 +10,8 @@ module Invitations
                CheckExistingInvitationIsPending,
                CheckExistingFriendship,
                CheckRecentlyDeclined,
-               Common::Model::Persist
+               Common::Model::Persist,
+               SendEmail
     end
   end
 end

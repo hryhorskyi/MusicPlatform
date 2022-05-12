@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 RSpec.describe InvitationMailer, type: :mailer do
-  describe 'invitation_created' do
+  describe '#create' do
     let(:invitation) { create(:invitation) }
-    let(:mail) { described_class.with(invitation: invitation).invitation_created.deliver_now }
+    let(:mail) { described_class.with(invitation_id: invitation.id).create.deliver_now }
 
     it 'renders the subject' do
-      expected_message = I18n.t('mailer.invitation.action.create')
+      expected_message = I18n.t('mailer.invitation.subject')
       expect(mail.subject).to eq(expected_message)
     end
 
     it 'renders the receiver email' do
-      expect(mail.to).to eq([invitation.receiver_id])
+      expect(mail.to).to eq([invitation.receiver.email])
     end
 
     it 'renders the sender email' do

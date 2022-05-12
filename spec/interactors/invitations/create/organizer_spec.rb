@@ -27,7 +27,8 @@ RSpec.describe Invitations::Create::Organizer do
         Invitations::Create::CheckExistingInvitationIsPending,
         Invitations::Create::CheckExistingFriendship,
         Invitations::Create::CheckRecentlyDeclined,
-        Common::Model::Persist
+        Common::Model::Persist,
+        Invitations::Create::SendEmail
       ]
     end
 
@@ -55,7 +56,7 @@ RSpec.describe Invitations::Create::Organizer do
     context 'when provided receiver does not exist' do
       let(:receiver_id) { 'blablabla' }
 
-      it 'has correct error massege and failure result' do
+      it 'has correct error message and failure result' do
         expected_message = I18n.t('invitation.create.errors.user_not_exist')
 
         expect(result.model.errors.messages[:receiver_id].first).to eq(expected_message)
@@ -70,7 +71,7 @@ RSpec.describe Invitations::Create::Organizer do
         existing_invitation
       end
 
-      it 'has correct error massege and failure result' do
+      it 'has correct error message and failure result' do
         expected_message = I18n.t('invitation.create.errors.already_friend')
 
         expect(result.model.errors.messages[:receiver_id].first).to eq(expected_message)
@@ -86,7 +87,7 @@ RSpec.describe Invitations::Create::Organizer do
         existing_invitation
       end
 
-      it 'has correct error massege and failure result' do
+      it 'has correct error message and failure result' do
         expected_message = I18n.t('invitation.create.errors.declined_recently')
 
         expect(result.model.errors.messages[:receiver_id].first).to eq(expected_message)
@@ -102,7 +103,7 @@ RSpec.describe Invitations::Create::Organizer do
         existing_invitation
       end
 
-      it 'has correct error massege and failure result' do
+      it 'has correct error message and failure result' do
         expected_message = I18n.t('invitation.create.errors.user_already_invited')
 
         expect(result.model.errors.messages[:receiver_id].first).to eq(expected_message)
@@ -118,7 +119,7 @@ RSpec.describe Invitations::Create::Organizer do
         existing_invitation
       end
 
-      it 'has correct error massege and failure result' do
+      it 'has correct error message and failure result' do
         expected_message = I18n.t('invitation.create.errors.you_already_invited')
 
         expect(result.model.errors.messages[:receiver_id].first).to eq(expected_message)

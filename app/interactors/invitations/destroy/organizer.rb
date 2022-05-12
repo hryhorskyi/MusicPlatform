@@ -4,7 +4,8 @@ module Invitations
   module Destroy
     class Organizer < Common::BaseOrganizer
       organize FindInvitation,
-               SetRevokeStatus
+               SetRevokeStatus,
+               SendEmail
     end
   end
 end

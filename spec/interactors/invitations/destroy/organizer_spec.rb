@@ -14,7 +14,8 @@ RSpec.describe Invitations::Destroy::Organizer do
     let(:expected_interactors) do
       [
         Invitations::Destroy::FindInvitation,
-        Invitations::Destroy::SetRevokeStatus
+        Invitations::Destroy::SetRevokeStatus,
+        Invitations::Destroy::SendEmail
       ]
     end
 

@@ -5,7 +5,9 @@ module Users
     class Organizer < Common::BaseOrganizer
       organize SetUsers,
                FilterByFriends,
-               FilterByUser
+               FilterByEmail,
+               FilterByUser,
+               Common::Service::Pagination
     end
   end
 end

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2f7ac428-f915-41ba-b0af-8da084c9d0ab",
+		"_postman_id": "ebdf402e-c7a4-484b-94e0-4062a8897af9",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -2195,6 +2195,119 @@
 							"name": "Success",
 							"item": [
 								{
+									"name": "Without params",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Without params",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:3000/api/v1/users",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"14dc3408b937dfe0759316a96aaee9dc\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "26dd3c82-57db-473e-be79-917015e1260b"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.005032"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.0498046875, sql.active_record;dur=1.1318359375, instantiation.active_record;dur=0.06201171875, process_action.action_controller;dur=3.265869140625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2\n            }\n        },\n        {\n            \"id\": \"3\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"ardella@kemmer.ca\",\n                \"nickname\": \"u2x0atvy16b0i6z\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1\n            }\n        },\n        {\n            \"id\": \"4\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"wanda@west.name\",\n                \"nickname\": \"l5mvj\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7\n            }\n        },\n        {\n            \"id\": \"5\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"camille@littelbatz.name\",\n                \"nickname\": \"7wh6zjofj1cxpkv0pog\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1\n            }\n        },\n        {\n            \"id\": \"6\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"123@gmail.com\",\n                \"nickname\": \"123gmail\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 0\n            }\n        },\n        {\n            \"id\": \"7\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"example@gmail.com\",\n                \"nickname\": \"example\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2\n            }\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
 									"name": "With exclude_friends=true",
 									"request": {
 										"auth": {
@@ -2210,12 +2323,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:3000/api/v1/users?exclude_friends=true",
-											"protocol": "http",
+											"raw": "{{url}}/api/v1/users?exclude_friends=true&email_filter",
 											"host": [
-												"localhost"
+												"{{url}}"
 											],
-											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -2225,6 +2336,10 @@
 												{
 													"key": "exclude_friends",
 													"value": "true"
+												},
+												{
+													"key": "email_filter",
+													"value": null
 												}
 											]
 										}
@@ -2322,7 +2437,7 @@
 									]
 								},
 								{
-									"name": "Without params",
+									"name": "With exclude_friends random value",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2337,27 +2452,35 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:3000/api/v1/users",
-											"protocol": "http",
+											"raw": "{{url}}/api/v1/users?exclude_friends=asgasdg32g23gsdga3&email_filter",
 											"host": [
-												"localhost"
+												"{{url}}"
 											],
-											"port": "3000",
 											"path": [
 												"api",
 												"v1",
 												"users"
+											],
+											"query": [
+												{
+													"key": "exclude_friends",
+													"value": "asgasdg32g23gsdga3"
+												},
+												{
+													"key": "email_filter",
+													"value": null
+												}
 											]
 										}
 									},
 									"response": [
 										{
-											"name": "Without params",
+											"name": "With exclude_friends random value",
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "http://localhost:3000/api/v1/users",
+													"raw": "http://localhost:3000/api/v1/users?exclude_friends=asgasdg32g23gsdga3",
 													"protocol": "http",
 													"host": [
 														"localhost"
@@ -2367,6 +2490,12 @@
 														"api",
 														"v1",
 														"users"
+													],
+													"query": [
+														{
+															"key": "exclude_friends",
+															"value": "asgasdg32g23gsdga3"
+														}
 													]
 												}
 											},
@@ -2408,7 +2537,7 @@
 												},
 												{
 													"key": "ETag",
-													"value": "W/\"14dc3408b937dfe0759316a96aaee9dc\""
+													"value": "W/\"f4eb46ad1644c254e2d65358d51db5af\""
 												},
 												{
 													"key": "Cache-Control",
@@ -2416,15 +2545,15 @@
 												},
 												{
 													"key": "X-Request-Id",
-													"value": "26dd3c82-57db-473e-be79-917015e1260b"
+													"value": "4d8560ed-6363-4c96-a045-637ec17ced5f"
 												},
 												{
 													"key": "X-Runtime",
-													"value": "0.005032"
+													"value": "0.005831"
 												},
 												{
 													"key": "Server-Timing",
-													"value": "start_processing.action_controller;dur=0.0498046875, sql.active_record;dur=1.1318359375, instantiation.active_record;dur=0.06201171875, process_action.action_controller;dur=3.265869140625"
+													"value": "start_processing.action_controller;dur=0.111328125, sql.active_record;dur=1.328369140625, instantiation.active_record;dur=0.0791015625, process_action.action_controller;dur=3.70849609375"
 												},
 												{
 													"key": "Transfer-Encoding",
@@ -2432,7 +2561,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2\n            }\n        },\n        {\n            \"id\": \"3\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"ardella@kemmer.ca\",\n                \"nickname\": \"u2x0atvy16b0i6z\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1\n            }\n        },\n        {\n            \"id\": \"4\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"wanda@west.name\",\n                \"nickname\": \"l5mvj\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7\n            }\n        },\n        {\n            \"id\": \"5\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"camille@littelbatz.name\",\n                \"nickname\": \"7wh6zjofj1cxpkv0pog\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1\n            }\n        },\n        {\n            \"id\": \"6\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"123@gmail.com\",\n                \"nickname\": \"123gmail\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 0\n            }\n        },\n        {\n            \"id\": \"7\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"example@gmail.com\",\n                \"nickname\": \"example\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 0\n            }\n        },\n        {\n            \"id\": \"3\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"linwood@monahan.co.uk\",\n                \"nickname\": \"y7ke1g4t73bz\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 4\n            }\n        },\n        {\n            \"id\": \"4\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"ebony@dachconn.biz\",\n                \"nickname\": \"s60wjp\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7\n            }\n        },\n        {\n            \"id\": \"5\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"dalia_aufderhar@roobbruen.com\",\n                \"nickname\": \"nroi05ocn7rugk95q\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 3\n            }\n        },\n        {\n            \"id\": \"6\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"example@gmail.com\",\n                \"nickname\": \"example\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 3\n            }\n        },\n        {\n            \"id\": \"7\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"gmail@gmail.com\",\n                \"nickname\": \"123\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 0\n            }\n        }\n    ]\n}"
 										}
 									]
 								},
@@ -2452,12 +2581,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:3000/api/v1/users?exclude_friends=false",
-											"protocol": "http",
+											"raw": "{{url}}/api/v1/users?exclude_friends=false&email_filter",
 											"host": [
-												"localhost"
+												"{{url}}"
 											],
-											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -2467,6 +2594,10 @@
 												{
 													"key": "exclude_friends",
 													"value": "false"
+												},
+												{
+													"key": "email_filter",
+													"value": null
 												}
 											]
 										}
@@ -2564,7 +2695,7 @@
 									]
 								},
 								{
-									"name": "With exclude_friends random value",
+									"name": "With email_filter success",
 									"request": {
 										"auth": {
 											"type": "bearer",
@@ -2579,12 +2710,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:3000/api/v1/users?exclude_friends=asgasdg32g23gsdga3",
-											"protocol": "http",
+											"raw": "{{url}}/api/v1/users?exclude_friends=&email_filter=init",
 											"host": [
-												"localhost"
+												"{{url}}"
 											],
-											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -2593,24 +2722,26 @@
 											"query": [
 												{
 													"key": "exclude_friends",
-													"value": "asgasdg32g23gsdga3"
+													"value": ""
+												},
+												{
+													"key": "email_filter",
+													"value": "init"
 												}
 											]
 										}
 									},
 									"response": [
 										{
-											"name": "With exclude_friends random value",
+											"name": "With email_filter success",
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "http://localhost:3000/api/v1/users?exclude_friends=asgasdg32g23gsdga3",
-													"protocol": "http",
+													"raw": "{{url}}/api/v1/users?exclude_friends=&email_filter=init",
 													"host": [
-														"localhost"
+														"{{url}}"
 													],
-													"port": "3000",
 													"path": [
 														"api",
 														"v1",
@@ -2619,7 +2750,11 @@
 													"query": [
 														{
 															"key": "exclude_friends",
-															"value": "asgasdg32g23gsdga3"
+															"value": ""
+														},
+														{
+															"key": "email_filter",
+															"value": "init"
 														}
 													]
 												}
@@ -2662,7 +2797,7 @@
 												},
 												{
 													"key": "ETag",
-													"value": "W/\"f4eb46ad1644c254e2d65358d51db5af\""
+													"value": "W/\"749d299c57d2ec85500a61e712b4375b\""
 												},
 												{
 													"key": "Cache-Control",
@@ -2670,15 +2805,15 @@
 												},
 												{
 													"key": "X-Request-Id",
-													"value": "4d8560ed-6363-4c96-a045-637ec17ced5f"
+													"value": "d1051c67-0e38-4637-b6bf-2e21e5afb3a1"
 												},
 												{
 													"key": "X-Runtime",
-													"value": "0.005831"
+													"value": "0.010608"
 												},
 												{
 													"key": "Server-Timing",
-													"value": "start_processing.action_controller;dur=0.111328125, sql.active_record;dur=1.328369140625, instantiation.active_record;dur=0.0791015625, process_action.action_controller;dur=3.70849609375"
+													"value": "start_processing.action_controller;dur=0.186279296875, sql.active_record;dur=3.06982421875, instantiation.active_record;dur=0.153076171875, process_action.action_controller;dur=6.90185546875"
 												},
 												{
 													"key": "Transfer-Encoding",
@@ -2686,7 +2821,1409 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": [\n        {\n            \"id\": \"2\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 0\n            }\n        },\n        {\n            \"id\": \"3\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"linwood@monahan.co.uk\",\n                \"nickname\": \"y7ke1g4t73bz\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 4\n            }\n        },\n        {\n            \"id\": \"4\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"ebony@dachconn.biz\",\n                \"nickname\": \"s60wjp\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7\n            }\n        },\n        {\n            \"id\": \"5\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"dalia_aufderhar@roobbruen.com\",\n                \"nickname\": \"nroi05ocn7rugk95q\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 3\n            }\n        },\n        {\n            \"id\": \"6\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"example@gmail.com\",\n                \"nickname\": \"example\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 3\n            }\n        },\n        {\n            \"id\": \"7\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"gmail@gmail.com\",\n                \"nickname\": \"123\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 0\n            }\n        }\n    ]\n}"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 9,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 1,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "With email_filter upper case",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?exclude_friends=&email_filter=INIT",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "exclude_friends",
+													"value": ""
+												},
+												{
+													"key": "email_filter",
+													"value": "INIT"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "With email_filter upper case",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?exclude_friends=&email_filter=INIT",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "exclude_friends",
+															"value": ""
+														},
+														{
+															"key": "email_filter",
+															"value": "INIT"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"cacdd02b57302fea22ff9d96de885aaf\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "539c5f5d-6133-48d9-9f3b-6b5f5333e9c4"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.009603"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.130615234375, sql.active_record;dur=2.821044921875, instantiation.active_record;dur=0.107421875, process_action.action_controller;dur=5.957763671875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 6,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 1,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "With email_filter without users",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?exclude_friends=&email_filter=unexisted email",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "exclude_friends",
+													"value": ""
+												},
+												{
+													"key": "email_filter",
+													"value": "unexisted email"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "With email_filter without users",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?exclude_friends=&email_filter=unexisted email",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "exclude_friends",
+															"value": ""
+														},
+														{
+															"key": "email_filter",
+															"value": "unexisted email"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"4bb52648f49fe8d45a657da7850e48e7\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "bc31e177-64dd-44d1-a065-f5f4845e12c0"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.008702"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.113525390625, sql.active_record;dur=2.6982421875, instantiation.active_record;dur=0.035888671875, process_action.action_controller;dur=5.25244140625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 0,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Correct params page and per_page",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?page=1&per_page=10",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Correct params page and per_page",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?page=1&per_page=10",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"key": "per_page",
+															"value": "10"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"f9e2cb32753d786c875eef82c7ae075f\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "701c8b9c-67f1-4f7e-a8dd-a8d571d12ccc"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.009394"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.147705078125, sql.active_record;dur=2.346923828125, instantiation.active_record;dur=0.127197265625, process_action.action_controller;dur=5.449462890625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 6,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 8,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 6,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 10,\n        \"max_per_page\": 25,\n        \"count\": 3,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Correct params after and per_page",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?after=b0abb3c9-ca5b-453b-813a-faa69b30f2b0&per_page=10",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "after",
+													"value": "b0abb3c9-ca5b-453b-813a-faa69b30f2b0"
+												},
+												{
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Correct params after and per_page",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?after=b0abb3c9-ca5b-453b-813a-faa69b30f2b0&per_page=10",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "after",
+															"value": "b0abb3c9-ca5b-453b-813a-faa69b30f2b0"
+														},
+														{
+															"key": "per_page",
+															"value": "10"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"d2067fed7474f8c832e12749488b1fa3\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "03cf2fc0-c8dc-4e6c-adbc-a24041cf1be0"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.012610"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.152587890625, sql.active_record;dur=4.283203125, instantiation.active_record;dur=0.122802734375, process_action.action_controller;dur=8.758056640625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 6,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": \"10\",\n        \"max_per_page\": 25,\n        \"comparation\": \"gt\",\n        \"after\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n        \"next\": \"930f5563-5182-4091-8c68-31087f811e04\",\n        \"has_more\": false\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only after param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?after=b0abb3c9-ca5b-453b-813a-faa69b30f2b0",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "after",
+													"value": "b0abb3c9-ca5b-453b-813a-faa69b30f2b0"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Correct params after and per_page Copy",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?after=b0abb3c9-ca5b-453b-813a-faa69b30f2b0",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "after",
+															"value": "b0abb3c9-ca5b-453b-813a-faa69b30f2b0"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2597c6ad7415e2bc1678d1199da44234\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "b433fdc1-1221-433f-acac-9b62c43c1ccd"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.011271"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.11572265625, sql.active_record;dur=4.116943359375, instantiation.active_record;dur=0.109375, process_action.action_controller;dur=8.115234375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 3,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"comparation\": \"gt\",\n        \"after\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n        \"next\": \"930f5563-5182-4091-8c68-31087f811e04\",\n        \"has_more\": false\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?page=1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?page=1",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"b7cd447c8a95b117e4e218a4e21950e9\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "55dd5336-cdde-4759-b1e2-1241ef7deb03"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.008673"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.109375, sql.active_record;dur=2.117919921875, instantiation.active_record;dur=0.115966796875, process_action.action_controller;dur=5.404296875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 2,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 3,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only per_page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?per_page=10",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only per_page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?per_page=10",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "per_page",
+															"value": "10"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"72ecc8a3b36e5213469ce954fecbdde3\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "2a8545b6-82d6-47c6-afbe-190ff7ebf132"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.014012"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.188232421875, sql.active_record;dur=3.537841796875, instantiation.active_record;dur=0.14794921875, process_action.action_controller;dur=8.153564453125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 3,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 8,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 10,\n        \"max_per_page\": 25,\n        \"count\": 3,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Incorrect after param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?after=incorrect",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "after",
+													"value": "incorrect"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect after param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?after=incorrect",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "after",
+															"value": "incorrect"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"112be36d7df02ce80e1309448e0b5df7\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "984d47b6-b57a-4b5e-99f2-e33ff7a0d25b"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.010625"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.321533203125, sql.active_record;dur=3.052978515625, instantiation.active_record;dur=0.052001953125, process_action.action_controller;dur=6.432373046875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"comparation\": \"gt\",\n        \"after\": \"incorrect\",\n        \"next\": null,\n        \"has_more\": false\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Incorrect page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?page=incorrect",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "incorrect"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?page=incorrect",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "incorrect"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"9424d07dcbb4ce098d7faa7d07b1b6dc\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "3c76845b-90da-4ce5-8078-22e6bb973552"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.009711"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.121337890625, sql.active_record;dur=2.812255859375, instantiation.active_record;dur=0.142822265625, process_action.action_controller;dur=6.33984375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 4,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 1,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 3,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Incorrect per_page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/users?per_page=incorrect",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "per_page",
+													"value": "incorrect"
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												},
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Incorrect per_page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/users?per_page=incorrect",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													],
+													"query": [
+														{
+															"key": "per_page",
+															"value": "incorrect"
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														},
+														{
+															"key": "",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"8669e225c54a6f543949daf500976ec4\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "99596b38-c622-46d5-ad74-a7b88f6c4a11"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.012623"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.157958984375, sql.active_record;dur=3.303466796875, instantiation.active_record;dur=0.203857421875, process_action.action_controller;dur=8.00537109375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"982804ee-17d8-4e93-a380-8aa3608befba\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"acceptor@epam.com\",\n                \"nickname\": \"Accept0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 9,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"b0abb3c9-ca5b-453b-813a-faa69b30f2b0\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"initiator@epam.com\",\n                \"nickname\": \"Initiat0r\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 6,\n                \"created_at\": \"2022-05-17 17:50:35\"\n            }\n        },\n        {\n            \"id\": \"930f5563-5182-4091-8c68-31087f811e04\",\n            \"type\": \"user\",\n            \"attributes\": {\n                \"email\": \"HUGe@gmail.com\",\n                \"nickname\": \"Huge\",\n                \"first_name\": null,\n                \"last_name\": null,\n                \"avatar\": \"dummy_avatar_url.png\",\n                \"shared_playlists_number\": 7,\n                \"created_at\": \"2022-05-18 13:22:51\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 3,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
 										}
 									]
 								}
@@ -2711,12 +4248,10 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:3000/api/v1/users",
-											"protocol": "http",
+											"raw": "{{url}}/api/v1/users",
 											"host": [
-												"localhost"
+												"{{url}}"
 											],
-											"port": "3000",
 											"path": [
 												"api",
 												"v1",
@@ -12214,10 +13749,6 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": []
-												},
 												"url": {
 													"raw": "{{url}}/api/v1/static_pages/about",
 													"host": [
@@ -12348,10 +13879,6 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": []
-												},
 												"url": {
 													"raw": "{{url}}/api/v1/static_pages?page_slug=abra-ka-da-bra",
 													"host": [

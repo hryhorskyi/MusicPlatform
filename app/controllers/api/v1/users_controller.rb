@@ -7,7 +7,7 @@ module Api
 
       def index
         result = Users::Index::Organizer.call(current_user: current_user, params: permitted_index_params)
-        render json: UserSerializer.new(result.collection), status: :ok
+        render json: UserSerializer.new(result.collection, meta: result.pagination_meta), status: :ok
       end
 
       def create
@@ -26,7 +26,7 @@ module Api
       end
 
       def permitted_index_params
-        params.permit(:exclude_friends)
+        params.permit(:exclude_friends, :email_filter, *PAGINATION_PARAMS)
       end
     end
   end

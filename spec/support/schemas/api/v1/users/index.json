@@ -1,9 +1,7 @@
 {
   "description": "The schema for users index method. Contains list of users data for response body.",
   "type": "object",
-  "required": [
-    "data"
-  ],
+  "required": ["data", "meta"],
   "properties": {
     "data": {
       "type": "array",
@@ -44,6 +42,16 @@
           }
         }
       }
+    },
+    "meta": {
+      "anyOf": [
+        {
+          "ref": "file:/pagination/cursor_pagination.json#"
+        },
+        {
+          "ref": "file:/pagination/numeric_pagination.json#"
+        }
+      ]
     }
   }
 }

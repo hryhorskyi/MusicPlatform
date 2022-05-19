@@ -8,10 +8,15 @@ RSpec.describe 'Users', type: :request do
       consumes 'application/json'
       parameter name: :authorization, in: :header, type: :string, required: true
       parameter name: :exclude_friends, in: :query, type: :string, example: [true, false]
+      parameter name: :email_filter, in: :query, type: :string, example: 'useremail'
+      parameter name: :page, in: :query, type: :string, required: false, example: 2
+      parameter name: :per_page, in: :query, type: :string, required: false, example: 20
+      parameter name: :after, in: :query, type: :string, required: false, example: SecureRandom.uuid
 
       let(:user1) { create(:user) }
       let(:user2) { create(:user) }
       let(:exclude_friends) { 'true' }
+      let(:email_filter) { 'email' }
 
       before do
         create(:friend, initiator_id: user1.id, acceptor_id: user2.id)
@@ -49,6 +54,44 @@ RSpec.describe 'Users', type: :request do
               get '/api/v1/users', params: { exclude_friends: 'true' }, headers: { authorization: access_token }
             end.to perform_constant_number_of_queries
           end
+        end
+
+        context 'when call with email_filter param', :n_plus_one do
+          populate { |n| create_list(:user, n) }
+
+          specify do
+            expect do
+              get '/api/v1/users', params: { email_filter: 'email' }, headers: { authorization: access_token }
+            end.to perform_constant_number_of_queries
+          end
+        end
+      end
+
+      response '200', 'when the user provide after, per_page parameters' do
+        before do
+          create_list(:user, 10)
+        end
+
+        let(:authorization) { SessionCreate.call(user1.id)[:access] }
+        let(:after) { User.first.id }
+        let(:per_page) { 5 }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/users/index')
+        end
+      end
+
+      response '200', 'when the user provide page, per_page parameters' do
+        before do
+          create_list(:user, 10)
+        end
+
+        let(:authorization) { SessionCreate.call(user1.id)[:access] }
+        let(:page) { 1 }
+        let(:per_page) { 5 }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/users/index')
         end
       end
 

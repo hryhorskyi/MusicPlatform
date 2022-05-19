@@ -16,7 +16,7 @@ module Users
       end
 
       def friendships
-        @friendships ||= context.current_user.initiated_friendships.or(context.current_user.accepted_friendships)
+        @friendships ||= context.current_user.friends
       end
     end
   end

@@ -5,6 +5,6 @@ class PublicUserSerializer < BaseSerializer
   attributes :nickname
 
   attribute :avatar do |object|
-    object.avatar.presence || UserSerializer::DEFAULT_AVATAR_URL
+    object&.avatar_url(:large) || UserSerializer::DEFAULT_BIG_AVATAR_URL
   end
 end

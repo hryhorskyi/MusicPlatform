@@ -9,9 +9,11 @@ RSpec.describe MyAccount::Update::Organizer do
       [
         MyAccount::Update::Initialization,
         MyAccount::Update::SetBaseModel,
+        MyAccount::Update::BuildAvatarAttributes,
         Common::Model::ValidateParams,
         MyAccount::Update::ValidateNicknameUniqueness,
         Common::Model::AssignAttributes,
+        Common::Model::ImageDerivatives,
         Common::Model::Persist
       ]
     end
@@ -21,11 +23,13 @@ RSpec.describe MyAccount::Update::Organizer do
     end
 
     context 'when provided params are correct' do
+      let(:avatar) { Base64.encode64(File.read(Rails.root.join('spec/fixtures/files/image.png'))) }
       let(:params) do
         {
           nickname: 'nickname_test',
           first_name: 'first_name_test',
-          last_name: 'last_name_test'
+          last_name: 'last_name_test',
+          avatar: { content: avatar, original_filename: 'test_image.png' }
         }
       end
 
@@ -46,6 +50,10 @@ RSpec.describe MyAccount::Update::Organizer do
       it 'has changed last_name' do
         previous_last_name = current_user.last_name
         expect { result }.to change { current_user.last_name }.from(previous_last_name).to(params[:last_name])
+      end
+
+      it 'has changed avatar' do
+        expect(result.model.avatar_data).not_to eq(current_user.avatar_data_before_last_save)
       end
     end
 
@@ -103,6 +111,54 @@ RSpec.describe MyAccount::Update::Organizer do
       it 'has correct error' do
         expected_error = I18n.t('errors.messages.too_short.other', count: 3)
         expect(result.model.errors.messages[:nickname].first).to eq(expected_error)
+      end
+    end
+
+    context 'when provided avatar is incorrect' do
+      before { create(:user) }
+
+      let(:params) do
+        {
+          nickname: 'nickname_test',
+          first_name: 'first_name_test',
+          last_name: 'last_name_test',
+          avatar: { content: 'dfdfdfdfdf', original_filename: 'img.png' }
+        }
+      end
+
+      it 'has failure result' do
+        expect(result).to be_failure
+      end
+
+      it 'has correct error' do
+        expected_error = I18n.t('my_account.update.errors.avatar_format')
+        expect(result.model.errors.messages[:image].first).to eq(expected_error)
+      end
+    end
+
+    context 'when provided avatar size is incorrect' do
+      before do
+        create(:user)
+        stub_const('AvatarUploader::AVATAR_MAX_SIZE', 1.kilobyte)
+      end
+
+      let(:avatar) { Base64.encode64(File.read(Rails.root.join('spec/fixtures/files/image.png'))) }
+      let(:params) do
+        {
+          nickname: 'nickname_test',
+          first_name: 'first_name_test',
+          last_name: 'last_name_test',
+          avatar: { content: avatar, original_filename: 'img.png' }
+        }
+      end
+
+      it 'has failure result' do
+        expect(result).to be_failure
+      end
+
+      it 'has correct error' do
+        expected_error = I18n.t('my_account.update.errors.avatar_size', count: AvatarUploader::AVATAR_MAX_SIZE)
+        expect(result.model.errors.messages[:image].first).to eq(expected_error)
       end
     end
 

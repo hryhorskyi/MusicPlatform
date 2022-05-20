@@ -1,6 +1,19 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+require 'shrine/storage/s3'
+
+store = Shrine::Storage::S3.new(
+  bucket: Rails.application.credentials.dig(:aws, :bucket),
+  region: Rails.application.credentials.dig(:aws, :region),
+  access_key_id: Rails.application.credentials.dig(:aws, :access_key_id),
+  secret_access_key: Rails.application.credentials.dig(:aws, :secret_access_key)
+)
+
+Shrine.storages = {
+  cache: store,
+  store: store
+}
 
 Rails.application.configure do
   config.cache_classes = true

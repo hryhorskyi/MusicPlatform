@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class UserSerializer < BaseSerializer
-  DEFAULT_AVATAR_URL = 'dummy_avatar_url.png'
+  DEFAULT_BIG_AVATAR_URL = '/app/assets/images/default_avatar/default_big.png'
 
   attributes :email, :nickname, :first_name, :last_name
 
   attribute :avatar do |object|
-    object.avatar.presence || DEFAULT_AVATAR_URL
+    object&.avatar_url(:large) || DEFAULT_BIG_AVATAR_URL
   end
 
   attribute :shared_playlists_number do |_object|

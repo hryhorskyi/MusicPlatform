@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include AvatarUploader.attachment(:avatar)
+
   NICKNAME_LENGTH = (3..20)
   FIRST_NAME_LENGTH = (3..20)
   LAST_NAME_LENGTH = (3..20)

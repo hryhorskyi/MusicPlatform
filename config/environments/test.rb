@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+require 'shrine/storage/memory'
+
+Shrine.storages = {
+  cache: Shrine::Storage::Memory.new,
+  store: Shrine::Storage::Memory.new
+}
 
 Rails.application.configure do
   config.cache_classes = true

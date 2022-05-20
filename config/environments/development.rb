@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
+require 'shrine/storage/file_system'
+
+Shrine.storages = {
+  cache: Shrine::Storage::FileSystem.new('public', prefix: 'uploads/cache'), # temporary
+  store: Shrine::Storage::FileSystem.new('public', prefix: 'uploads') # permanent
+}
 
 Rails.application.configure do
   config.cache_classes = false

@@ -11,6 +11,7 @@ en:
       action:
         index: index users
         create: create user
+        destroy: delete user
     my_account:
       tags: My Account
       action:

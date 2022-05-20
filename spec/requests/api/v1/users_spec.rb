@@ -136,4 +136,43 @@ RSpec.describe 'Users', type: :request do
       end
     end
   end
+
+  path '/api/v1/users/{id}' do
+    delete(I18n.t('swagger.users.action.destroy')) do
+      tags I18n.t('swagger.users.tags')
+      consumes 'application/json'
+      parameter name: :authorization, in: :header, type: :string, required: true
+      parameter name: :id, in: :path, type: :string, example: SecureRandom.uuid, required: true
+
+      let(:user) { create(:user) }
+      let(:id) { user.id }
+
+      response '204', 'when user is successfully removed' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+
+        run_test!
+      end
+
+      response '400', 'when passed incorrect id' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:id) { '123' }
+
+        run_test!
+      end
+
+      response '401', 'when user is unauthorize' do
+        let(:authorization) { nil }
+
+        run_test!
+      end
+
+      response '403', 'when current user not equal user_for_remove' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+
+        let(:id) { create(:user).id }
+
+        run_test!
+      end
+    end
+  end
 end

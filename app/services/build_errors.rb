@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BuildErrors
-  ERRORS_WITHOUT_BODY = %i[not_found forbidden].freeze
+  ERRORS_WITHOUT_BODY = %i[not_found forbidden bad_request].freeze
   class << self
     def call(object, status)
       { errors: json_errors(object, status) }

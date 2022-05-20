@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       end
       resource :session, only: %i[create destroy update]
       resources :static_pages, only: %i[show]
-      resources :users, only: %i[index create]
+      resources :users, only: %i[index create destroy]
     end
   end
   mount Rswag::Ui::Engine => '/api-docs'

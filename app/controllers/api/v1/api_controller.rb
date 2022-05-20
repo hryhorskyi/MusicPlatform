@@ -9,6 +9,7 @@ module Api
       end
 
       PAGINATION_PARAMS = %i[after page per_page].freeze
+      IMAGE_PARAMS = %i[content original_filename].freeze
 
       private
 

@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       it { is_expected.to have_db_column(field).of_type(:string).with_options(null: false) }
     end
 
-    %i[first_name last_name avatar].each do |field|
+    %i[first_name last_name avatar_data].each do |field|
       it { is_expected.to have_db_column(field).of_type(:string) }
     end
 

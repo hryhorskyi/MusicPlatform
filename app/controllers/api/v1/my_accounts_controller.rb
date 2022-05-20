@@ -21,7 +21,7 @@ module Api
       private
 
       def permitted_update_params
-        params.require(:my_account).permit(:nickname, :first_name, :last_name)
+        params.require(:my_account).permit(:nickname, :first_name, :last_name, avatar: IMAGE_PARAMS)
       end
     end
   end

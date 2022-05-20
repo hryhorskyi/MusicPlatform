@@ -25,3 +25,5 @@ dump.rdb
 dump.rdb
 
 /swagger/*
+
+/public/uploads/

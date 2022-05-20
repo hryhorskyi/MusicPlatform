@@ -3,3 +3,5 @@ en:
     update:
       errors:
         nickname_exist: already exist
+        avatar_format: 'type must be one of: image/jpeg, image/png, image/webp'
+        avatar_size: "size must not be greater than #{count} bytes"

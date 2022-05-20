@@ -33,6 +33,7 @@ image: "ruby:3.1.0"
     key: swagger_hash
     untracked: true
   before_script:
+    - rm -rf spec
     - gem install dpl
     - gem install faraday -v 1.10.0
     - apt-get update

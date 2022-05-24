@@ -1,0 +1,59 @@
+{
+  "description": "The schema for home index method",
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "attributes",
+        "id",
+        "type"
+      ],
+      "properties": {
+        "attributes": {
+          "type": "object",
+          "required": [
+            "latest_public_playlists",
+            "latest_songs",
+            "most_popular_playlists",
+            "most_popular_songs",
+            "people_with_most_friends",
+            "top_contributors",
+            "top_featured_public_playlists",
+            "top_songs_in_top_genres"
+
+          ],
+          "properties": {
+            "latest_public_playlists": {
+              "type": "object"
+            },
+            "latest_songs": {
+              "type": "object"
+            },
+            "most_popular_playlists": {
+              "type": "object"
+            },
+            "most_popular_songs": {
+              "type": "object"
+            },
+            "people_with_most_friends": {
+              "type": "object"
+            },
+            "top_contributors": {
+              "type": "object"
+            },
+            "top_featured_public_playlists": {
+              "type": "object"
+            },
+            "top_songs_in_top_genres": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  }
+}

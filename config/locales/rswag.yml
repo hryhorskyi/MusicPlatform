@@ -46,3 +46,7 @@ en:
       tags: Static Pages
       action:
         show: show slug content
+    home:
+      tags: Home
+      action:
+        index: index home page data

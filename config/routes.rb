@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :comments, only: %i[create]
       resources :friends, only: %i[create index]
+      resources :home, only: %i[index]
       resources :invitations, only: %i[create index destroy update]
       resource :my_account, only: %i[show update]
       resources :playlists, only: %i[destroy create] do

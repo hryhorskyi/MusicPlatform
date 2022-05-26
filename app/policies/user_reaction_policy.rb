@@ -12,6 +12,10 @@ class UserReactionPolicy < ApplicationPolicy
     not_playlist_owner? && (public_playlist? || shared_playlist_for_friend?)
   end
 
+  def destroy?
+    user == user_reaction.user
+  end
+
   private
 
   def not_playlist_owner?

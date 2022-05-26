@@ -49,4 +49,17 @@ RSpec.describe UserReactionPolicy, type: :policy do
 
     it { is_expected.not_to permit(:create) }
   end
+
+  context 'when user is permitted to destroy reaction' do
+    let(:user_reaction) { create(:user_reaction, user_id: user.id) }
+
+    it { is_expected.to permit(:destroy) }
+  end
+
+  context 'when user is not permitted to destroy reaction' do
+    let(:user_reaction) { create(:user_reaction, user_id: stranger_user.id) }
+    let(:stranger_user) { create(:user) }
+
+    it { is_expected.not_to permit(:destroy) }
+  end
 end

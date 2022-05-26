@@ -42,6 +42,7 @@ en:
       tags: User Reactions
       action:
         post: create user reaction
+        delete: delete user reaction
     static_pages:
       tags: Static Pages
       action:

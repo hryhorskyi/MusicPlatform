@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "678820e5-8793-46b0-920f-dae81c702014",
+		"_postman_id": "b1657497-7bc3-4f0c-a985-ae2330e7b244",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20124314"
+		"_exporter_id": "20195510"
 	},
 	"item": [
 		{
@@ -13259,6 +13259,678 @@
 												{
 													"key": "Server-Timing",
 													"value": "start_processing.action_controller;dur=0.2001953125, sql.active_record;dur=4.23876953125, instantiation.active_record;dur=0.421875, process_action.action_controller;dur=9.771728515625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Destroy",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Destroy",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												":playlist_id",
+												"user_reactions",
+												":user_reaction_id"
+											],
+											"variable": [
+												{
+													"key": "playlist_id",
+													"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+												},
+												{
+													"key": "user_reaction_id",
+													"value": "4d7ec4bf-e7a0-47b1-bf17-9ab2003e143e"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Destroy",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														":playlist_id",
+														"user_reactions",
+														":user_reaction_id"
+													],
+													"variable": [
+														{
+															"key": "playlist_id",
+															"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+														},
+														{
+															"key": "user_reaction_id",
+															"value": "4d7ec4bf-e7a0-47b1-bf17-9ab2003e143e"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "0d1adfd1-327f-4c13-a6e0-3584dcbc7fec"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.107546"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.222900390625, sql.active_record;dur=66.25732421875, instantiation.active_record;dur=2.177490234375, process_action.action_controller;dur=83.296142578125"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "bad_token",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												":playlist_id",
+												"user_reactions",
+												":user_reaction_id"
+											],
+											"variable": [
+												{
+													"key": "playlist_id",
+													"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+												},
+												{
+													"key": "user_reaction_id",
+													"value": "8287dd21-b5e9-42e1-8089-efb6818863c5"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														":playlist_id",
+														"user_reactions",
+														":user_reaction_id"
+													],
+													"variable": [
+														{
+															"key": "playlist_id",
+															"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+														},
+														{
+															"key": "user_reaction_id",
+															"value": "8287dd21-b5e9-42e1-8089-efb6818863c5"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f9c5431b-a8e9-4d42-92da-4b28626d978e"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.015480"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.26806640625, process_action.action_controller;dur=0.975830078125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Playlist not found",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												":playlist_id",
+												"user_reactions",
+												":user_reaction_id"
+											],
+											"variable": [
+												{
+													"key": "playlist_id",
+													"value": "1"
+												},
+												{
+													"key": "user_reaction_id",
+													"value": "8287dd21-b5e9-42e1-8089-efb6818863c5"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Playlist not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														":playlist_id",
+														"user_reactions",
+														":user_reaction_id"
+													],
+													"variable": [
+														{
+															"key": "playlist_id",
+															"value": "1"
+														},
+														{
+															"key": "user_reaction_id",
+															"value": "8287dd21-b5e9-42e1-8089-efb6818863c5"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "1e5a606c-db98-4226-9d0d-597a319d1b81"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.025796"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.211181640625, sql.active_record;dur=2.174560546875, instantiation.active_record;dur=0.1220703125, process_action.action_controller;dur=6.5478515625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Reaction not found",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												":playlist_id",
+												"user_reactions",
+												":user_reaction_id"
+											],
+											"variable": [
+												{
+													"key": "playlist_id",
+													"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+												},
+												{
+													"key": "user_reaction_id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Reaction not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														":playlist_id",
+														"user_reactions",
+														":user_reaction_id"
+													],
+													"variable": [
+														{
+															"key": "playlist_id",
+															"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+														},
+														{
+															"key": "user_reaction_id",
+															"value": "1"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "97820ee2-4196-47e4-a9d4-8c3e7fba1c3e"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.035462"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.344970703125, sql.active_record;dur=5.508056640625, instantiation.active_record;dur=0.271484375, process_action.action_controller;dur=15.12109375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Reaction is not left by current user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												":playlist_id",
+												"user_reactions",
+												":user_reaction_id"
+											],
+											"variable": [
+												{
+													"key": "playlist_id",
+													"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+												},
+												{
+													"key": "user_reaction_id",
+													"value": "8287dd21-b5e9-42e1-8089-efb6818863c5"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Reaction is not left by current user",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/:playlist_id/user_reactions/:user_reaction_id",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														":playlist_id",
+														"user_reactions",
+														":user_reaction_id"
+													],
+													"variable": [
+														{
+															"key": "playlist_id",
+															"value": "b8819342-26aa-4bac-8d28-26a5852d506b"
+														},
+														{
+															"key": "user_reaction_id",
+															"value": "8287dd21-b5e9-42e1-8089-efb6818863c5"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "676c44ce-7e1c-4a3e-977f-33b72d160ef9"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.030002"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.228759765625, sql.active_record;dur=4.256103515625, instantiation.active_record;dur=0.35302734375, process_action.action_controller;dur=8.703857421875"
 												},
 												{
 													"key": "Transfer-Encoding",

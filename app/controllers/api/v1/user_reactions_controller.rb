@@ -3,7 +3,7 @@
 module Api
   module V1
     class UserReactionsController < ApiController
-      before_action :authorize_access_request!
+      before_action :authorize_access_request!, only: %i[create destroy]
 
       def create
         result = UserReactions::Create::Organizer.call(current_user: current_user, params: permitted_create_params)
@@ -15,10 +15,24 @@ module Api
         end
       end
 
+      def destroy
+        result = UserReactions::Destroy::Organizer.call(current_user: current_user, params: permitted_destroy_params)
+
+        if result.success?
+          render status: :no_content
+        else
+          render_errors(object: result.model, status: result.error_status)
+        end
+      end
+
       private
 
       def permitted_create_params
         params.permit(:playlist_id, :reaction)
+      end
+
+      def permitted_destroy_params
+        params.permit(:id, :playlist_id)
       end
     end
   end

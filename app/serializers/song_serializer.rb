@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class SongSerializer < BaseSerializer
-  attributes :name
+  attributes :name, :featured
 end

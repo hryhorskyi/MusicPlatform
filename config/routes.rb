@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resource :my_account, only: %i[show update]
       resources :playlists, only: %i[destroy create] do
         resources :user_reactions, only: %i[create destroy]
+        resources :playlist_songs, only: %i[create]
       end
       resource :session, only: %i[create destroy update]
       resources :static_pages, only: %i[show]

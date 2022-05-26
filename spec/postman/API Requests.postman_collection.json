@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "b1657497-7bc3-4f0c-a985-ae2330e7b244",
+		"_postman_id": "4dcc54e6-5a73-4ecb-95a9-67a0881d9ffe",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20195510"
+		"_exporter_id": "19611287"
 	},
 	"item": [
 		{
@@ -13401,7 +13401,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								}
@@ -15361,6 +15361,669 @@
 											],
 											"cookie": [],
 											"body": "{\n    \"data\": {\n        \"id\": null,\n        \"type\": \"home\",\n        \"attributes\": {\n            \"top_contributors\": {\n                \"data\": [\n                    {\n                        \"id\": \"6db519e4-feb6-402e-96bb-a9845a6e9428\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test1\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"ce763edc-0c8c-4f1b-9736-b3615c9fc8a6\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test12\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"002b6991-b29b-476e-8e72-fe33d533e0f3\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test123\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"82487fbe-20b4-4b3a-928b-885a03b44513\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test1234\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"a640fd5d-bac2-4a22-9665-4f55b57522ec\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test12345\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    }\n                ]\n            },\n            \"people_with_most_friends\": {\n                \"data\": [\n                    {\n                        \"id\": \"6db519e4-feb6-402e-96bb-a9845a6e9428\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test1\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"ce763edc-0c8c-4f1b-9736-b3615c9fc8a6\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test12\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"002b6991-b29b-476e-8e72-fe33d533e0f3\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test123\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"82487fbe-20b4-4b3a-928b-885a03b44513\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test1234\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    },\n                    {\n                        \"id\": \"a640fd5d-bac2-4a22-9665-4f55b57522ec\",\n                        \"type\": \"user\",\n                        \"attributes\": {\n                            \"nickname\": \"test12345\",\n                            \"avatar\": \"/app/assets/images/default_avatar/default_big.png\"\n                        }\n                    }\n                ]\n            },\n            \"latest_public_playlists\": {\n                \"data\": [\n                    {\n                        \"id\": \"d8769c9c-0404-44f5-95d3-28092a1b3d04\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Floodplain\",\n                            \"description\": \"Dolor quasi illum ad ullam asperiores necessitatibus praesentium dignissimos. Ipsa iste eos facere doloremque sunt dicta quo excepturi. Ratione amet unde labore veritatis provident. Quaerat reprehenderit debitis iure facere veritatis placeat voluptatem.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"7f4f1370-1171-4528-bbb5-768ff02ad730\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Genesis Series\",\n                            \"description\": \"Ipsum exercitationem eligendi molestias animi debitis. Commodi ab culpa debitis dicta. Tenetur voluptas est quae maxime quibusdam reiciendis. Repellat vel velit odio voluptatem eius provident. Assumenda dignissimos eveniet vero omnis eaque.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"06288bad-cefa-431a-bb87-67bbb4096455\",\n                                        \"type\": \"song\"\n                                    }\n                                ]\n                            },\n                            \"comments\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"a25ecbd5-d298-402b-ab78-44161b2ecfba\",\n                                        \"type\": \"comment\"\n                                    }\n                                ]\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"39b6fcb6-4893-4e82-8c88-1a58a961df71\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Homecoming\",\n                            \"description\": \"Iusto quas fugit enim temporibus assumenda rerum. Eveniet quae deleniti eum voluptatem labore impedit inventore aliquid. Est placeat in accusantium iure sint.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"6179c8fd-cc71-4a09-80cc-5053fe5f7c38\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Crush\",\n                            \"description\": \"Dolores error iusto sapiente id exercitationem ex illo repellendus. Porro repellendus saepe corporis odit. Omnis ipsa assumenda asperiores modi at.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:31\",\n                            \"updated_at\": \"2022-05-17 13:47:31\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"8fa40910-d213-4640-b73b-c4c4a65a5519\",\n                                        \"type\": \"song\"\n                                    }\n                                ]\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"14b601e9-5280-4423-a75b-60a93afca1a7\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Hablemos\",\n                            \"description\": \"Deserunt architecto in asperiores ipsum. Id ad a officia corrupti. Totam vel fugiat quam pariatur nemo. Adipisci vero repudiandae molestias ut nulla.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:31\",\n                            \"updated_at\": \"2022-05-17 13:47:31\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    }\n                ]\n            },\n            \"most_popular_playlists\": {\n                \"data\": [\n                    {\n                        \"id\": \"d8769c9c-0404-44f5-95d3-28092a1b3d04\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Floodplain\",\n                            \"description\": \"Dolor quasi illum ad ullam asperiores necessitatibus praesentium dignissimos. Ipsa iste eos facere doloremque sunt dicta quo excepturi. Ratione amet unde labore veritatis provident. Quaerat reprehenderit debitis iure facere veritatis placeat voluptatem.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"7f4f1370-1171-4528-bbb5-768ff02ad730\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Genesis Series\",\n                            \"description\": \"Ipsum exercitationem eligendi molestias animi debitis. Commodi ab culpa debitis dicta. Tenetur voluptas est quae maxime quibusdam reiciendis. Repellat vel velit odio voluptatem eius provident. Assumenda dignissimos eveniet vero omnis eaque.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"06288bad-cefa-431a-bb87-67bbb4096455\",\n                                        \"type\": \"song\"\n                                    }\n                                ]\n                            },\n                            \"comments\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"a25ecbd5-d298-402b-ab78-44161b2ecfba\",\n                                        \"type\": \"comment\"\n                                    }\n                                ]\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"39b6fcb6-4893-4e82-8c88-1a58a961df71\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Homecoming\",\n                            \"description\": \"Iusto quas fugit enim temporibus assumenda rerum. Eveniet quae deleniti eum voluptatem labore impedit inventore aliquid. Est placeat in accusantium iure sint.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"6179c8fd-cc71-4a09-80cc-5053fe5f7c38\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Crush\",\n                            \"description\": \"Dolores error iusto sapiente id exercitationem ex illo repellendus. Porro repellendus saepe corporis odit. Omnis ipsa assumenda asperiores modi at.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:31\",\n                            \"updated_at\": \"2022-05-17 13:47:31\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"8fa40910-d213-4640-b73b-c4c4a65a5519\",\n                                        \"type\": \"song\"\n                                    }\n                                ]\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"14b601e9-5280-4423-a75b-60a93afca1a7\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Hablemos\",\n                            \"description\": \"Deserunt architecto in asperiores ipsum. Id ad a officia corrupti. Totam vel fugiat quam pariatur nemo. Adipisci vero repudiandae molestias ut nulla.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:31\",\n                            \"updated_at\": \"2022-05-17 13:47:31\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    }\n                ]\n            },\n            \"top_featured_public_playlists\": {\n                \"data\": [\n                    {\n                        \"id\": \"d8769c9c-0404-44f5-95d3-28092a1b3d04\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Floodplain\",\n                            \"description\": \"Dolor quasi illum ad ullam asperiores necessitatibus praesentium dignissimos. Ipsa iste eos facere doloremque sunt dicta quo excepturi. Ratione amet unde labore veritatis provident. Quaerat reprehenderit debitis iure facere veritatis placeat voluptatem.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"7f4f1370-1171-4528-bbb5-768ff02ad730\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Genesis Series\",\n                            \"description\": \"Ipsum exercitationem eligendi molestias animi debitis. Commodi ab culpa debitis dicta. Tenetur voluptas est quae maxime quibusdam reiciendis. Repellat vel velit odio voluptatem eius provident. Assumenda dignissimos eveniet vero omnis eaque.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"06288bad-cefa-431a-bb87-67bbb4096455\",\n                                        \"type\": \"song\"\n                                    }\n                                ]\n                            },\n                            \"comments\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"a25ecbd5-d298-402b-ab78-44161b2ecfba\",\n                                        \"type\": \"comment\"\n                                    }\n                                ]\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"39b6fcb6-4893-4e82-8c88-1a58a961df71\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Homecoming\",\n                            \"description\": \"Iusto quas fugit enim temporibus assumenda rerum. Eveniet quae deleniti eum voluptatem labore impedit inventore aliquid. Est placeat in accusantium iure sint.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:30\",\n                            \"updated_at\": \"2022-05-17 13:47:30\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"6179c8fd-cc71-4a09-80cc-5053fe5f7c38\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Crush\",\n                            \"description\": \"Dolores error iusto sapiente id exercitationem ex illo repellendus. Porro repellendus saepe corporis odit. Omnis ipsa assumenda asperiores modi at.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:31\",\n                            \"updated_at\": \"2022-05-17 13:47:31\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": [\n                                    {\n                                        \"id\": \"8fa40910-d213-4640-b73b-c4c4a65a5519\",\n                                        \"type\": \"song\"\n                                    }\n                                ]\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"14b601e9-5280-4423-a75b-60a93afca1a7\",\n                        \"type\": \"playlist\",\n                        \"attributes\": {\n                            \"name\": \"Hablemos\",\n                            \"description\": \"Deserunt architecto in asperiores ipsum. Id ad a officia corrupti. Totam vel fugiat quam pariatur nemo. Adipisci vero repudiandae molestias ut nulla.\",\n                            \"likes_count\": 0,\n                            \"dislikes_count\": 0,\n                            \"logo\": \"DUMMY\",\n                            \"created_at\": \"2022-05-17 13:47:31\",\n                            \"updated_at\": \"2022-05-17 13:47:31\"\n                        },\n                        \"relationships\": {\n                            \"owner\": {\n                                \"data\": {\n                                    \"id\": \"aa0e549a-13da-4b83-bece-b78c31eff1a4\",\n                                    \"type\": \"user\"\n                                }\n                            },\n                            \"user_reactions\": {\n                                \"data\": []\n                            },\n                            \"songs\": {\n                                \"data\": []\n                            },\n                            \"comments\": {\n                                \"data\": []\n                            }\n                        }\n                    }\n                ]\n            },\n            \"top_songs_in_top_genres\": {\n                \"data\": [\n                    {\n                        \"id\": \"3130ea92-8456-4cff-9475-1097529b18e0\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Can't Get Enough Of Myself\"\n                        }\n                    },\n                    {\n                        \"id\": \"a1be37a8-336b-4647-b1af-7aa4872a36ae\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Renegade Runaway\"\n                        }\n                    },\n                    {\n                        \"id\": \"ce1439c7-12ad-4801-9200-5b513303ecde\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Locked Away\"\n                        }\n                    },\n                    {\n                        \"id\": \"8d4e27bb-7545-4ddc-8fd4-dd605d809439\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Duhhh\"\n                        }\n                    },\n                    {\n                        \"id\": \"231cd480-1de2-43ac-b601-f38720b4fcbb\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Shots\"\n                        }\n                    },\n                    {\n                        \"id\": \"a56d6497-5073-4b48-b001-a8cc9c157e4f\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Tennessee Whiskey\"\n                        }\n                    },\n                    {\n                        \"id\": \"06288bad-cefa-431a-bb87-67bbb4096455\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Tonight Tonight\"\n                        }\n                    },\n                    {\n                        \"id\": \"b5a47b63-4b24-4131-92ae-d17c58700a0a\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Don't\"\n                        }\n                    },\n                    {\n                        \"id\": \"666a8235-df60-434a-954b-dc4041df6405\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Leave A Trace\"\n                        }\n                    },\n                    {\n                        \"id\": \"42b716c7-882f-445c-a4c3-6f60b7acb7df\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"All the Same\"\n                        }\n                    }\n                ]\n            },\n            \"latest_songs\": {\n                \"data\": [\n                    {\n                        \"id\": \"a56d6497-5073-4b48-b001-a8cc9c157e4f\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Tennessee Whiskey\"\n                        }\n                    },\n                    {\n                        \"id\": \"06288bad-cefa-431a-bb87-67bbb4096455\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Tonight Tonight\"\n                        }\n                    },\n                    {\n                        \"id\": \"b5a47b63-4b24-4131-92ae-d17c58700a0a\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Don't\"\n                        }\n                    },\n                    {\n                        \"id\": \"666a8235-df60-434a-954b-dc4041df6405\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Leave A Trace\"\n                        }\n                    },\n                    {\n                        \"id\": \"42b716c7-882f-445c-a4c3-6f60b7acb7df\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"All the Same\"\n                        }\n                    }\n                ]\n            },\n            \"most_popular_songs\": {\n                \"data\": [\n                    {\n                        \"id\": \"a56d6497-5073-4b48-b001-a8cc9c157e4f\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Tennessee Whiskey\"\n                        }\n                    },\n                    {\n                        \"id\": \"06288bad-cefa-431a-bb87-67bbb4096455\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Tonight Tonight\"\n                        }\n                    },\n                    {\n                        \"id\": \"b5a47b63-4b24-4131-92ae-d17c58700a0a\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Don't\"\n                        }\n                    },\n                    {\n                        \"id\": \"666a8235-df60-434a-954b-dc4041df6405\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"Leave A Trace\"\n                        }\n                    },\n                    {\n                        \"id\": \"42b716c7-882f-445c-a4c3-6f60b7acb7df\",\n                        \"type\": \"song\",\n                        \"attributes\": {\n                            \"name\": \"All the Same\"\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Playlist_songs",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Create",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "song_id",
+													"value": "086e763a-9609-45e5-b009-acc59574860c",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												"playlist_songs"
+											],
+											"query": [
+												{
+													"key": "song_id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Create",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "song_id",
+															"value": "086e763a-9609-45e5-b009-acc59574860c",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"174d0d4a-eb0e-4087-8325-f669161464aa",
+														"playlist_songs"
+													],
+													"query": [
+														{
+															"key": "song_id",
+															"value": "",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"39b6d42450ac832a52a28327c5567c44\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "fb6d88dd-345b-4151-bbe8-ce5a3ff07bb3"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.205516"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=2.0947265625, sql.active_record;dur=90.6357421875, instantiation.active_record;dur=1.161376953125, process_action.action_controller;dur=187.980224609375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"174d0d4a-eb0e-4087-8325-f669161464aa\",\n        \"type\": \"playlist\",\n        \"attributes\": {\n            \"name\": \"public_playlist\",\n            \"description\": \"best public music of 2022\",\n            \"likes_count\": 1,\n            \"dislikes_count\": 0,\n            \"logo\": \"dummy_logo_url.png\",\n            \"created_at\": \"2022-05-23 19:33:24\",\n            \"updated_at\": \"2022-05-23 19:33:24\"\n        },\n        \"relationships\": {\n            \"owner\": {\n                \"data\": {\n                    \"id\": \"95bba674-62aa-44fd-a805-5e88bf7f9b2f\",\n                    \"type\": \"user\"\n                }\n            },\n            \"user_reactions\": {\n                \"data\": [\n                    {\n                        \"id\": \"5c97213d-d3c0-42b0-b889-9411ec58dcf8\",\n                        \"type\": \"user_reaction\"\n                    }\n                ]\n            },\n            \"songs\": {\n                \"data\": [\n                    {\n                        \"id\": \"c7f25383-8774-4e68-86cb-9724e1a1e940\",\n                        \"type\": \"song\"\n                    },\n                    {\n                        \"id\": \"9151861e-5c0d-4275-806a-3da763329927\",\n                        \"type\": \"song\"\n                    },\n                    {\n                        \"id\": \"cf3c5f43-bb69-45ff-898d-e09b0f87aff5\",\n                        \"type\": \"song\"\n                    },\n                    {\n                        \"id\": \"1fb4fa8c-22f4-4419-be01-d3ea63ee995d\",\n                        \"type\": \"song\"\n                    },\n                    {\n                        \"id\": \"050a2208-6b22-4929-9732-ecced71427d5\",\n                        \"type\": \"song\"\n                    },\n                    {\n                        \"id\": \"086e763a-9609-45e5-b009-acc59574860c\",\n                        \"type\": \"song\"\n                    }\n                ]\n            },\n            \"comments\": {\n                \"data\": []\n            }\n        }\n    },\n    \"included\": [\n        {\n            \"id\": \"c7f25383-8774-4e68-86cb-9724e1a1e940\",\n            \"type\": \"song\",\n            \"attributes\": {\n                \"name\": \"Sound & Color\",\n                \"featured\": true\n            }\n        },\n        {\n            \"id\": \"9151861e-5c0d-4275-806a-3da763329927\",\n            \"type\": \"song\",\n            \"attributes\": {\n                \"name\": \"Alright\",\n                \"featured\": true\n            }\n        },\n        {\n            \"id\": \"cf3c5f43-bb69-45ff-898d-e09b0f87aff5\",\n            \"type\": \"song\",\n            \"attributes\": {\n                \"name\": \"All Eyes On You\",\n                \"featured\": true\n            }\n        },\n        {\n            \"id\": \"1fb4fa8c-22f4-4419-be01-d3ea63ee995d\",\n            \"type\": \"song\",\n            \"attributes\": {\n                \"name\": \"Like I'm Gonna Lose You\",\n                \"featured\": false\n            }\n        },\n        {\n            \"id\": \"050a2208-6b22-4929-9732-ecced71427d5\",\n            \"type\": \"song\",\n            \"attributes\": {\n                \"name\": \"Facts\",\n                \"featured\": true\n            }\n        },\n        {\n            \"id\": \"086e763a-9609-45e5-b009-acc59574860c\",\n            \"type\": \"song\",\n            \"attributes\": {\n                \"name\": \"Ex's & Oh's\",\n                \"featured\": true\n            }\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Unauthorize",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												"playlist_songs"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorize",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"174d0d4a-eb0e-4087-8325-f669161464aa",
+														"playlist_songs"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "a875d194-2ff8-4bc2-ae8e-f549322d74fe"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.025444"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=1.473388671875, process_action.action_controller;dur=6.80615234375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When song exists",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "song_id",
+													"value": "1fb4fa8c-22f4-4419-be01-d3ea63ee995d",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												"playlist_songs"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When song exists",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "song_id",
+															"value": "1fb4fa8c-22f4-4419-be01-d3ea63ee995d",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"174d0d4a-eb0e-4087-8325-f669161464aa",
+														"playlist_songs"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "882e7f5d-82c0-49c4-bbc2-6ccc8192dc5d"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.069878"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=8.2158203125, sql.active_record;dur=26.202392578125, instantiation.active_record;dur=1.162353515625, process_action.action_controller;dur=41.9345703125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"status\": 422,\n            \"title\": \"Song\",\n            \"source\": {\n                \"pointer\": \"/data/attributes/song\"\n            },\n            \"detail\": \"Song has already been taken\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "When user is not owner",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "song_id",
+													"value": "5094024e-e5ad-492a-8cfd-ad80cd099ea1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												"playlist_songs"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When user is not owner",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "song_id",
+															"value": "5094024e-e5ad-492a-8cfd-ad80cd099ea1",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"174d0d4a-eb0e-4087-8325-f669161464aa",
+														"playlist_songs"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "99fdb9ab-6c6c-4e93-80c4-3ac8fb66b15f"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.038945"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.293212890625, sql.active_record;dur=11.1220703125, instantiation.active_record;dur=0.921630859375, process_action.action_controller;dur=26.607177734375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When friend playlist is private",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "song_id",
+													"value": "5094024e-e5ad-492a-8cfd-ad80cd099ea1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"playlists",
+												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												"playlist_songs"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When friend playlist is private",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "song_id",
+															"value": "5094024e-e5ad-492a-8cfd-ad80cd099ea1",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"playlists",
+														"174d0d4a-eb0e-4087-8325-f669161464aa",
+														"playlist_songs"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "99fdb9ab-6c6c-4e93-80c4-3ac8fb66b15f"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.038945"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.293212890625, sql.active_record;dur=11.1220703125, instantiation.active_record;dur=0.921630859375, process_action.action_controller;dur=26.607177734375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
 										}
 									]
 								}

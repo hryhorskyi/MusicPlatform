@@ -47,6 +47,10 @@ en:
       tags: Static Pages
       action:
         show: show slug content
+    playlist_songs:
+      tags: Playlist Songs
+      action:
+        post: create playlist songs
     home:
       tags: Home
       action:

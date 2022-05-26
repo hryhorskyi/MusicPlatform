@@ -1,0 +1,3 @@
+{
+  "oneOf": [{ "$ref": "file:/entities/playlist_with_songs.json#" }]
+}

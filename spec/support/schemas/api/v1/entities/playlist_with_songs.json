@@ -1,0 +1,194 @@
+{
+  "id": "file:/entities/playlist_with_songs.json#",
+  "type": "object",
+  "required": [
+      "data",
+      "included"
+  ],
+  "properties": {
+      "data": {
+          "type": "object",
+          "required": [
+              "id",
+              "type",
+              "attributes",
+              "relationships"
+          ],
+          "properties": {
+              "id": {
+                  "type": "string"
+              },
+              "type": {
+                  "type": "string"
+              },
+              "attributes": {
+                  "type": "object",
+                  "required": [
+                      "name",
+                      "description",
+                      "likes_count",
+                      "dislikes_count",
+                      "logo",
+                      "created_at",
+                      "updated_at"
+                  ],
+                  "properties": {
+                      "name": {
+                          "type": "string"
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "likes_count": {
+                          "type": "integer"
+                      },
+                      "dislikes_count": {
+                          "type": "integer"
+                      },
+                      "logo": {
+                          "type": "string"
+                      },
+                      "created_at": {
+                          "type": "string"
+                      },
+                      "updated_at": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "relationships": {
+                  "type": "object",
+                  "required": [
+                      "owner",
+                      "user_reactions",
+                      "songs",
+                      "comments"
+                  ],
+                  "properties": {
+                      "owner": {
+                          "type": "object",
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "type": "object",
+                                  "required": [
+                                      "id",
+                                      "type"
+                                  ],
+                                  "properties": {
+                                      "id": {
+                                          "type": "string"
+                                      },
+                                      "type": {
+                                          "type": "string"
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "user_reactions": {
+                          "type": "object",
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "type": "array",
+                                  "items": {
+                                      "type": "object",
+                                      "required": [
+                                          "id",
+                                          "type"
+                                      ],
+                                      "properties": {
+                                          "id": {
+                                              "type": "string"
+                                          },
+                                          "type": {
+                                              "type": "string"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "songs": {
+                          "type": "object",
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "type": "array",
+                                  "items": {
+                                      "type": "object",
+                                      "required": [
+                                          "id",
+                                          "type"
+                                      ],
+                                      "properties": {
+                                          "id": {
+                                              "type": "string"
+                                          },
+                                          "type": {
+                                              "type": "string"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      },
+                      "comments": {
+                          "type": "object",
+                          "required": [
+                              "data"
+                          ],
+                          "properties": {
+                              "data": {
+                                  "type": "array",
+                                  "items": {}
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      },
+      "included": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "required": [
+                  "id",
+                  "type",
+                  "attributes"
+              ],
+              "properties": {
+                  "id": {
+                      "type": "string"
+                  },
+                  "type": {
+                      "type": "string"
+                  },
+                  "attributes": {
+                      "type": "object",
+                      "required": [
+                          "name",
+                          "featured"
+                      ],
+                      "properties": {
+                          "name": {
+                              "type": "string"
+                          },
+                          "featured": {
+                              "type": "boolean"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

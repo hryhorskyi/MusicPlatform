@@ -27,6 +27,9 @@
                 { "type": "string" }
               ]
             },
+            "playlist_type": {
+              "type": "string"
+            },
             "likes_count": {
               "type": "integer"
             },
@@ -46,6 +49,7 @@
           "required": [
             "name",
             "description",
+            "playlist_type",
             "likes_count",
             "dislikes_count",
             "logo",

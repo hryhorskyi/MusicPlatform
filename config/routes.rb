@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :invitations, only: %i[create index destroy update]
       resource :my_account, only: %i[show update]
       resources :playlists, only: %i[destroy create] do
-        resources :user_reactions, only: %i[create destroy]
+        resources :user_reactions, only: %i[create update destroy]
         resources :playlist_songs, only: %i[create]
       end
       resource :session, only: %i[create destroy update]

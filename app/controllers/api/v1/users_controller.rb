@@ -3,7 +3,7 @@
 module Api
   module V1
     class UsersController < ApiController
-      before_action :authorize_access_request!, only: %i[index destroy]
+      before_action :authorize_user!, only: %i[index destroy]
 
       def index
         result = Users::Index::Organizer.call(current_user: current_user, params: permitted_index_params)

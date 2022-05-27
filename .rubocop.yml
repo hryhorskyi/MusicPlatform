@@ -58,4 +58,8 @@ RSpec/ExpectChange:
   EnforcedStyle: block
 
 RSpec/NestedGroups:
-  Max: 5
+  Max: 6
+
+RSpec/DescribedClass:
+  Exclude:
+    - spec/controllers/concerns/*

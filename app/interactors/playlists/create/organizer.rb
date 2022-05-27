@@ -9,7 +9,8 @@ module Playlists
                BuildAttributes,
                Common::Model::AssignAttributes,
                Common::Model::Validate,
-               Common::Model::Persist
+               Common::Model::Persist,
+               ProcessAchievement
     end
   end
 end

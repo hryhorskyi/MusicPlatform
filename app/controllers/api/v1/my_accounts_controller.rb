@@ -3,7 +3,7 @@
 module Api
   module V1
     class MyAccountsController < ApiController
-      before_action :authorize_access_request!, only: %i[show update]
+      before_action :authorize_user!, only: %i[show update]
 
       def show
         render json: UserSerializer.new(current_user), status: :ok

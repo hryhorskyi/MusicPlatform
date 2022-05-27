@@ -3,7 +3,7 @@
 module Api
   module V1
     class CommentsController < ApiController
-      before_action :authorize_access_request!, only: %i[create]
+      before_action :authorize_user!, only: %i[create]
 
       def create
         comment = Comments::Create::Organizer.call(params: permitted_create_params, current_user: current_user)

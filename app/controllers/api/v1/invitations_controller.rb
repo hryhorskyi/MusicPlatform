@@ -3,7 +3,7 @@
 module Api
   module V1
     class InvitationsController < ApiController
-      before_action :authorize_access_request!
+      before_action :authorize_user!
 
       def index
         result = Invitations::Index::Organizer.call(current_user: current_user, params: permitted_index_params)

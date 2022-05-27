@@ -3,7 +3,7 @@
 module Api
   module V1
     class FriendsController < ApiController
-      before_action :authorize_access_request!, only: %i[create index]
+      before_action :authorize_user!, only: %i[create index]
 
       def index
         friends = current_user.initiated_friendships

@@ -3,7 +3,7 @@
 module Api
   module V1
     class PlaylistsController < ApiController
-      before_action :authorize_access_request!
+      before_action :authorize_user!
 
       def create
         result = Playlists::Create::Organizer.call(current_user: current_user, params: permitted_create_params)

@@ -16,7 +16,8 @@ RSpec.describe Playlists::Create::Organizer do
         Playlists::Create::BuildAttributes,
         Common::Model::AssignAttributes,
         Common::Model::Validate,
-        Common::Model::Persist
+        Common::Model::Persist,
+        Playlists::Create::ProcessAchievement
       ]
     end
 

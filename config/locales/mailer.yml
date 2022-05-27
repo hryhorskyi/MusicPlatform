@@ -6,3 +6,8 @@ en:
         create: You get friends invitation from %{nickname}
         update: Your invitation were declined by %{nickname}
         destroy: You had invitation from %{nickname}, but requestor canceled it
+    achievement:
+      subject: Epam Music achievement notification
+      action:
+        playlist: Dear, %{nickname}. You have got achievement for reaching %{playlists_count} created playlists
+    

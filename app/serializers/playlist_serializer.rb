@@ -8,7 +8,7 @@ class PlaylistSerializer < BaseSerializer
   has_many :songs
   has_many :comments
 
-  attributes :name, :description
+  attributes :name, :description, :playlist_type
 
   attribute :likes_count do |object|
     object.user_reactions.like_reaction.count

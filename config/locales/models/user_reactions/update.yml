@@ -1,0 +1,6 @@
+en:
+  user_reactions:
+    update:
+      errors:
+        invalid_reaction: incorrect type of reaction
+        same_reaction: you don't update your current reaction

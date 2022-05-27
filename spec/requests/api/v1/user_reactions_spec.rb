@@ -87,6 +87,87 @@ RSpec.describe 'UserReactions', type: :request do
   end
 
   path '/api/v1/playlists/{playlist_id}/user_reactions/{id}' do
+    patch(I18n.t('swagger.user_reactions.action.patch')) do
+      tags I18n.t('swagger.user_reactions.tags')
+      consumes 'application/json'
+      produces 'application/json'
+      parameter name: 'authorization', in: :header, type: :string, required: true
+      parameter name: :playlist_id, in: :path, type: :string, example: SecureRandom.uuid
+      parameter name: :id, in: :path, type: :string, example: SecureRandom.uuid
+      parameter name: :user_reaction, in: :body, schema: {
+        type: :object,
+        properties: {
+          reaction: { type: :string }
+        },
+        example: {
+          reaction: 'dislike'
+        },
+        required: %w[reaction]
+      }
+
+      let(:playlist_id) { playlist.id }
+      let(:id) { user_reaction.id }
+      let(:user_reaction) { user_reaction_params }
+      let(:current_user) { create(:user) }
+      let(:playlist) { create(:playlist, playlist_type: 'public') }
+      let(:user_reaction_params) do
+        create(:user_reaction, user_id: current_user.id, playlist_id: playlist.id, reaction: 'dislike')
+      end
+
+      response '200', 'when user reaction successfully updated' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:user_reaction) { { reaction: 'like' } }
+        let(:id) { user_reaction_params.id }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/user_reactions/update')
+        end
+      end
+
+      response '401', 'unauthorized request' do
+        let(:authorization) { '' }
+
+        run_test!
+      end
+
+      response '403', 'when user update reaction of another user' do
+        let(:user) { create(:user) }
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:user_reaction) { { reaction: 'like' } }
+        let(:id) { user_reaction_params.id }
+
+        run_test!
+      end
+
+      response '404', 'when playlist not found' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:playlist_id) { -1 }
+
+        run_test!
+      end
+
+      response '404', 'when user reaction not found' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:id) { -1 }
+
+        run_test!
+      end
+
+      response '422', 'when reaction is invalid' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+        let(:user_reaction) { { reaction: 'a' } }
+        let(:id) { user_reaction_params.id }
+
+        run_test!
+      end
+
+      response '422', 'when reaction did not change' do
+        let(:authorization) { SessionCreate.call(current_user.id)[:access] }
+
+        run_test!
+      end
+    end
+
     delete(I18n.t('swagger.user_reactions.action.delete')) do
       tags I18n.t('swagger.user_reactions.tags')
       consumes 'application/json'

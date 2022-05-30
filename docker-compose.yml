@@ -72,5 +72,5 @@ services:
       start_period: 10s
       retries: 3
     depends_on:
-      server:
+      redis:
         condition: service_healthy

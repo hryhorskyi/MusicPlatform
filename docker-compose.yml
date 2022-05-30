@@ -1,0 +1,76 @@
+version: '3.5'
+
+x-env-postgres: &env-postgres
+  POSTGRES_USER: epam-music
+  POSTGRES_PASSWORD: epam-music-password
+  POSTGRES_DB: epam-music-database
+
+x-base-server: &base-server
+  build: ./
+  volumes:
+    - .:/home/www/epam-music
+  environment:
+    <<: *env-postgres
+    DOCKER_REDIS_URL: redis://redis:6379/0
+    POSTGRES_HOST: postgres
+    REDIS_URL_SIDEKIQ: redis://redis:6379/1
+
+services:
+  server:
+    <<: *base-server
+    ports:
+      - "3000:3000"
+    tty: true
+    stdin_open: true
+    entrypoint: ["sh", "./entrypoints/server-entrypoint.sh"]
+    command: ["sh", "-c", "RAILS_ENV=${RAILS_ENV:-development} rails server -b 0.0.0.0"]
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://0.0.0.0:3000 || exit 1"]
+      interval: 25s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:14.3-alpine
+    restart: unless-stopped
+    environment:
+      <<: *env-postgres
+    volumes:
+      - ./tmp/db/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U epam-music -depam-music-database"]
+      timeout: 45s
+      interval: 10s
+      retries: 5
+  
+  redis:
+    image: redis:alpine
+    hostname: redis
+    restart: unless-stopped
+    volumes:
+      - ./tmp/db/redis:/var/lib/redis
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli", "ping"]
+      timeout: 45s
+      interval: 10s
+      retries: 5
+
+  sidekiq:
+    <<: *base-server
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    entrypoint: ["sh", "./entrypoints/sidekiq-entrypoint.sh"]
+    healthcheck:
+      test: ["CMD-SHELL", "ps ax | grep -v grep | grep sidekiq || exit 1"]
+      interval: 25s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+    depends_on:
+      server:
+        condition: service_healthy

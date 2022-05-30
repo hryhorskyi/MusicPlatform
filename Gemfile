@@ -7,7 +7,7 @@ ruby File.read('.ruby-version').strip
 
 gem 'rails', '~> 7.0.1'
 
-gem 'activeadmin', '~> 2.11'
+gem 'activeadmin', '~> 2.13'
 gem 'ar_lazy_preload', '~> 1.0'
 gem 'aws-sdk-s3', '~> 1.113'
 gem 'bcrypt', '~> 3.1'
@@ -46,10 +46,10 @@ group :development, :test do
   gem 'lefthook', '~> 0.7'
   gem 'pry', '~> 0.14'
   gem 'pry-byebug', '~> 3.8', require: false
-  gem 'rubocop', '~> 1.27'
-  gem 'rubocop-performance', '~> 1.13'
+  gem 'rubocop', '~> 1.30'
+  gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.13'
-  gem 'rubocop-rspec', '~> 2.8', require: false
+  gem 'rubocop-rspec', '~> 2.11', require: false
   gem 'traceroute', '~> 0.8'
 end
 

@@ -119,7 +119,11 @@ Now you can access sidekiq UI, to do this you have to be logged as admin and go 
   1. `docker build -t epam-music-image .` - default dev env
   2. `docker build -t epam-music-image --build-arg RAILS_ENV_VARIABLE=staging .` - chose staging env
   3. `docker build -t epam-music-image --build-arg RAILS_ENV_VARIABLE=production .` - chose production env
-* Run container command `docker run --name epam-music -dp 3000:3000 epam-music-image` <strong> IT'S work on MAC or WINDOWS</strong>
-* Run container command `docker run --name epam-music -dp 3000:3000 epam-music-image` <strong> IT'S work on MAC or WINDOWS</strong>
-* Run container command `docker run --name epam-music -dp 3000:3000 --add-host host.docker.internal:host-gateway epam-music-image` <strong> IT'S work on the LINUX</strong>
-* Open your browser and go to the `http://localhost:3000`
+
+## Docker Compose
+
+* Install docker for your system `https://www.docker.com/get-started/`
+* Go to the folder with the project epam-music
+* For start you need execute command `docker compose up`
+* For exite and stop containers you must to execute command `docker compose down`
+* if you want add seed's for app then you need to execute command `docker compose exec server rails db:seed` 

@@ -27,3 +27,5 @@ dump.rdb
 /swagger/*
 
 /public/uploads/
+
+.DS_Store

@@ -1,0 +1,5 @@
+en:
+  friends:
+    destroy:
+      errors:
+        delete_rollback: didn't delete!

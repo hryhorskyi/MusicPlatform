@@ -182,4 +182,71 @@ RSpec.describe 'Friends', type: :request do
       end
     end
   end
+
+  path '/api/v1/friends/{friendship_id}' do
+    delete(I18n.t('swagger.friends.action.destroy')) do
+      tags I18n.t('swagger.friends.tags')
+
+      consumes 'application/json'
+      produces 'application/json'
+
+      parameter name: 'authorization', in: :header, type: :string, required: true
+
+      parameter name: :friendship_id, in: :path, type: :string, required: true, example: SecureRandom.uuid
+      parameter name: :keep_songs, in: :query, type: :boolean, required: false, example: 'true'
+      parameter name: :keep_comments, in: :query, type: :boolean, required: false, example: 'true'
+
+      let(:user) { create(:user) }
+      let(:friendship_id) { create(:friend, acceptor: user).id }
+
+      response '204', 'when success destroy friendship with params keep_songs=true and keep_comments=true' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:keep_songs) { 'true' }
+        let(:keep_comments) { 'true' }
+
+        run_test!
+      end
+
+      response '204', 'when success destroy friendship with params keep_songs=false and keep_comments=false' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:keep_songs) { 'false' }
+        let(:keep_comments) { 'false' }
+
+        run_test!
+      end
+
+      response '204', 'when success destroy friendship with param only keep_songs=true' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:keep_songs) { 'true' }
+
+        run_test!
+      end
+
+      response '204', 'when success destroy friendship with param only keep_comments=true' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:keep_comments) { 'true' }
+
+        run_test!
+      end
+
+      response '204', 'when success destroy friendship without params keep_songs and keep_comments' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+
+        run_test!
+      end
+
+      response '403', 'when friendship is not exist' do
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:friendship_id) { SecureRandom.uuid }
+
+        run_test!
+      end
+
+      response '401', 'unauthorized' do
+        let(:authorization) { nil }
+
+        run_test!
+      end
+    end
+  end
 end

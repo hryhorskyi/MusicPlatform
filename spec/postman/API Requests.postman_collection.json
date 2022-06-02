@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "d7b30738-7e0a-48a6-ab81-e1d5fbb8796e",
+		"_postman_id": "da81357a-7f86-4167-aba2-dbcc8ad37fb9",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "8202248"
+		"_exporter_id": "19611287"
 	},
 	"item": [
 		{
@@ -10633,6 +10633,811 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Destroy",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "Destroy without params",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends/:id/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "3f4dd2c7-041e-49bb-a7c7-a1f5447f6c4f"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Destroy without params",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/friends/:id/",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"friends",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3f4dd2c7-041e-49bb-a7c7-a1f5447f6c4f"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "7e8ad815-ce1c-4b6a-ac21-e81a6f96be86"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.059620"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.262939453125, sql.active_record;dur=26.200439453125, instantiation.active_record;dur=1.1171875, process_action.action_controller;dur=44.962890625"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "Destroy keep_songs",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends/:id/?keep_songs=true",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends",
+												":id",
+												""
+											],
+											"query": [
+												{
+													"key": "keep_songs",
+													"value": "true"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1eaf5000-c154-4dc7-bc84-e9c05ec36fda"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Destroy keep_songs",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/friends/:id/?keep_songs=true",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"friends",
+														":id",
+														""
+													],
+													"query": [
+														{
+															"key": "keep_songs",
+															"value": "true"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "effc9108-b7e5-45d3-9a48-7a2a38c3b64a"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "f3775f0e-1452-4954-ad08-9e365c749592"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.042933"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.363037109375, sql.active_record;dur=19.98828125, instantiation.active_record;dur=0.744873046875, process_action.action_controller;dur=34.1767578125"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "Destroy keep_comments",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends/:id/?keep_comments=true",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends",
+												":id",
+												""
+											],
+											"query": [
+												{
+													"key": "keep_comments",
+													"value": "true"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "f02face8-5c45-4273-aa25-1e8f8002f529"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Destroy keep_comments",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/friends/:id/?keep_comments=true",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"friends",
+														":id",
+														""
+													],
+													"query": [
+														{
+															"key": "keep_comments",
+															"value": "true"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "f02face8-5c45-4273-aa25-1e8f8002f529"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "9a43f9fb-3ffe-40b0-bd89-1d3be8fc76db"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.082279"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.2900390625, sql.active_record;dur=23.979248046875, instantiation.active_record;dur=6.142333984375, process_action.action_controller;dur=56.648681640625"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "Destroy keep_songs/comments",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends/:id/?keep_songs=true&keep_comments=true",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends",
+												":id",
+												""
+											],
+											"query": [
+												{
+													"key": "keep_songs",
+													"value": "true"
+												},
+												{
+													"key": "keep_comments",
+													"value": "true"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2c158abe-e3dc-4fa5-80c4-038cb87de859"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Destroy keep_songs/comments",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/friends/:id/?keep_songs=false&keep_comments=true",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"friends",
+														":id",
+														""
+													],
+													"query": [
+														{
+															"key": "keep_songs",
+															"value": "false"
+														},
+														{
+															"key": "keep_comments",
+															"value": "true"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "2c158abe-e3dc-4fa5-80c4-038cb87de859"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "fd38a6f5-6c69-41bf-b593-ae4266f37cb6"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.058701"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=1.626220703125, sql.active_record;dur=30.6201171875, instantiation.active_record;dur=1.21240234375, process_action.action_controller;dur=46.6171875"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "Friendship not exist",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends/:id/?keep_songs&keep_comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends",
+												":id",
+												""
+											],
+											"query": [
+												{
+													"key": "keep_songs",
+													"value": null
+												},
+												{
+													"key": "keep_comments",
+													"value": null
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{$randomUUID}}"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Friendship not exist",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/friends/:id/?keep_songs&keep_comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"friends",
+														":id",
+														""
+													],
+													"query": [
+														{
+															"key": "keep_songs",
+															"value": null
+														},
+														{
+															"key": "keep_comments",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "{{$randomUUID}}"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "e0d0f0b8-5e7c-45f2-b3cb-8b9d2266a171"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.078892"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=2.67138671875, sql.active_record;dur=22.978515625, instantiation.active_record;dur=0.1181640625, process_action.action_controller;dur=62.2158203125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "Unauthorized",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{nil}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/friends/:id/?keep_songs&keep_comments",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"friends",
+												":id",
+												""
+											],
+											"query": [
+												{
+													"key": "keep_songs",
+													"value": null
+												},
+												{
+													"key": "keep_comments",
+													"value": null
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{$randomUUID}}"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/friends/:id/?keep_songs&keep_comments",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"friends",
+														":id",
+														""
+													],
+													"query": [
+														{
+															"key": "keep_songs",
+															"value": null
+														},
+														{
+															"key": "keep_comments",
+															"value": null
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "{{$randomUUID}}"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "78c24975-48ce-4fee-8f8d-1f59e982ed27"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.021831"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.358642578125, process_action.action_controller;dur=10.224609375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
 				}
 			]
 		},
@@ -16495,7 +17300,7 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"raw": "{{url}}/api/v1/playlists/:id/playlist_songs?song_id=c7f25383-8774-4e68-86cb-9724e1a1e940",
 											"host": [
 												"{{url}}"
 											],
@@ -16503,14 +17308,19 @@
 												"api",
 												"v1",
 												"playlists",
-												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												":id",
 												"playlist_songs"
 											],
 											"query": [
 												{
 													"key": "song_id",
-													"value": "",
-													"disabled": true
+													"value": "c7f25383-8774-4e68-86cb-9724e1a1e940"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "c23448e5-b937-43ca-87e1-1062c9bd698f"
 												}
 											]
 										}
@@ -16750,7 +17560,7 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"raw": "{{url}}/api/v1/playlists/:id/playlist_songs",
 											"host": [
 												"{{url}}"
 											],
@@ -16758,8 +17568,14 @@
 												"api",
 												"v1",
 												"playlists",
-												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												":id",
 												"playlist_songs"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "174d0d4a-eb0e-4087-8325-f669161464aa"
+												}
 											]
 										}
 									},
@@ -16881,7 +17697,7 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"raw": "{{url}}/api/v1/playlists/:id/playlist_songs",
 											"host": [
 												"{{url}}"
 											],
@@ -16889,8 +17705,14 @@
 												"api",
 												"v1",
 												"playlists",
-												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												":id",
 												"playlist_songs"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "174d0d4a-eb0e-4087-8325-f669161464aa"
+												}
 											]
 										}
 									},
@@ -17012,7 +17834,7 @@
 											]
 										},
 										"url": {
-											"raw": "{{url}}/api/v1/playlists/174d0d4a-eb0e-4087-8325-f669161464aa/playlist_songs",
+											"raw": "{{url}}/api/v1/playlists/:id/playlist_songs",
 											"host": [
 												"{{url}}"
 											],
@@ -17020,8 +17842,14 @@
 												"api",
 												"v1",
 												"playlists",
-												"174d0d4a-eb0e-4087-8325-f669161464aa",
+												":id",
 												"playlist_songs"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "174d0d4a-eb0e-4087-8325-f669161464aa"
+												}
 											]
 										}
 									},

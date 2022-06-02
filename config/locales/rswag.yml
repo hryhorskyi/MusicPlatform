@@ -22,6 +22,7 @@ en:
       action:
         create: create friend
         index: show list of friends
+        destroy: delete friend
     invitations:
       tags: Invitations
       action:

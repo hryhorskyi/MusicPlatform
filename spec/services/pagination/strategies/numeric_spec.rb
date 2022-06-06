@@ -5,13 +5,14 @@ RSpec.describe Pagination::Strategies::Numeric do
 
   before { create_list(:invitation, 10) }
 
+  let(:collection) { Invitation.all.order(Pagy::DEFAULT[:default_order]) }
+
   describe '#paginate' do
     let(:paginate_collection) { paginator.collection }
     let(:pagination) { paginator.paginate(collection) }
     let(:params) { { page: page, per_page: per_page } }
 
     context 'when provided collection has invitations' do
-      let(:collection) { Invitation.all }
       let(:page) { 1 }
       let(:per_page) { 10 }
 
@@ -46,7 +47,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     end
 
     context 'when provided per_page param' do
-      let(:collection) { Invitation.all }
       let(:page) { 1 }
       let(:per_page) { 5 }
 
@@ -66,7 +66,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     end
 
     context 'when not provided per_page param' do
-      let(:collection) { Invitation.all }
       let(:page) { 1 }
       let(:params) { { page: page } }
 
@@ -86,7 +85,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     end
 
     context 'when provided empty line per_page param' do
-      let(:collection) { Invitation.all }
       let(:page) { 1 }
       let(:params) { { page: page, per_page: '' } }
 
@@ -106,7 +104,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     end
 
     context 'when provided incorrect line per_page param' do
-      let(:collection) { Invitation.all }
       let(:page) { 1 }
       let(:params) { { page: page, per_page: 'asd' } }
 
@@ -126,7 +123,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     end
 
     context 'when provided not exist param page' do
-      let(:collection) { Invitation.all }
       let(:page) { 102_020 }
       let(:per_page) { 2 }
 
@@ -141,7 +137,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     end
 
     context 'when provided param page with string value' do
-      let(:collection) { Invitation.all }
       let(:page) { '102_020' }
       let(:per_page) { 2 }
 
@@ -173,7 +168,6 @@ RSpec.describe Pagination::Strategies::Numeric do
       before { paginator.paginate(collection) }
 
       let(:page) { 1 }
-      let(:collection) { Invitation.all }
 
       it 'returns correct paginated_collection' do
         expect(paginate_collection).to eq(collection.first(Pagy::DEFAULT[:items]))
@@ -197,7 +191,6 @@ RSpec.describe Pagination::Strategies::Numeric do
     context 'when calling method after executed method paginate' do
       before { paginator.paginate(collection) }
 
-      let(:collection) { Invitation.all }
       let(:prev_page) { (page - 1).negative? ? nil : page - 1 }
       let(:last_page) { (collection.count / per_page.to_f).ceil }
       let(:expected_pagination_meta) do

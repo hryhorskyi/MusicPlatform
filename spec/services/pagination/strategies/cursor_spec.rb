@@ -5,13 +5,14 @@ RSpec.describe Pagination::Strategies::Cursor do
 
   before { create_list(:invitation, 10) }
 
+  let(:collection) { Invitation.all.order(Pagy::DEFAULT[:default_order]) }
+
   describe '#paginate' do
     let(:paginate_collection) { paginator.collection }
     let(:pagination) { paginator.paginate(collection) }
     let(:params) { { after: after, per_page: per_page } }
 
     context 'when provided collection has invitations' do
-      let(:collection) { Invitation.all }
       let(:after) { Invitation.first.id }
       let(:per_page) { 10 }
 
@@ -46,7 +47,6 @@ RSpec.describe Pagination::Strategies::Cursor do
     end
 
     context 'when provided per_page param' do
-      let(:collection) { Invitation.all }
       let(:after) { Invitation.first.id }
       let(:per_page) { 5 }
 
@@ -66,7 +66,6 @@ RSpec.describe Pagination::Strategies::Cursor do
     end
 
     context 'when not provided per_page param' do
-      let(:collection) { Invitation.all }
       let(:after) { Invitation.first.id }
       let(:params) { { after: after } }
 
@@ -86,7 +85,6 @@ RSpec.describe Pagination::Strategies::Cursor do
     end
 
     context 'when provided empty line per_page param' do
-      let(:collection) { Invitation.all }
       let(:after) { Invitation.first.id }
       let(:params) { { after: after, per_page: '' } }
 
@@ -106,7 +104,6 @@ RSpec.describe Pagination::Strategies::Cursor do
     end
 
     context 'when provided incorrect per_page param' do
-      let(:collection) { Invitation.all }
       let(:after) { Invitation.first.id }
       let(:params) { { after: after, per_page: 'asd' } }
 
@@ -126,7 +123,6 @@ RSpec.describe Pagination::Strategies::Cursor do
     end
 
     context 'when provided not exist param page' do
-      let(:collection) { Invitation.all }
       let(:after) { SecureRandom.uuid }
       let(:per_page) { 2 }
 
@@ -141,7 +137,6 @@ RSpec.describe Pagination::Strategies::Cursor do
     end
 
     context 'when provided param page with string value' do
-      let(:collection) { Invitation.all }
       let(:after) { '102_020' }
       let(:per_page) { 2 }
 
@@ -179,7 +174,6 @@ RSpec.describe Pagination::Strategies::Cursor do
 
       let(:params) { { after: after } }
       let(:after) { collection.first.id }
-      let(:collection) { Invitation.all }
 
       it 'returns correct paginated_collection' do
         expect(paginate_collection).to match_array(collection[1..Pagy::DEFAULT[:items]])

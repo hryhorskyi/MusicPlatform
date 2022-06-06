@@ -81,7 +81,7 @@ RSpec.describe Invitations::Index::Organizer do
     context 'when provided params per_page and page' do
       before { create_list(:invitation, 10, receiver: user) }
 
-      let(:collection) { Invitation.all }
+      let(:collection) { Invitation.all.order(Pagy::DEFAULT[:default_order]) }
       let(:page) { 1 }
       let(:per_page) { 5 }
       let(:filter) { nil }
@@ -99,7 +99,7 @@ RSpec.describe Invitations::Index::Organizer do
     context 'when provided params after and filter' do
       before { create_list(:invitation, 10, requestor: user) }
 
-      let(:collection) { Invitation.all }
+      let(:collection) { Invitation.all.order(Pagy::DEFAULT[:default_order]) }
       let(:after) { collection.first.id }
       let(:per_page) { 5 }
       let(:filter) { nil }

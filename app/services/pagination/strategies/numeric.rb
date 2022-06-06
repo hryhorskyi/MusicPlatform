@@ -14,10 +14,9 @@ module Pagination
 
       def paginate(collection)
         @raw_pagination_meta, @collection = pagy(
-          collection,
+          collection.order(Pagy::DEFAULT[:default_order]),
           page: page,
-          items: params[:per_page].to_i.positive? ? params[:per_page] : Pagy::DEFAULT[:items],
-          order: Pagy::DEFAULT[:default_order]
+          items: params[:per_page].to_i.positive? ? params[:per_page] : Pagy::DEFAULT[:items]
         )
 
         @paginated = true

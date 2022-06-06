@@ -261,7 +261,7 @@ RSpec.describe 'Invitations', type: :request do
         end
 
         let(:authorization) { SessionCreate.call(user.id)[:access] }
-        let(:after) { Invitation.first.id }
+        let(:after) { Invitation.order(Pagy::DEFAULT[:default_order]).first.id }
         let(:per_page) { 5 }
 
         run_test! do |response|

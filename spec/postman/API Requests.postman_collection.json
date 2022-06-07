@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "da81357a-7f86-4167-aba2-dbcc8ad37fb9",
+		"_postman_id": "52278ea3-18d7-4af7-9804-2bd07afbecaf",
 		"name": "API Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19611287"
+		"_exporter_id": "13979178"
 	},
 	"item": [
 		{
@@ -10751,7 +10751,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								},
@@ -10878,7 +10878,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								},
@@ -11005,7 +11005,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								},
@@ -11140,7 +11140,7 @@
 												}
 											],
 											"cookie": [],
-											"body": null
+											"body": ""
 										}
 									]
 								}
@@ -11179,11 +11179,11 @@
 											"query": [
 												{
 													"key": "keep_songs",
-													"value": null
+													"value": ""
 												},
 												{
 													"key": "keep_comments",
-													"value": null
+													"value": ""
 												}
 											],
 											"variable": [
@@ -11322,11 +11322,11 @@
 											"query": [
 												{
 													"key": "keep_songs",
-													"value": null
+													"value": ""
 												},
 												{
 													"key": "keep_comments",
-													"value": null
+													"value": ""
 												}
 											],
 											"variable": [
@@ -16874,6 +16874,1859 @@
 											],
 											"cookie": [],
 											"body": " "
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Index",
+					"item": [
+						{
+							"name": "Success",
+							"item": [
+								{
+									"name": "When is public playlists exist and have comments",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When playlists exist and have comments",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3c26380e6d181c353097d95fc853b62e\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "0611474c-8f18-407f-bbec-b26e07cb0b8c"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "8.080634"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.19921875, sql.active_record;dur=14.548828125, instantiation.active_record;dur=16.28369140625, process_action.action_controller;dur=8054.65234375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Iure dolore architecto exercitationem distinctio rem quidem. Distinctio expedita maxime iste pariatur non blanditiis. Incidunt perferendis officia esse a nulla nisi ducimus. Sapiente adipisci at consectetur accusamus voluptate quaerat quisquam. Culpa distinctio repudiandae sit dolor.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"43aef3e4-bd8d-41b0-8c88-9dcc4b791c80\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"1014d2f6-0485-43d0-9523-8d190d7d7d02\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Tempora accusantium sed officiis dicta dignissimos quis. Sit repellendus voluptatum optio sequi quisquam nulla explicabo. Et temporibus perspiciatis reiciendis nulla alias. Debitis dignissimos quos vel quo architecto.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"c1bbc04a-97eb-4737-b887-7342c52d607d\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"05fef8cf-03c6-4270-9b16-04dcae681c64\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Autem repellat sint voluptates maxime perspiciatis ex. Sequi temporibus delectus excepturi molestiae modi. Dignissimos quo commodi molestiae libero impedit.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"04765321-c3a8-4615-8fb7-2785adf443a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"213e6c73-7c22-406d-819c-4da9f003819b\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Non eaque illum ipsa optio corporis totam nobis. Consequatur tempora itaque porro quos sunt. Non accusamus quas porro nulla tempore. Veniam cupiditate vero exercitationem quae libero eveniet alias aspernatur. Similique eius inventore facere sequi.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"e186510d-dcf0-4989-a81b-93d585210d98\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"153a5c7a-92db-4c6c-9271-b78ceaf440f9\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Reiciendis cum necessitatibus unde nam. Molestiae dolorum adipisci nisi doloremque. Ipsam ducimus blanditiis doloribus rem et hic molestias adipisci. Itaque illum neque accusamus adipisci ut ab delectus rerum. Atque beatae nam deserunt in maxime ut vitae fugiat.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"dfc57ce9-8497-43fe-a670-12fad97f3f0a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9b36429c-3d38-4f34-a382-807bb15f0ec2\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Dolor recusandae culpa corrupti odio laboriosam distinctio. Necessitatibus delectus debitis unde labore perspiciatis ratione accusantium quibusdam. Enim reprehenderit architecto in quod aliquid illum beatae recusandae.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"b8b431ed-2d99-48b8-a7d9-96c37927e6a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 15,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "When is shared playlists current_user's",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=f331dc1e-3b46-4ece-be4a-87c83ccb57bd",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "f331dc1e-3b46-4ece-be4a-87c83ccb57bd"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When is shared playlists current_user's",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=f331dc1e-3b46-4ece-be4a-87c83ccb57bd",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "f331dc1e-3b46-4ece-be4a-87c83ccb57bd"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"8a989fda52fd1f7ac8fb66fb73149441\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "193b21a1-7e44-4711-ba11-4aeb07df0b24"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.042221"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.154296875, sql.active_record;dur=7.506591796875, instantiation.active_record;dur=4.15478515625, process_action.action_controller;dur=28.680908203125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"9dca14d9-9796-49e6-a9eb-610ce766f3e8\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Illum ipsum animi molestiae ullam ab dicta. Culpa quo dolore officia possimus illo. Sequi hic dicta eaque repellat perferendis quos reiciendis aperiam.\",\n                \"created_at\": \"2022-06-06 16:46:13\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"a908462d-94c2-4da2-8ddd-9d4be965143a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"a5bec1e0-80c1-46ee-a4a0-d36ee030adec\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Aliquid ipsum atque odio quas nostrum nisi magni. Assumenda molestiae aperiam blanditiis cumque optio quibusdam. Corporis doloremque veritatis aperiam perspiciatis repudiandae.\",\n                \"created_at\": \"2022-06-06 16:46:13\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"9f43be52-04f8-4e7b-a7cc-f2b0192700a4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"538ed4d6-e178-41ef-a3f6-5ef1d1987a17\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nulla placeat doloribus necessitatibus non quibusdam voluptate iusto. Optio mollitia perspiciatis eius ratione omnis. Corporis minima inventore eos id ducimus facere. Est quis vitae fugiat doloribus ab dolorum.\",\n                \"created_at\": \"2022-06-06 16:46:13\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6a35c911-c918-40f5-993d-12a78875123f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"ad2e7406-6ac6-42e6-ae12-e9affb1165fa\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Earum quo quaerat aliquam blanditiis. Eum doloremque adipisci neque dolor veniam ad ea provident. Ratione deserunt laudantium impedit assumenda nostrum provident. Dolorem voluptates quas in ipsum quo.\",\n                \"created_at\": \"2022-06-06 16:46:14\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"45276175-3441-4d5e-8cc1-b99df374cb93\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"17d0205a-6de2-4c96-8446-30919887be1a\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"At ratione odio ad pariatur esse dolores. Minima quo ad esse iste recusandae. Asperiores pariatur deserunt culpa tempore. Magnam iusto sunt quo doloribus facere laudantium.\",\n                \"created_at\": \"2022-06-06 16:46:14\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"fcc57694-993a-4fe7-aa60-99a19d9bb3c2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"685917c2-6e4d-4252-8e8b-071eed519a66\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Labore pariatur aut praesentium at. Mollitia excepturi dignissimos voluptatem sequi rerum aliquam. Vero necessitatibus facere dolores eius laborum quia tenetur eaque.\",\n                \"created_at\": \"2022-06-06 16:46:14\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6d9a015a-d019-4c9e-a0d2-47da333ab31f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"bdb9baa0-d78b-4d0b-a5b3-e6c49277f123\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Dicta aspernatur nihil aliquid inventore a alias asperiores ipsa. Saepe eum temporibus tempore sequi. Eum dignissimos quo explicabo nobis. Quas amet quam vero optio quae odit.\",\n                \"created_at\": \"2022-06-06 16:46:14\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"28a83a94-1ad7-4f5b-9b0b-e60139688c55\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"50a06dc1-62aa-4547-a83c-979214ddb047\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Unde commodi debitis eum doloribus exercitationem dolorem deserunt iusto. Nisi vero sapiente delectus pariatur voluptates incidunt. Corporis tempore numquam molestias earum rerum facere sequi illo.\",\n                \"created_at\": \"2022-06-06 16:46:15\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"9803f629-842e-4a1c-9e01-0014f999c846\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"57c02592-03c5-4be1-a383-e5413b661a58\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Ullam occaecati quod adipisci at qui. Dolorum quod debitis fugiat perferendis eveniet. Explicabo quae iure excepturi aliquid culpa magnam provident. Itaque iusto debitis exercitationem temporibus.\",\n                \"created_at\": \"2022-06-06 16:46:15\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"2ba03130-be4f-448b-ab72-9201058ec51a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"f591934c-d358-44bf-aa2d-e4dcedf0fbb4\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Libero totam occaecati sapiente fugit doloremque adipisci. Sit cumque quam facere possimus adipisci nihil ullam. Facere in sint aperiam quae id illum saepe incidunt. Est quam eum facere animi excepturi commodi.\",\n                \"created_at\": \"2022-06-06 16:46:15\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"5b913911-259b-4f98-bbc3-6a028f75a5dc\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 30,\n        \"max_per_page\": 25,\n        \"count\": 10,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "When is shared playlist of another user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=f331dc1e-3b46-4ece-be4a-87c83ccb57bd",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "f331dc1e-3b46-4ece-be4a-87c83ccb57bd"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When is shared playlist of another user",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=f331dc1e-3b46-4ece-be4a-87c83ccb57bd",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "f331dc1e-3b46-4ece-be4a-87c83ccb57bd"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "02b4b02e-4381-4acc-8897-10488b2d4a79"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.023317"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.1689453125, sql.active_record;dur=4.164794921875, instantiation.active_record;dur=0.306884765625, process_action.action_controller;dur=9.24365234375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When playlists exist and have not comments",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=f331dc1e-3b46-4ece-be4a-87c83ccb57bd",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "f331dc1e-3b46-4ece-be4a-87c83ccb57bd"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When playlists exist and have comments Copy",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=f331dc1e-3b46-4ece-be4a-87c83ccb57bd",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "f331dc1e-3b46-4ece-be4a-87c83ccb57bd"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"4bb52648f49fe8d45a657da7850e48e7\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "4b39f971-634e-4bed-9319-88d03aad251a"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.027348"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.191162109375, sql.active_record;dur=4.87353515625, instantiation.active_record;dur=0.47705078125, process_action.action_controller;dur=10.947021484375"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 0,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Correct params page and per_page",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a&page=1&per_page=10",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "per_page",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Correct params page and per_page",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a&page=1&per_page=10",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														},
+														{
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"key": "per_page",
+															"value": "10"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"629cb4a6ed227169dbc3520e574fa68e\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "0cf767d7-8913-43f8-a365-8893eccce99b"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.021554"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.152099609375, sql.active_record;dur=4.45361328125, instantiation.active_record;dur=0.42041015625, process_action.action_controller;dur=9.716796875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Iure dolore architecto exercitationem distinctio rem quidem. Distinctio expedita maxime iste pariatur non blanditiis. Incidunt perferendis officia esse a nulla nisi ducimus. Sapiente adipisci at consectetur accusamus voluptate quaerat quisquam. Culpa distinctio repudiandae sit dolor.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"43aef3e4-bd8d-41b0-8c88-9dcc4b791c80\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 10,\n        \"max_per_page\": 25,\n        \"count\": 15,\n        \"self\": 1,\n        \"next\": 2,\n        \"last\": 2,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Correct params after and per_page",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a&after=db76e92d-9150-4493-b933-fa5bc103a5d7&per_page=5",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												},
+												{
+													"key": "after",
+													"value": "db76e92d-9150-4493-b933-fa5bc103a5d7"
+												},
+												{
+													"key": "per_page",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Correct params after and per_page",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a&after=db76e92d-9150-4493-b933-fa5bc103a5d7&per_page=5",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														},
+														{
+															"key": "after",
+															"value": "db76e92d-9150-4493-b933-fa5bc103a5d7"
+														},
+														{
+															"key": "per_page",
+															"value": "5"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"cb63073f983a853f6de46a9c358e4ccc\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "8a7c9597-4df4-4471-8b8f-98c36d064c55"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.033091"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.19091796875, sql.active_record;dur=8.6337890625, instantiation.active_record;dur=0.388427734375, process_action.action_controller;dur=16.6689453125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": \"5\",\n        \"max_per_page\": 25,\n        \"comparation\": \"gt\",\n        \"after\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n        \"next\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n        \"has_more\": true\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only after param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a&after=db76e92d-9150-4493-b933-fa5bc103a5d7",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												},
+												{
+													"key": "after",
+													"value": "db76e92d-9150-4493-b933-fa5bc103a5d7"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only after param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a&after=db76e92d-9150-4493-b933-fa5bc103a5d7",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														},
+														{
+															"key": "after",
+															"value": "db76e92d-9150-4493-b933-fa5bc103a5d7"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"a035fdbd1b1ec6cdb509ba96a52ae974\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "9f255c71-d2d2-44df-9104-2e3889a4b222"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.023556"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.14697265625, sql.active_record;dur=4.79541015625, instantiation.active_record;dur=0.399658203125, process_action.action_controller;dur=11.205078125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"1014d2f6-0485-43d0-9523-8d190d7d7d02\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Tempora accusantium sed officiis dicta dignissimos quis. Sit repellendus voluptatum optio sequi quisquam nulla explicabo. Et temporibus perspiciatis reiciendis nulla alias. Debitis dignissimos quos vel quo architecto.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"c1bbc04a-97eb-4737-b887-7342c52d607d\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"05fef8cf-03c6-4270-9b16-04dcae681c64\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Autem repellat sint voluptates maxime perspiciatis ex. Sequi temporibus delectus excepturi molestiae modi. Dignissimos quo commodi molestiae libero impedit.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"04765321-c3a8-4615-8fb7-2785adf443a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"213e6c73-7c22-406d-819c-4da9f003819b\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Non eaque illum ipsa optio corporis totam nobis. Consequatur tempora itaque porro quos sunt. Non accusamus quas porro nulla tempore. Veniam cupiditate vero exercitationem quae libero eveniet alias aspernatur. Similique eius inventore facere sequi.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"e186510d-dcf0-4989-a81b-93d585210d98\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"153a5c7a-92db-4c6c-9271-b78ceaf440f9\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Reiciendis cum necessitatibus unde nam. Molestiae dolorum adipisci nisi doloremque. Ipsam ducimus blanditiis doloribus rem et hic molestias adipisci. Itaque illum neque accusamus adipisci ut ab delectus rerum. Atque beatae nam deserunt in maxime ut vitae fugiat.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"dfc57ce9-8497-43fe-a670-12fad97f3f0a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9b36429c-3d38-4f34-a382-807bb15f0ec2\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Dolor recusandae culpa corrupti odio laboriosam distinctio. Necessitatibus delectus debitis unde labore perspiciatis ratione accusantium quibusdam. Enim reprehenderit architecto in quod aliquid illum beatae recusandae.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"b8b431ed-2d99-48b8-a7d9-96c37927e6a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"comparation\": \"gt\",\n        \"after\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n        \"next\": \"9b36429c-3d38-4f34-a382-807bb15f0ec2\",\n        \"has_more\": false\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?page=1&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?page=1&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "1"
+														},
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3c26380e6d181c353097d95fc853b62e\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "0d6f4343-0ec2-4721-87b5-00b65e7c2d64"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.031002"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.329833984375, sql.active_record;dur=5.17822265625, instantiation.active_record;dur=0.482177734375, process_action.action_controller;dur=13.97607421875"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Iure dolore architecto exercitationem distinctio rem quidem. Distinctio expedita maxime iste pariatur non blanditiis. Incidunt perferendis officia esse a nulla nisi ducimus. Sapiente adipisci at consectetur accusamus voluptate quaerat quisquam. Culpa distinctio repudiandae sit dolor.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"43aef3e4-bd8d-41b0-8c88-9dcc4b791c80\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"1014d2f6-0485-43d0-9523-8d190d7d7d02\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Tempora accusantium sed officiis dicta dignissimos quis. Sit repellendus voluptatum optio sequi quisquam nulla explicabo. Et temporibus perspiciatis reiciendis nulla alias. Debitis dignissimos quos vel quo architecto.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"c1bbc04a-97eb-4737-b887-7342c52d607d\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"05fef8cf-03c6-4270-9b16-04dcae681c64\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Autem repellat sint voluptates maxime perspiciatis ex. Sequi temporibus delectus excepturi molestiae modi. Dignissimos quo commodi molestiae libero impedit.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"04765321-c3a8-4615-8fb7-2785adf443a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"213e6c73-7c22-406d-819c-4da9f003819b\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Non eaque illum ipsa optio corporis totam nobis. Consequatur tempora itaque porro quos sunt. Non accusamus quas porro nulla tempore. Veniam cupiditate vero exercitationem quae libero eveniet alias aspernatur. Similique eius inventore facere sequi.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"e186510d-dcf0-4989-a81b-93d585210d98\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"153a5c7a-92db-4c6c-9271-b78ceaf440f9\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Reiciendis cum necessitatibus unde nam. Molestiae dolorum adipisci nisi doloremque. Ipsam ducimus blanditiis doloribus rem et hic molestias adipisci. Itaque illum neque accusamus adipisci ut ab delectus rerum. Atque beatae nam deserunt in maxime ut vitae fugiat.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"dfc57ce9-8497-43fe-a670-12fad97f3f0a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9b36429c-3d38-4f34-a382-807bb15f0ec2\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Dolor recusandae culpa corrupti odio laboriosam distinctio. Necessitatibus delectus debitis unde labore perspiciatis ratione accusantium quibusdam. Enim reprehenderit architecto in quod aliquid illum beatae recusandae.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"b8b431ed-2d99-48b8-a7d9-96c37927e6a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 15,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only per_page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?per_page=10&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "per_page",
+													"value": "10"
+												},
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only per_page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?per_page=10&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "per_page",
+															"value": "10"
+														},
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"629cb4a6ed227169dbc3520e574fa68e\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "c056b5dc-dcf6-4a6c-b71f-89ec75bce7a4"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.034616"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.248046875, sql.active_record;dur=4.398193359375, instantiation.active_record;dur=0.36376953125, process_action.action_controller;dur=19.01025390625"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Iure dolore architecto exercitationem distinctio rem quidem. Distinctio expedita maxime iste pariatur non blanditiis. Incidunt perferendis officia esse a nulla nisi ducimus. Sapiente adipisci at consectetur accusamus voluptate quaerat quisquam. Culpa distinctio repudiandae sit dolor.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"43aef3e4-bd8d-41b0-8c88-9dcc4b791c80\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 10,\n        \"max_per_page\": 25,\n        \"count\": 15,\n        \"self\": 1,\n        \"next\": 2,\n        \"last\": 2,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only  incorrect per_page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?per_page=fdsfds&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "per_page",
+													"value": "fdsfds"
+												},
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only  incorrect per_page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?per_page=fdsfds&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "per_page",
+															"value": "fdsfds"
+														},
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3c26380e6d181c353097d95fc853b62e\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "7decf46f-e9dc-4431-ae6b-a8511672f5dc"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.026346"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.1748046875, sql.active_record;dur=3.612060546875, instantiation.active_record;dur=0.521240234375, process_action.action_controller;dur=11.30078125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Iure dolore architecto exercitationem distinctio rem quidem. Distinctio expedita maxime iste pariatur non blanditiis. Incidunt perferendis officia esse a nulla nisi ducimus. Sapiente adipisci at consectetur accusamus voluptate quaerat quisquam. Culpa distinctio repudiandae sit dolor.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"43aef3e4-bd8d-41b0-8c88-9dcc4b791c80\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"1014d2f6-0485-43d0-9523-8d190d7d7d02\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Tempora accusantium sed officiis dicta dignissimos quis. Sit repellendus voluptatum optio sequi quisquam nulla explicabo. Et temporibus perspiciatis reiciendis nulla alias. Debitis dignissimos quos vel quo architecto.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"c1bbc04a-97eb-4737-b887-7342c52d607d\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"05fef8cf-03c6-4270-9b16-04dcae681c64\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Autem repellat sint voluptates maxime perspiciatis ex. Sequi temporibus delectus excepturi molestiae modi. Dignissimos quo commodi molestiae libero impedit.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"04765321-c3a8-4615-8fb7-2785adf443a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"213e6c73-7c22-406d-819c-4da9f003819b\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Non eaque illum ipsa optio corporis totam nobis. Consequatur tempora itaque porro quos sunt. Non accusamus quas porro nulla tempore. Veniam cupiditate vero exercitationem quae libero eveniet alias aspernatur. Similique eius inventore facere sequi.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"e186510d-dcf0-4989-a81b-93d585210d98\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"153a5c7a-92db-4c6c-9271-b78ceaf440f9\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Reiciendis cum necessitatibus unde nam. Molestiae dolorum adipisci nisi doloremque. Ipsam ducimus blanditiis doloribus rem et hic molestias adipisci. Itaque illum neque accusamus adipisci ut ab delectus rerum. Atque beatae nam deserunt in maxime ut vitae fugiat.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"dfc57ce9-8497-43fe-a670-12fad97f3f0a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9b36429c-3d38-4f34-a382-807bb15f0ec2\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Dolor recusandae culpa corrupti odio laboriosam distinctio. Necessitatibus delectus debitis unde labore perspiciatis ratione accusantium quibusdam. Enim reprehenderit architecto in quod aliquid illum beatae recusandae.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"b8b431ed-2d99-48b8-a7d9-96c37927e6a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 15,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only  incorrect page param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?page=fdsfds&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "fdsfds"
+												},
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only  incorrect page param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?page=fdsfds&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "fdsfds"
+														},
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3c26380e6d181c353097d95fc853b62e\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "d9a91823-8e42-4af5-b5ce-1628a3f855a2"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.034334"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.181884765625, sql.active_record;dur=10.434814453125, instantiation.active_record;dur=0.525146484375, process_action.action_controller;dur=19.552001953125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"db76e92d-9150-4493-b933-fa5bc103a5d7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Iure dolore architecto exercitationem distinctio rem quidem. Distinctio expedita maxime iste pariatur non blanditiis. Incidunt perferendis officia esse a nulla nisi ducimus. Sapiente adipisci at consectetur accusamus voluptate quaerat quisquam. Culpa distinctio repudiandae sit dolor.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"43aef3e4-bd8d-41b0-8c88-9dcc4b791c80\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0957fa2a-07f7-4dcb-9c38-a70da3aa4080\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quis voluptas dolore temporibus corrupti dicta eveniet explicabo amet. Temporibus eius eos error quis soluta consequuntur velit. Similique maxime placeat tempore laborum quod officiis. Labore minima reiciendis iure velit voluptates. Doloremque quae nulla laboriosam id totam voluptate quis ut.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1257c163-b3e9-44f5-8ac8-dfa1750e4bc4\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"66c37997-a729-47fc-a05d-ee383b79d3d6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Quod nulla nisi ipsum asperiores reprehenderit. Ducimus earum deleniti eum et. Similique maxime autem quam porro placeat. Dolor assumenda corporis explicabo alias nemo exercitationem sunt quidem.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f8011f8d-190b-4e1d-9675-56b89166237b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"49dc08f2-b5da-492d-b4bb-8655d2309c21\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Omnis adipisci vitae ipsum sapiente sint. Vitae vel non iure atque inventore expedita. Aperiam repellendus excepturi blanditiis atque cumque magni.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"6c2ae9c2-498b-499a-9982-3a0c4dd8bdd7\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"0f595619-5f40-4e6f-856f-24d792bab06e\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Harum quia hic recusandae quas assumenda aliquid suscipit ex. Pariatur nostrum natus dicta tempore temporibus. Nostrum atque molestiae dolores et ducimus repudiandae. Facere dicta atque molestiae dignissimos quis consequatur sed.\",\n                \"created_at\": \"2022-06-06 13:11:01\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"f1500b4b-c48d-4246-8727-4704ba8409cf\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"65e2eee2-4aeb-4d26-8322-00a956293754\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Totam voluptates praesentium commodi ducimus ex. Aut hic reiciendis nobis sunt. Suscipit omnis deserunt impedit asperiores hic fuga.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"214c7bc9-fb53-47e2-984b-cede962e3f1f\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"4fa032bb-68e0-4489-98e3-921113251a3f\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Eos expedita nesciunt illum magnam quibusdam tenetur odit nobis. Ut exercitationem occaecati dolorem explicabo. Magni id quibusdam eius at molestiae voluptatem. Voluptas dolor reiciendis et saepe praesentium sit animi occaecati.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"24ccb15f-e944-49bd-9b8b-6e06912feb40\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9a14fb1f-f54a-4ffd-af16-3c15a3a807c6\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Fuga ab cum at corporis atque. Temporibus ullam pariatur veritatis ratione iusto. Distinctio aperiam soluta necessitatibus nostrum sed.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"344598e4-be46-4c19-a5b9-7e6f9649d99b\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"46cda07c-a044-4293-a0de-266d6e67c982\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Provident aut sint quia facere perspiciatis. Soluta dolor cumque nisi ullam libero. Qui molestiae a optio laborum rem totam quis. Incidunt veniam debitis earum officia corrupti ea. Aliquam necessitatibus est nisi velit ipsam amet.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"06cc40c9-3590-41ed-bb31-75c90ad50f7c\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"288b921a-67a2-4d8c-9b1f-e36ed96efea7\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Nesciunt sit iure odit doloremque. Corporis saepe est voluptates officia natus. Sed ut quam adipisci aliquam nam iste molestiae. Aliquam dolorum magnam illo officiis optio.\",\n                \"created_at\": \"2022-06-06 13:11:02\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"1ba00db0-5853-48d0-b65c-3c7630b09334\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"1014d2f6-0485-43d0-9523-8d190d7d7d02\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Tempora accusantium sed officiis dicta dignissimos quis. Sit repellendus voluptatum optio sequi quisquam nulla explicabo. Et temporibus perspiciatis reiciendis nulla alias. Debitis dignissimos quos vel quo architecto.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"c1bbc04a-97eb-4737-b887-7342c52d607d\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"05fef8cf-03c6-4270-9b16-04dcae681c64\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Autem repellat sint voluptates maxime perspiciatis ex. Sequi temporibus delectus excepturi molestiae modi. Dignissimos quo commodi molestiae libero impedit.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"04765321-c3a8-4615-8fb7-2785adf443a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"213e6c73-7c22-406d-819c-4da9f003819b\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Non eaque illum ipsa optio corporis totam nobis. Consequatur tempora itaque porro quos sunt. Non accusamus quas porro nulla tempore. Veniam cupiditate vero exercitationem quae libero eveniet alias aspernatur. Similique eius inventore facere sequi.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"e186510d-dcf0-4989-a81b-93d585210d98\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"153a5c7a-92db-4c6c-9271-b78ceaf440f9\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Reiciendis cum necessitatibus unde nam. Molestiae dolorum adipisci nisi doloremque. Ipsam ducimus blanditiis doloribus rem et hic molestias adipisci. Itaque illum neque accusamus adipisci ut ab delectus rerum. Atque beatae nam deserunt in maxime ut vitae fugiat.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"dfc57ce9-8497-43fe-a670-12fad97f3f0a\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": \"9b36429c-3d38-4f34-a382-807bb15f0ec2\",\n            \"type\": \"comment\",\n            \"attributes\": {\n                \"text\": \"Dolor recusandae culpa corrupti odio laboriosam distinctio. Necessitatibus delectus debitis unde labore perspiciatis ratione accusantium quibusdam. Enim reprehenderit architecto in quod aliquid illum beatae recusandae.\",\n                \"created_at\": \"2022-06-06 13:11:03\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"data\": {\n                        \"id\": \"b8b431ed-2d99-48b8-a7d9-96c37927e6a2\",\n                        \"type\": \"user\"\n                    }\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"count\": 15,\n        \"self\": 1,\n        \"next\": null,\n        \"last\": 1,\n        \"prev\": null\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Provide only  incorrect after param",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?after=qsddsf&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "after",
+													"value": "qsddsf"
+												},
+												{
+													"key": "playlist_id",
+													"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Provide only  incorrect after param",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?after=qsddsf&playlist_id=5157cecc-bfc3-4003-815f-fee7bc86400a",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "after",
+															"value": "qsddsf"
+														},
+														{
+															"key": "playlist_id",
+															"value": "5157cecc-bfc3-4003-815f-fee7bc86400a"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"65b7e16237334e3dc7c618b465b0f173\""
+												},
+												{
+													"key": "Cache-Control",
+													"value": "max-age=0, private, must-revalidate"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "405d7f99-acd8-479d-9edb-847a362947e4"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.019278"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "start_processing.action_controller;dur=0.169921875, sql.active_record;dur=3.2412109375, instantiation.active_record;dur=0.130126953125, process_action.action_controller;dur=7.376953125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [],\n    \"meta\": {\n        \"per_page\": 20,\n        \"max_per_page\": 25,\n        \"comparation\": \"gt\",\n        \"after\": \"qsddsf\",\n        \"next\": null,\n        \"has_more\": false\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Failure",
+							"item": [
+								{
+									"name": "When playlist_id not found",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "Invalid token",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=fcdb9846-a620-427f-accd-1d3b5798cd75",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "fcdb9846-a620-427f-accd-1d3b5798cd75"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When playlist_id not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=fcdb9846-a620-427f-accd-1d3b5798cd75",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "fcdb9846-a620-427f-accd-1d3b5798cd75"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "html",
+											"header": [
+												{
+													"key": "Server",
+													"value": "Cowboy"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 06 Jun 2022 13:09:03 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/html; charset=UTF-8"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "5172d2f2-c285-4789-94b6-9163b1d65960"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.002730"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=63072000; includeSubDomains"
+												},
+												{
+													"key": "Content-Length",
+													"value": "0"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 vegur"
+												}
+											],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "When is private playlists another user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=f51abd1b-8af9-4859-a260-7a689a938008",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "f51abd1b-8af9-4859-a260-7a689a938008"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When is private playlists",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=f51abd1b-8af9-4859-a260-7a689a938008",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "f51abd1b-8af9-4859-a260-7a689a938008"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "0"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Permitted-Cross-Domain-Policies",
+													"value": "none"
+												},
+												{
+													"key": "Referrer-Policy",
+													"value": "strict-origin-when-cross-origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "text/plain; charset=utf-8"
+												},
+												{
+													"key": "Vary",
+													"value": "Accept"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache"
+												},
+												{
+													"key": "X-Request-Id",
+													"value": "95239c99-db6e-4dd8-b8cf-c82c81badaea"
+												},
+												{
+													"key": "X-Runtime",
+													"value": "0.289360"
+												},
+												{
+													"key": "Server-Timing",
+													"value": "active_admin.application.before_load;dur=0.236572265625, active_admin.resource.register;dur=0.22412109375, active_admin.application.after_load;dur=0.024169921875, start_processing.action_controller;dur=0.18896484375, sql.active_record;dur=9.411376953125, instantiation.active_record;dur=8.587890625, process_action.action_controller;dur=33.86328125"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												}
+											],
+											"cookie": [],
+											"body": " "
+										}
+									]
+								},
+								{
+									"name": "When is private playlists current_user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/v1/comments?playlist_id=dffaea3b-d029-4960-ba07-b9a7142ac920",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"comments"
+											],
+											"query": [
+												{
+													"key": "playlist_id",
+													"value": "dffaea3b-d029-4960-ba07-b9a7142ac920"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "When is private playlists current_user",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/api/v1/comments?playlist_id=dffaea3b-d029-4960-ba07-b9a7142ac920",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"comments"
+													],
+													"query": [
+														{
+															"key": "playlist_id",
+															"value": "dffaea3b-d029-4960-ba07-b9a7142ac920"
+														}
+													]
+												}
+											},
+											"_postman_previewlanguage": null,
+											"header": null,
+											"cookie": [],
+											"body": null
 										}
 									]
 								}

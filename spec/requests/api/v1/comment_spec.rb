@@ -2,6 +2,114 @@
 
 RSpec.describe 'Comments', type: :request do
   path '/api/v1/comments' do
+    get(I18n.t('swagger.comments.action.index')) do
+      tags I18n.t('swagger.comments.tags')
+      consumes 'application/json'
+      produces 'application/json'
+
+      parameter name: 'authorization', in: :header, type: :string, required: false
+      parameter name: :playlist_id, in: :query, type: :string, required: true, example: SecureRandom.uuid
+      parameter name: :page, in: :query, type: :string, required: false, example: 2
+      parameter name: :per_page, in: :query, type: :string, required: false, example: 20
+      parameter name: :after, in: :query, type: :string, required: false, example: SecureRandom.uuid
+
+      let(:playlist_id) { playlist.id }
+      let(:playlist) { create(:playlist) }
+
+      before do
+        create(:comment, playlist: playlist)
+      end
+
+      response '200', 'when playlist is public' do
+        let(:playlist) { create(:playlist, :public) }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/comments/index')
+        end
+      end
+
+      response '200', 'when playlist is shared and user is owner' do
+        let(:user) { create(:user) }
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:playlist) { create(:playlist, :shared, owner: user) }
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/comments/index')
+        end
+      end
+
+      response '200', 'when playlist is shared and user is owners friend' do
+        let(:user) { create(:user) }
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:owner) { create(:user) }
+        let(:playlist) { create(:playlist, :shared, owner: owner) }
+
+        before do
+          create(:friend, initiator: owner, acceptor: user)
+        end
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/comments/index')
+        end
+      end
+
+      response '200', 'when user provides page and per_page parameters' do
+        let(:playlist) { create(:playlist, :public) }
+        let(:page) { 1 }
+        let(:per_page) { 5 }
+
+        before do
+          create_list(:comment, 10, playlist: playlist)
+        end
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/comments/index')
+        end
+      end
+
+      response '200', 'when user provides after and per_page parameters' do
+        let(:playlist) { create(:playlist, :public) }
+        let(:after) { Comment.order(Pagy::DEFAULT[:default_order]).first.id }
+        let(:per_page) { 5 }
+
+        before do
+          create_list(:comment, 10, playlist: playlist)
+        end
+
+        run_test! do |response|
+          expect(response).to match_json_schema('v1/comments/index')
+        end
+      end
+
+      response '403', 'when playlist is shared and user is not owner or friend of owner' do
+        let(:user) { create(:user) }
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+        let(:playlist) { create(:playlist, :shared) }
+
+        run_test!
+      end
+
+      response '403', 'when playlist is shared and user is guest' do
+        let(:playlist) { create(:playlist, :shared) }
+
+        run_test!
+      end
+
+      response '403', 'when playlist is private' do
+        let(:user) { create(:user) }
+        let(:playlist) { create(:playlist, :private, owner: user) }
+        let(:authorization) { SessionCreate.call(user.id)[:access] }
+
+        run_test!
+      end
+
+      response '401', 'unauthorized' do
+        let(:authorization) { 'invalid token' }
+
+        run_test!
+      end
+    end
+
     post(I18n.t('swagger.comments.action.post')) do
       tags I18n.t('swagger.comments.tags')
       consumes 'application/json'

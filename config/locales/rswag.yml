@@ -39,6 +39,7 @@ en:
       tags: Comments
       action:
         post: create comment
+        index: show comment list
     user_reactions:
       tags: User Reactions
       action:

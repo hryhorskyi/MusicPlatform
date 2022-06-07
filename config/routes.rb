@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
-      resources :comments, only: %i[create]
+      resources :comments, only: %i[index create]
       resources :friends, only: %i[create index destroy]
       resources :home, only: %i[index]
       resources :invitations, only: %i[create index destroy update]

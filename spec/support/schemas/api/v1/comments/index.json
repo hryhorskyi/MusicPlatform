@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "id": "file:/comments/index#",
+  "type": "object",
+  "required": [
+    "data",
+    "meta"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "attributes",
+          "relationships"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "required": [
+              "text",
+              "created_at"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "required": [
+              "user"
+            ],
+            "properties": {
+              "user": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "type"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "anyOf": [
+        {
+          "ref": "file:/pagination/cursor_pagination.json#"
+        },
+        {
+          "ref": "file:/pagination/numeric_pagination.json#"
+        }
+      ]
+    }
+  }
+}

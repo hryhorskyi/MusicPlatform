@@ -37,7 +37,78 @@
               "type": "object"
             },
             "most_popular_songs": {
-              "type": "object"
+              "type": "object",
+              "required": [
+                  "data"
+              ],
+              "properties": {
+                  "data": {
+                      "type": "array",
+                      "items": {
+                          "type": "object",
+                          "required": [
+                              "id",
+                              "type",
+                              "attributes",
+                              "relationships"
+                          ],
+                          "properties": {
+                              "id": {
+                                  "type": "string"
+                              },
+                              "type": {
+                                  "type": "string"
+                              },
+                              "attributes": {
+                                  "type": "object",
+                                  "required": [
+                                      "name",
+                                      "featured"
+                                  ],
+                                  "properties": {
+                                      "name": {
+                                          "type": "string"
+                                      },
+                                      "featured": {
+                                          "type": "boolean"
+                                      }
+                                  }
+                              },
+                              "relationships": {
+                                  "type": "object",
+                                  "required": [
+                                      "album"
+                                  ],
+                                  "properties": {
+                                      "album": {
+                                          "type": "object",
+                                          "required": [
+                                              "data"
+                                          ],
+                                          "properties": {
+                                              "data": {
+                                                  "type": "object",
+                                                  "required": [
+                                                      "id",
+                                                      "type"
+                                                  ],
+                                                  "properties": {
+                                                      "id": {
+                                                          "type": "string"
+                                                      },
+                                                      "type": {
+                                                          "type": "string"
+                                                      }
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
             },
             "people_with_most_friends": {
               "type": "object"

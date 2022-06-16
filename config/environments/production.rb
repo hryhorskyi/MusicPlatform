@@ -23,6 +23,8 @@ Rails.application.configure do
   config.force_ssl = ENV['DISABLE_FORCE_SSL'] ? false : true
   config.log_level = :info
   config.log_tags = [:request_id]
+  config.action_controller.perform_caching = true
+  config.cache_store = :memory_store
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

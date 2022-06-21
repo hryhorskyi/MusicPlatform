@@ -9,7 +9,7 @@ RSpec.describe Home::Index::Organizer do
       create_list(:playlist_song, 10)
     end
 
-    let(:model) { Struct.new(:most_popular_songs).new }
+    let(:model) { Struct.new(:most_popular_songs, :latest_songs).new }
     let(:popular_song) { create(:song) }
     let(:expected_interactors) do
       [
@@ -46,6 +46,22 @@ RSpec.describe Home::Index::Organizer do
     context 'when set of most popular songs works incorrect' do
       it 'has top list without popular song' do
         expect(result.model.most_popular_songs).not_to include(popular_song)
+      end
+    end
+
+    context 'when set of latest songs works correct' do
+      let!(:latest_song) { create(:song) }
+
+      it 'has included latest song in top list' do
+        expect(result.model.latest_songs).to include(latest_song)
+      end
+    end
+
+    context 'when set of latest songs works incorrect' do
+      let(:latest_song) { create(:song) }
+
+      it 'has top list without latest song' do
+        expect(result.model.latest_songs).not_to include(latest_song)
       end
     end
   end

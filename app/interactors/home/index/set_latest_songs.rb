@@ -12,7 +12,7 @@ module Home
       private
 
       def find_songs
-        Song.last(SONGS_QUANTITY)
+        Rails.cache.fetch('latest_songs', expires_in: 5.minutes) { Song.last(SONGS_QUANTITY) }
       end
     end
   end
